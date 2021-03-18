@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="sidebar-visible no-js rust">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Camera Operations - y</title>
+        <title>Camera Operations - Ks-Sdk Help document</title>
         
         
 
@@ -50,7 +50,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -76,7 +76,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('rust')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../dsl.html"><strong aria-hidden="true">2.</strong> DSL Description</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../dsl/camera.html"><strong aria-hidden="true">2.1.</strong> Camera</a></li></ol></li><li class="chapter-item expanded "><a href="../dsl_run_and_debug.html"><strong aria-hidden="true">3.</strong> DSL Run and Debug</a></li><li class="chapter-item expanded "><a href="../functionality.html"><strong aria-hidden="true">4.</strong> Function List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../functionality/entity_operations.html"><strong aria-hidden="true">4.1.</strong> Entity Operation</a></li><li class="chapter-item expanded "><a href="../functionality/camera_operations.html" class="active"><strong aria-hidden="true">4.2.</strong> Camera Operations</a></li><li class="chapter-item expanded "><a href="../functionality/cc_instance_operations.html"><strong aria-hidden="true">4.3.</strong> Add/Remove CcInstance</a></li><li class="chapter-item expanded "><a href="../functionality/light_operations.html"><strong aria-hidden="true">4.4.</strong> Lighting Operations</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../dsl.html"><strong aria-hidden="true">2.</strong> DSL Description</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../dsl/camera.html"><strong aria-hidden="true">2.1.</strong> Camera</a></li><li class="chapter-item expanded "><a href="../dsl/light.html"><strong aria-hidden="true">2.2.</strong> Light</a></li><li class="chapter-item expanded "><a href="../dsl/instance.html"><strong aria-hidden="true">2.3.</strong> Instance</a></li></ol></li><li class="chapter-item expanded "><a href="../dsl_run_and_debug.html"><strong aria-hidden="true">3.</strong> DSL Run and Debug</a></li><li class="chapter-item expanded "><a href="../functionality.html"><strong aria-hidden="true">4.</strong> Function List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../functionality/entity_operations.html"><strong aria-hidden="true">4.1.</strong> Entity Operations</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../functionality/camera_operations.html" class="active"><strong aria-hidden="true">4.1.1.</strong> Camera Operations</a></li><li class="chapter-item expanded "><a href="../functionality/cc_instance_operations.html"><strong aria-hidden="true">4.1.2.</strong> Instance Operations</a></li><li class="chapter-item expanded "><a href="../functionality/light_operations.html"><strong aria-hidden="true">4.1.3.</strong> Lighting Operations</a></li></ol></li><li class="chapter-item expanded "><a href="../functionality/layout_operations.html"><strong aria-hidden="true">4.2.</strong> Layout Operations</a></li><li class="chapter-item expanded "><a href="../functionality/replacement.html"><strong aria-hidden="true">4.3.</strong> Replacement Operation</a></li><li class="chapter-item expanded "><a href="../functionality/image.html"><strong aria-hidden="true">4.4.</strong> Image Operation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../functionality/noise.html"><strong aria-hidden="true">4.4.1.</strong> Noise Simulation</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -114,8 +114,8 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
@@ -127,7 +127,7 @@
                         
                     </div>
 
-                    <h1 class="menu-title">y</h1>
+                    <h1 class="menu-title">Ks-Sdk Help document</h1>
 
                     <div class="right-buttons">
                         
@@ -163,12 +163,13 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#camera-operations" id="camera-operations">Camera Operations</a></h1>
+                        <h1><a class="header" href="#camera-operations" id="camera-operations">Camera operations</a></h1>
 <!-- toc -->
 <h2><a class="header" href="#get-the-camera-and-its-attributes" id="get-the-camera-and-its-attributes">Get the camera and its attributes</a></h2>
 <p>Function Description</p>
 <ul>
 <li><code>self.shader.world.cameras</code>: Get the camera list of the scene</li>
+<li><code>self.shader.world.camera_ids</code>: get a list of camera ids of the scene</li>
 <li><code>camera.{attr_name}</code>: Get the attributes of the camera, see the name of the camera attribute: <a href="../dsl/camera.html">Camera</a></li>
 </ul>
 <p>example</p>
@@ -188,27 +189,34 @@
 <pre><code class="language-python">class CreateCameraDsl(EntityProcessor):
     def process(self):
         # add camera
-        camera = self.shader.world.add_camera(id=&quot;test_camera&quot;,
-                                              cameraType=&quot;PERSPECTIVE&quot;,
-                                              position={'x':0,'y':0,'z':1000},
-                                              lookAt={'x':100,'y':0,'z':1000},
-                                              imageWidth=1280,
-                                              imageHeight=720,
-                                              vfov=90)
+        camera = self.shader.world.add_camera(
+        id=&quot;test_camera&quot;,
+        cameraType=&quot;PERSPECTIVE&quot;,
+        position={'x':0,'y':0,'z':1000},
+        lookAt={'x':100,'y':0,'z':1000},
+        imageWidth=1280,
+        imageHeight=720,
+        vfov=90
+        hfov=105
+        )
 </code></pre>
 <h2><a class="header" href="#modify-camera" id="modify-camera">Modify camera</a></h2>
 <p>Function Description</p>
 <ul>
-<li><code>camera.set_attr({attr_name}, {attr_value})</code>: modify the attributes of the camera</li>
+<li><code>camera.set_attr({attr_name}, *args, **kwargs)</code><sup class="footnote-reference"><a href="#args description">1</a></sup>: modify the attributes of the camera
+example</li>
 </ul>
-<p>example</p>
-<pre><code class="language-python">class KwsEntityDsl(EntityProcessor):
+<pre><code class="language-python">class SetCameraDsl(EntityProcessor):
     def process(self):
         for camera in self.shader.world.cameras:
             # set camera attr
-            camera.set_attr('position', {'x':100,'y':0,'z':1000})
-            camera.set_attr('lookAt', {'x':200,'y':0,'z':1000})
+            camera.set_attr('position', x=100, y=0, z=1000)
+            camera.set_attr('imageWidth', 1280)
+            camera.set_attr('hfov', 90, &quot;degree&quot;)
 </code></pre>
+<div class="footnote-definition" id="args description"><sup class="footnote-definition-label">1</sup>
+<p><code>*args</code> may have multiple input parameters, in addition to the value of hfov, vfov, you can also specify the unit as <code>&quot;degree&quot;</code>/<code>&quot;rad&quot;</code>; <code>**kwargs</code> is used as a dictionary Type of attributes, such as position, etc.</p>
+</div>
 
                     </main>
 

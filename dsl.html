@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="sidebar-visible no-js rust">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>DSL Description - y</title>
+        <title>DSL Description - Ks-Sdk Help document</title>
         
         
 
@@ -50,7 +50,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -76,7 +76,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('rust')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="dsl.html" class="active"><strong aria-hidden="true">2.</strong> DSL Description</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dsl/camera.html"><strong aria-hidden="true">2.1.</strong> Camera</a></li></ol></li><li class="chapter-item expanded "><a href="dsl_run_and_debug.html"><strong aria-hidden="true">3.</strong> DSL Run and Debug</a></li><li class="chapter-item expanded "><a href="functionality.html"><strong aria-hidden="true">4.</strong> Function List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functionality/entity_operations.html"><strong aria-hidden="true">4.1.</strong> Entity Operation</a></li><li class="chapter-item expanded "><a href="functionality/camera_operations.html"><strong aria-hidden="true">4.2.</strong> Camera Operations</a></li><li class="chapter-item expanded "><a href="functionality/cc_instance_operations.html"><strong aria-hidden="true">4.3.</strong> Add/Remove CcInstance</a></li><li class="chapter-item expanded "><a href="functionality/light_operations.html"><strong aria-hidden="true">4.4.</strong> Lighting Operations</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="dsl.html" class="active"><strong aria-hidden="true">2.</strong> DSL Description</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dsl/camera.html"><strong aria-hidden="true">2.1.</strong> Camera</a></li><li class="chapter-item expanded "><a href="dsl/light.html"><strong aria-hidden="true">2.2.</strong> Light</a></li><li class="chapter-item expanded "><a href="dsl/instance.html"><strong aria-hidden="true">2.3.</strong> Instance</a></li></ol></li><li class="chapter-item expanded "><a href="dsl_run_and_debug.html"><strong aria-hidden="true">3.</strong> DSL Run and Debug</a></li><li class="chapter-item expanded "><a href="functionality.html"><strong aria-hidden="true">4.</strong> Function List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functionality/entity_operations.html"><strong aria-hidden="true">4.1.</strong> Entity Operations</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functionality/camera_operations.html"><strong aria-hidden="true">4.1.1.</strong> Camera Operations</a></li><li class="chapter-item expanded "><a href="functionality/cc_instance_operations.html"><strong aria-hidden="true">4.1.2.</strong> Instance Operations</a></li><li class="chapter-item expanded "><a href="functionality/light_operations.html"><strong aria-hidden="true">4.1.3.</strong> Lighting Operations</a></li></ol></li><li class="chapter-item expanded "><a href="functionality/layout_operations.html"><strong aria-hidden="true">4.2.</strong> Layout Operations</a></li><li class="chapter-item expanded "><a href="functionality/replacement.html"><strong aria-hidden="true">4.3.</strong> Replacement Operation</a></li><li class="chapter-item expanded "><a href="functionality/image.html"><strong aria-hidden="true">4.4.</strong> Image Operation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functionality/noise.html"><strong aria-hidden="true">4.4.1.</strong> Noise Simulation</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -114,8 +114,8 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
@@ -127,7 +127,7 @@
                         
                     </div>
 
-                    <h1 class="menu-title">y</h1>
+                    <h1 class="menu-title">Ks-Sdk Help document</h1>
 
                     <div class="right-buttons">
                         
@@ -163,19 +163,49 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#dsl-description" id="dsl-description">DSL Description</a></h1>
+                        <h1><a class="header" href="#dsl-description" id="dsl-description">DSL description</a></h1>
 <!-- toc -->
 <h2><a class="header" href="#introduction-to-dsl" id="introduction-to-dsl">Introduction to DSL</a></h2>
-<h2><a class="header" href="#processor" id="processor">Processor</a></h2>
-<p>There are currently three types of EntityProcessor, PixelProcessor, and StructureProcessor, which provide
-CC world data, rasterized image results and other editing capabilities are supported.</p>
-<p>The custom classes in the DSL should inherit from the above three categories, and use the interface provided by the SDK to complete the custom editing function.</p>
-<h3><a class="header" href="#entityprocessor" id="entityprocessor">EntityProcessor</a></h3>
-<h3><a class="header" href="#pixelprocessor" id="pixelprocessor">PixelProcessor</a></h3>
-<h3><a class="header" href="#structureprocessor" id="structureprocessor">StructureProcessor</a></h3>
-<h2><a class="header" href="#worldelement" id="worldelement">World&amp;Element</a></h2>
-<p>The &quot;database&quot; used to store the input data of CC world is composed of various entities of Elment</p>
-<p>Currently supports six elements Instance, Light, Room, Level, Trajectory, Camera</p>
+<p>The essence of DSL writing is that the user customizes one or more subclasses in the py file. The subclasses:</p>
+<ul>
+<li>Three subclasses of the Processor class inherited from KsSDK
+-Borrow the interface provided by the SDK and inherited attributes to implement custom functions in the <code>process()</code> function</li>
+</ul>
+<h2><a class="header" href="#three-types" id="three-types">Three types</a></h2>
+<ol>
+<li>EntityProcessor, provides custom editing of CC world data</li>
+</ol>
+<pre><code class="language-python">from ksecs.ECS.processors.entity_processor import EntityProcessor
+class entityDsl(EntityProcessor):
+def process(self, *args, **kwargs):
+pass
+</code></pre>
+<ol start="2">
+<li>PixelProcessor, provides custom editing of rasterized image results</li>
+</ol>
+<pre><code class="language-python">from ksecs.ECS.processors.pixel_processor import PixelProcessor
+class pixelDsl(PixelProcessor):
+def process(self, *args, **kwargs):
+pass
+</code></pre>
+<ol start="3">
+<li>StructureProcessor, edit the output structured data</li>
+</ol>
+<pre><code class="language-python">from ksecs.ECS.processors.structure_processor import StructureProcessor
+class structureDsl(StructureProcessor):
+def process(self, *args, **kwargs):
+pass
+</code></pre>
+<h2><a class="header" href="#an-attribute---shader" id="an-attribute---shader">An attribute - shader</a></h2>
+<p>The user-defined class inherits the attribute shader, which connects to the underlying data structure of the SDK.
+Shader is an instantiated object of class <code>Shader</code>, which has attributes world and image_handler</p>
+<h3><a class="header" href="#world" id="world">World</a></h3>
+<p>World is an instantiated object of class World, which is used to store the &quot;database&quot; of the input data of CC world, which is composed of various entities of Elment.</p>
+<h4><a class="header" href="#element" id="element">Element</a></h4>
+<p>Currently supports six elements <code>Instance</code>, <code>Light</code>, <code>Room</code>, <code>Level</code>, <code>Trajectory</code>, and <code>Camera</code>.
+Each element corresponds to a class, with its own attributes and methods</p>
+<h3><a class="header" href="#imagehandler" id="imagehandler">ImageHandler</a></h3>
+<p>image_handler is an instantiated object of class ImageHandler, mainly used to process image-related operations</p>
 
                     </main>
 
