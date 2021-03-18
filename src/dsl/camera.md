@@ -9,11 +9,11 @@ When adding a camera, you need to set the camera's parameters, including the com
 |---|---|---|---|
 |id|Camera ID, users need to add a prefix to ensure that the ID is unique| |Yes|
 |cameraType|Camera type, support PERSPECTIVE (perspective camera), ORTHO (orthogonal camera), PANORAMA (panoramic camera)|"PERSPECTIVE"|
-|position|Camera coordinates, the format is {'x':1,'y':2,'z':3}, the unit is mm| |is|
+|position|Camera coordinates, the format is {'x':1,'y':2,'z':3}, the unit is mm| |Yes|
 |lookAt|Target coordinates, the format is {'x':1,'y':2,'z':3}, the unit is mm|position+{'x':1,'y':0,'z': 0}|
 |up|Camera up direction, the format is {'x':1,'y':2,'z':3}, the unit is mm|{'x':0,'y':0,'z': 1}|
 |imageWidth|Width of the image| |Yes|
-|imageHeight|The height of the image| |is|
+|imageHeight|The height of the image| |Yes|
 |near|Cut plane near| 200|
 |far|Cut plane far|2000000|
 |iso|Indicates the sensitivity of the camera||

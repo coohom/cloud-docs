@@ -1,4 +1,4 @@
-# Entity Operation
+# Entity operation
 
 ## Get Entity
 TODO
