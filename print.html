@@ -97,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="dsl.html"><strong aria-hidden="true">2.</strong> DSL Description</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dsl/camera.html"><strong aria-hidden="true">2.1.</strong> Camera</a></li><li class="chapter-item expanded "><a href="dsl/light.html"><strong aria-hidden="true">2.2.</strong> Light</a></li><li class="chapter-item expanded "><a href="dsl/instance.html"><strong aria-hidden="true">2.3.</strong> Instance</a></li></ol></li><li class="chapter-item expanded "><a href="dsl_run_and_debug.html"><strong aria-hidden="true">3.</strong> DSL Run and Debug</a></li><li class="chapter-item expanded "><a href="functionality.html"><strong aria-hidden="true">4.</strong> Function List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functionality/entity_operations.html"><strong aria-hidden="true">4.1.</strong> Entity Operations</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functionality/camera_operations.html"><strong aria-hidden="true">4.1.1.</strong> Camera Operations</a></li><li class="chapter-item expanded "><a href="functionality/cc_instance_operations.html"><strong aria-hidden="true">4.1.2.</strong> Instance Operations</a></li><li class="chapter-item expanded "><a href="functionality/light_operations.html"><strong aria-hidden="true">4.1.3.</strong> Lighting Operations</a></li></ol></li><li class="chapter-item expanded "><a href="functionality/layout_operations.html"><strong aria-hidden="true">4.2.</strong> Layout Operations</a></li><li class="chapter-item expanded "><a href="functionality/replacement.html"><strong aria-hidden="true">4.3.</strong> Replacement Operation</a></li><li class="chapter-item expanded "><a href="functionality/image.html"><strong aria-hidden="true">4.4.</strong> Image Operation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functionality/noise.html"><strong aria-hidden="true">4.4.1.</strong> Noise Simulation</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="dsl.html"><strong aria-hidden="true">2.</strong> DSL Description</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dsl/camera.html"><strong aria-hidden="true">2.1.</strong> Camera</a></li><li class="chapter-item expanded "><a href="dsl/light.html"><strong aria-hidden="true">2.2.</strong> Light</a></li><li class="chapter-item expanded "><a href="dsl/instance.html"><strong aria-hidden="true">2.3.</strong> Instance</a></li></ol></li><li class="chapter-item expanded "><a href="functionality.html"><strong aria-hidden="true">3.</strong> Function List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functionality/entity_operations.html"><strong aria-hidden="true">3.1.</strong> Entity Operations</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functionality/camera_operations.html"><strong aria-hidden="true">3.1.1.</strong> Camera Operations</a></li><li class="chapter-item expanded "><a href="functionality/cc_instance_operations.html"><strong aria-hidden="true">3.1.2.</strong> Instance Operations</a></li><li class="chapter-item expanded "><a href="functionality/light_operations.html"><strong aria-hidden="true">3.1.3.</strong> Lighting Operations</a></li></ol></li><li class="chapter-item expanded "><a href="functionality/layout_operations.html"><strong aria-hidden="true">3.2.</strong> Layout Operations</a></li><li class="chapter-item expanded "><a href="functionality/replacement.html"><strong aria-hidden="true">3.3.</strong> Replacement Operation</a></li><li class="chapter-item expanded "><a href="functionality/image.html"><strong aria-hidden="true">3.4.</strong> Image Operation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functionality/noise.html"><strong aria-hidden="true">3.4.1.</strong> Noise Simulation</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -167,7 +167,7 @@
                     <main>
                         <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
 <h2><a class="header" href="#introduction-to-eus" id="introduction-to-eus">Introduction to EUS</a></h2>
-<p>EUS (Environment Understanding Solution) is a scene cognitive training data set solution for the indoor intelligent body industry.
+<p>EUS (Environment Understanding Solution) is a scene cognitive training data set solution for the indoor agent industry.
 Users use EUS to generate large-scale low-cost scene recognition data sets based on KJL's massive scene sets.</p>
 <p>The core workflow of EUS includes the following parts:</p>
 <ul>
@@ -182,8 +182,10 @@ Users use EUS to generate large-scale low-cost scene recognition data sets based
 <h2><a class="header" href="#introduction-to-dsl" id="introduction-to-dsl">Introduction to DSL</a></h2>
 <p>The essence of DSL writing is that the user customizes one or more subclasses in the py file. The subclasses:</p>
 <ul>
-<li>Three subclasses of the Processor class inherited from KsSDK
--Borrow the interface provided by the SDK and inherited attributes to implement custom functions in the <code>process()</code> function</li>
+<li>Three subclasses of the Processor class inherited from KsSDK</li>
+</ul>
+<ul>
+<li>Borrow the interface provided by the SDK and inherited attributes to implement custom functions in the <code>process()</code> function</li>
 </ul>
 <h2><a class="header" href="#three-types" id="three-types">Three types</a></h2>
 <ol>
@@ -191,24 +193,24 @@ Users use EUS to generate large-scale low-cost scene recognition data sets based
 </ol>
 <pre><code class="language-python">from ksecs.ECS.processors.entity_processor import EntityProcessor
 class entityDsl(EntityProcessor):
-def process(self, *args, **kwargs):
-pass
+	def process(self, *args, **kwargs):
+		pass
 </code></pre>
 <ol start="2">
 <li>PixelProcessor, provides custom editing of rasterized image results</li>
 </ol>
 <pre><code class="language-python">from ksecs.ECS.processors.pixel_processor import PixelProcessor
 class pixelDsl(PixelProcessor):
-def process(self, *args, **kwargs):
-pass
+	def process(self, *args, **kwargs):
+		pass
 </code></pre>
 <ol start="3">
 <li>StructureProcessor, edit the output structured data</li>
 </ol>
 <pre><code class="language-python">from ksecs.ECS.processors.structure_processor import StructureProcessor
 class structureDsl(StructureProcessor):
-def process(self, *args, **kwargs):
-pass
+	def process(self, *args, **kwargs):
+		pass
 </code></pre>
 <h2><a class="header" href="#an-attribute---shader" id="an-attribute---shader">An attribute - shader</a></h2>
 <p>The user-defined class inherits the attribute shader, which connects to the underlying data structure of the SDK.
@@ -265,180 +267,6 @@ Each element corresponds to a class, with its own attributes and methods</p>
 <tr><td>type</td><td>Possible values are MESH | ASSET| CC_OBJECT| COMPOSITE</td><td></td><td>Yes</td></tr>
 <tr><td>size</td><td>Properties only available when type is ASSET</td><td></td><td></td></tr>
 </tbody></table>
-<h1><a class="header" href="#dsl-local-operation-and-debugging" id="dsl-local-operation-and-debugging">DSL Local operation and debugging</a></h1>
-<!-- toc -->
-<h2><a class="header" href="#environment-setup" id="environment-setup">Environment setup</a></h2>
-<h3><a class="header" href="#python" id="python">PYTHON</a></h3>
-<p>It is recommended to use python 3.6 version and use Anaconda to install (the document description is based on this premise)</p>
-<hr />
-<h3><a class="header" href="#environment-configuration" id="environment-configuration">Environment configuration</a></h3>
-<h4><a class="header" href="#use-git--source-project" id="use-git--source-project">Use Git + source project</a></h4>
-<ol>
-<li>
-<p>clone project</p>
-<pre><code class="language-bash">git clone git@gitlab.qunhequnhe.com:kloudsim/kloudsim-ecs-sdk.git
-</code></pre>
-</li>
-<li>
-<p>Dependent installation</p>
-<p>Under the above project path, execute</p>
-<pre><code class="language-bash">pip install -r requirements.txt
-</code></pre>
-</li>
-<li>
-<p>PYTHONPATH designation</p>
-<ol>
-<li>
-<p>Run from the command line <sup class="footnote-reference"><a href="#win">1</a></sup></p>
-<pre><code class="language-bash">echo $PYTHONPATH #View the configured path, which can be saved
-source envsetup.sh #Use the environment setup script provided in the project, and specify the path as the superior of ksecs, such as kloudsim-ecs-sdk, or use the export statement directly
-</code></pre>
-<div class="footnote-definition" id="win"><sup class="footnote-definition-label">1</sup>
-<p>Windows recommends using IDE directly; if you want to use the command line, first add the path to the <em>environment variable</em></p>
-</div>
-</li>
-<li>
-<p>IDE operation</p>
-<p>Import the upper layer of ksecs, namely the project kloudsim-ecs-sdk, no need to configure the path</p>
-</li>
-</ol>
-</li>
-</ol>
-<h4><a class="header" href="#use-pip-install--package" id="use-pip-install--package">Use pip install + package</a></h4>
-<pre><code class="language-bash">pip install ksecs==version -i http://nexus.qunhequnhe.com/repository/pypi-qunhe/simple --trusted-host nexus.qunhequnhe.com
-</code></pre>
-<p>Optional version:
--21.1.0
--21.2.0
--21.3.0</p>
-<hr />
-<h2><a class="header" href="#run" id="run">Run</a></h2>
-<h3><a class="header" href="#add-main-function" id="add-main-function">Add main function</a></h3>
-<p>Two ways:</p>
-<ol>
-<li>Add main function to custom DSL py file</li>
-</ol>
-<pre><code class="language-python">if __name__ =='__main__':
-    from ksecs import apply
-    apply(_is_dsl=True) # As long as it is directly debugged in dsl, _is_dsl is True. If you want to directly use the demo data in resources,
-</code></pre>
-<ol start="2">
-<li>Open the main function comment directly in demoDSL.py</li>
-</ol>
-<h3><a class="header" href="#configure-running-parameters-take-demodslpy-as-an-example" id="configure-running-parameters-take-demodslpy-as-an-example">Configure running parameters (take demoDSL.py as an example)</a></h3>
-<ol>
-<li>View parameter requirements</li>
-</ol>
-<p>You can use the command line to check the requirements and descriptions of the incoming parameters</p>
-<pre><code class="language-bash">python ksecs/resources/demoDSL.py -h
-</code></pre>
-<p>Result display:</p>
-<pre><code class="language-bash">optional arguments:
-  -h, --help show this help message and exit
-  -t T Type of shader to call
-              Options:
-              0 --&gt; ENTITY;
-              1 --&gt; PIXEL;
-              2 --&gt; STRUCTURE
-  -i I Enter path of cc world data
-  -d D Eneter path of dsl file
-  -o O Eneter path of output folder
-  -s S Enter scene task id
-  -p P Enter path of rasterization result
-</code></pre>
-<ol start="2">
-<li>
-<p>Parameter description
--Required parameter -t
--Optional parameters:
--If the other parameters are not added, the demo related in resources will be used as the incoming parameter by default
--If you specify by yourself,-i/d/o is required,-p is required for pixelshader
--Debugging can ignore the parameter -s</p>
-</li>
-<li>
-<p>Operation mode
--Use default test resources
-- Command Line</p>
-</li>
-</ol>
-<pre><code class="language-bash">python ksecs/resources/demoDSL.py -t 0 # Take entity processor as an example
-</code></pre>
-<p>-IDE
-- Code
-Just add a ptype parameter corresponding to the value of -t, such as <code>apply(ptype=0, _is_dsl=True)</code>
--IDE parameter configuration
-Take Pycharm as an example, add -t 0 to the <code>Parameters</code> of <code>Run/Debug Configuration</code></p>
-<p>-Use specific task resources
-- Command Line</p>
-<pre><code class="language-bash">python ksecs/app.py -i path of ccworld.json -d path of dsl.py -o path of output folder -t 1 -p path of rasterizeOutput # Take pixel processor as an example
-</code></pre>
-<p>-IDE
-Take Pycharm as an example, add in the <code>Parameters</code> of <code>Run/Debug Configuration</code></p>
-<pre><code class="language-bash">-i path of ccworld.json
--d path of dsl.py
--o path of output folder
--t 1
--p path of rasterizeOutput
-</code></pre>
-<hr />
-<h2><a class="header" href="#download" id="download">Download</a></h2>
-<p>It is recommended to use test resources directly for debugging during the development process;
-When there is a problem with a specific task, download the specific task resource and perform local debugging</p>
-<h3><a class="header" href="#test-resources" id="test-resources">Test resources</a></h3>
-<h4><a class="header" href="#method-of-obtaining" id="method-of-obtaining">method of obtaining:</a></h4>
-<p>ksecs/resources</p>
-<h4><a class="header" href="#how-to-use" id="how-to-use">How to use:</a></h4>
-<p>Use the default test resources for *** in the above running mode***</p>
-<h3><a class="header" href="#specific-task-resource-download" id="specific-task-resource-download">Specific task resource download</a></h3>
-<h4><a class="header" href="#method-of-obtaining-1" id="method-of-obtaining-1">method of obtaining:</a></h4>
-<p>Use the debug module under ksecs</p>
-<ol>
-<li>Check the parameters required for operation</li>
-</ol>
-<pre><code class="language-bash">python ksecs/debug/debug.py -h
- 
-usage: debug.py [-h] [-t T] [-e E] [-s S] [-p P]
- 
-optional arguments:
-  -h, --help show this help message and exit
-  -t T Type of resources to download
-              Options:
-              0 --&gt; only json.gz;
-              1 --&gt; json.gz and dsl file;
-              2 --&gt; json.gz, dsl file and rasterizeOutput
-  -e E Eneter env for cc-manage
-  -s S Enter scene task id
-  -p P Enter local path for download resources
-</code></pre>
-<ol start="2">
-<li>
-<p>Parameter description
---p: Required, specify the local path where the resource is downloaded
-To
---s: required field, id of specific task
-To
---t: The choice of downloading resources, the complete works of downloadable resources are ccWorld.json.gz, rasterize.json.gz, task_config.json.gz
-To
--0: Only download the above json.gz resource and decompress json to -p
--Based on 1:0, generate dsl.py used by the user according to task_config.json
--On a 2:1 basis, download all rasterize results to rasterizeOutput according to rasterize.json
-To
-The default is 1 when it is not passed in
-To
---e Resource download is through the cc-mange interface
-To
--prod_test
--prod
--sit</p>
-</li>
-<li>
-<p>Operation mode</p>
-</li>
-</ol>
-<pre><code class="language-bash">python ksecs/debug/debug.py -p ksecs/debug/ -s ZQYPIUMTCZ5YC325LQFH3KA8_0 -e prod_test -t 2
-</code></pre>
-<h4><a class="header" href="#how-to-use-1" id="how-to-use-1">How to use</a></h4>
-<p>Use specific task resources for *** in the above operation mode***</p>
 <h1><a class="header" href="#function-list" id="function-list">function list</a></h1>
 <h1><a class="header" href="#entity-operation" id="entity-operation">Entity operation</a></h1>
 <h2><a class="header" href="#get-entity" id="get-entity">Get Entity</a></h2>
@@ -698,7 +526,7 @@ example</li>
 </ol>
 <h2><a class="header" href="#instructions-for-use" id="instructions-for-use">Instructions for use</a></h2>
 <h3><a class="header" href="#example" id="example">Example</a></h3>
-<pre><code class="language-python">class KwsPixelDsl(PixelProcessor):
+<pre><code class="language-python">class TestPixelDsl(PixelProcessor):
      def process(self, **kwargs):
          for cid, img in self.shader.image_handler.load_images(&quot;camera_depth.png&quot;, mode=&quot;pillow&quot;):
              img_after_noise = self.shader.image_handler.add_depth_noise(img, 3)
