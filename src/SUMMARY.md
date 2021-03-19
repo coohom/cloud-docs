@@ -5,7 +5,6 @@
   - [Camera](dsl/camera.md)
   - [Light](dsl/light.md)
   - [Instance](dsl/instance.md)
-- [DSL Run and Debug](./dsl_run_and_debug.md)
 - [Function List](./functionality.md)
   - [Entity Operations](./functionality/entity_operations.md)
     - [Camera Operations](functionality/camera_operations.md)

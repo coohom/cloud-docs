@@ -1,7 +1,7 @@
 # Introduction
 
 ## Introduction to EUS
-EUS (Environment Understanding Solution) is a scene cognitive training data set solution for the indoor intelligent body industry.
+EUS (Environment Understanding Solution) is a scene cognitive training data set solution for the indoor agent industry.
 Users use EUS to generate large-scale low-cost scene recognition data sets based on KJL's massive scene sets.
 
 The core workflow of EUS includes the following parts:

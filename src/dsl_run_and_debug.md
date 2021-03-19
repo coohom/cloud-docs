@@ -47,9 +47,9 @@ It is recommended to use python 3.6 version and use Anaconda to install (the doc
 pip install ksecs==version -i http://nexus.qunhequnhe.com/repository/pypi-qunhe/simple --trusted-host nexus.qunhequnhe.com
 ```
 Optional version:
--21.1.0
--21.2.0
--21.3.0
+- 21.1.0
+- 21.2.0
+- 21.3.0
 
 ----
 
@@ -93,38 +93,38 @@ optional arguments:
 ```
 
 2. Parameter description
--Required parameter -t
--Optional parameters:
--If the other parameters are not added, the demo related in resources will be used as the incoming parameter by default
--If you specify by yourself,-i/d/o is required,-p is required for pixelshader
--Debugging can ignore the parameter -s
+	- Required parameter -t
+	- Optional parameters:
+		- If the other parameters are not added, the demo related in resources will be used as the incoming parameter by default
+		- If you specify by yourself,-i/d/o is required,-p is required for pixelshader
+	- Debugging can ignore the parameter -s
 
 3. Operation mode
--Use default test resources
+	- Use default test resources
 		- Command Line
-```bash
-python ksecs/resources/demoDSL.py -t 0 # Take entity processor as an example
-```
--IDE
+		```bash
+		python ksecs/resources/demoDSL.py -t 0 # Take entity processor as an example
+		```
+		-IDE
 			- Code
-Just add a ptype parameter corresponding to the value of -t, such as `apply(ptype=0, _is_dsl=True)`
--IDE parameter configuration
-Take Pycharm as an example, add -t 0 to the `Parameters` of `Run/Debug Configuration`
+				Just add a ptype parameter corresponding to the value of -t, such as `apply(ptype=0, _is_dsl=True)`
+			- IDE parameter configuration
+				Take Pycharm as an example, add -t 0 to the `Parameters` of `Run/Debug Configuration`
 
--Use specific task resources
+	- Use specific task resources
 		- Command Line
-```bash
-python ksecs/app.py -i path of ccworld.json -d path of dsl.py -o path of output folder -t 1 -p path of rasterizeOutput # Take pixel processor as an example
-```
--IDE
-Take Pycharm as an example, add in the `Parameters` of `Run/Debug Configuration`
-```bash
--i path of ccworld.json
--d path of dsl.py
--o path of output folder
--t 1
--p path of rasterizeOutput
-```
+		```bash
+		python ksecs/app.py -i path of ccworld.json -d path of dsl.py -o path of output folder -t 1 -p path of rasterizeOutput # Take pixel processor as an example
+		```
+		-IDE
+		Take Pycharm as an example, add in the `Parameters` of `Run/Debug Configuration`
+		```bash
+		-i path of ccworld.json
+		-d path of dsl.py
+		-o path of output folder
+		-t 1
+		-p path of rasterizeOutput
+		```
 ----
 ## Download
 
@@ -162,23 +162,23 @@ optional arguments:
   -p P Enter local path for download resources
 ```
 2. Parameter description
---p: Required, specify the local path where the resource is downloaded
-To
---s: required field, id of specific task
-To
---t: The choice of downloading resources, the complete works of downloadable resources are ccWorld.json.gz, rasterize.json.gz, task_config.json.gz
-To
--0: Only download the above json.gz resource and decompress json to -p
--Based on 1:0, generate dsl.py used by the user according to task_config.json
--On a 2:1 basis, download all rasterize results to rasterizeOutput according to rasterize.json
-To
-The default is 1 when it is not passed in
-To
---e Resource download is through the cc-mange interface
-To
--prod_test
--prod
--sit
+	- -p: Required, specify the local path where the resource is downloaded
+	To
+	- -s: required field, id of specific task
+	To
+	- -t: The choice of downloading resources, the complete works of downloadable resources are ccWorld.json.gz, rasterize.json.gz, task_config.json.gz
+	To
+		- 0: Only download the above json.gz resource and decompress json to -p
+		- Based on 1:0, generate dsl.py used by the user according to task_config.json
+		- On a 2:1 basis, download all rasterize results to rasterizeOutput according to rasterize.json
+		To
+		The default is 1 when it is not passed in
+		To
+		- -e Resource download is through the cc-mange interface
+		To
+			- prod_test
+			- prod
+			- sit
 
 3. Operation mode
 ```bash

@@ -10,7 +10,7 @@ Currently, it supports to simulate four common image noises and add them to the 
 ### Example
 
 ```python
-class KwsPixelDsl(PixelProcessor):
+class TestPixelDsl(PixelProcessor):
      def process(self, **kwargs):
          for cid, img in self.shader.image_handler.load_images("camera_depth.png", mode="pillow"):
              img_after_noise = self.shader.image_handler.add_depth_noise(img, 3)
