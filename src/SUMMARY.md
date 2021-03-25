@@ -14,3 +14,4 @@
   - [Replacement Operation](functionality/replacement.md)
   - [Image Operation](functionality/image.md)
     - [Noise Simulation](functionality/noise.md)
+- [Js Query Sample Code](./js_query_sample.md)
