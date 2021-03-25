@@ -3,9 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Ks-Sdk Help document</title>
-        
-        <meta name="robots" content="noindex" />
+        <title>Js Query Sample Code - Ks-Sdk Help document</title>
         
         
 
@@ -97,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="dsl.html"><strong aria-hidden="true">2.</strong> DSL Description</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dsl/camera.html"><strong aria-hidden="true">2.1.</strong> Camera</a></li><li class="chapter-item expanded "><a href="dsl/light.html"><strong aria-hidden="true">2.2.</strong> Light</a></li><li class="chapter-item expanded "><a href="dsl/instance.html"><strong aria-hidden="true">2.3.</strong> Instance</a></li></ol></li><li class="chapter-item expanded "><a href="functionality.html"><strong aria-hidden="true">3.</strong> Function List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functionality/entity_operations.html"><strong aria-hidden="true">3.1.</strong> Entity Operations</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functionality/camera_operations.html"><strong aria-hidden="true">3.1.1.</strong> Camera Operations</a></li><li class="chapter-item expanded "><a href="functionality/cc_instance_operations.html"><strong aria-hidden="true">3.1.2.</strong> Instance Operations</a></li><li class="chapter-item expanded "><a href="functionality/light_operations.html"><strong aria-hidden="true">3.1.3.</strong> Lighting Operations</a></li></ol></li><li class="chapter-item expanded "><a href="functionality/layout_operations.html"><strong aria-hidden="true">3.2.</strong> Layout Operations</a></li><li class="chapter-item expanded "><a href="functionality/replacement.html"><strong aria-hidden="true">3.3.</strong> Replacement Operation</a></li><li class="chapter-item expanded "><a href="functionality/image.html"><strong aria-hidden="true">3.4.</strong> Image Operation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functionality/noise.html"><strong aria-hidden="true">3.4.1.</strong> Noise Simulation</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="js_query_sample.html"><strong aria-hidden="true">4.</strong> Js Query Sample Code</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="dsl.html"><strong aria-hidden="true">2.</strong> DSL Description</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dsl/camera.html"><strong aria-hidden="true">2.1.</strong> Camera</a></li><li class="chapter-item expanded "><a href="dsl/light.html"><strong aria-hidden="true">2.2.</strong> Light</a></li><li class="chapter-item expanded "><a href="dsl/instance.html"><strong aria-hidden="true">2.3.</strong> Instance</a></li></ol></li><li class="chapter-item expanded "><a href="functionality.html"><strong aria-hidden="true">3.</strong> Function List</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functionality/entity_operations.html"><strong aria-hidden="true">3.1.</strong> Entity Operations</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functionality/camera_operations.html"><strong aria-hidden="true">3.1.1.</strong> Camera Operations</a></li><li class="chapter-item expanded "><a href="functionality/cc_instance_operations.html"><strong aria-hidden="true">3.1.2.</strong> Instance Operations</a></li><li class="chapter-item expanded "><a href="functionality/light_operations.html"><strong aria-hidden="true">3.1.3.</strong> Lighting Operations</a></li></ol></li><li class="chapter-item expanded "><a href="functionality/layout_operations.html"><strong aria-hidden="true">3.2.</strong> Layout Operations</a></li><li class="chapter-item expanded "><a href="functionality/replacement.html"><strong aria-hidden="true">3.3.</strong> Replacement Operation</a></li><li class="chapter-item expanded "><a href="functionality/image.html"><strong aria-hidden="true">3.4.</strong> Image Operation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functionality/noise.html"><strong aria-hidden="true">3.4.1.</strong> Noise Simulation</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="js_query_sample.html" class="active"><strong aria-hidden="true">4.</strong> Js Query Sample Code</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -165,390 +163,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
-<h2><a class="header" href="#introduction-to-eus" id="introduction-to-eus">Introduction to EUS</a></h2>
-<p>EUS (Environment Understanding Solution) is a scene cognitive training data set solution for the indoor agent industry.
-Users use EUS to generate large-scale low-cost scene recognition data sets based on KJL's massive scene sets.</p>
-<p>The core workflow of EUS includes the following parts:</p>
-<ul>
-<li>Scene modification: users modify scene content (furniture, lighting, etc.), modify camera information (including ordinary camera and track camera)</li>
-<li>Rasterize data generation: based on the scene and camera, use the FF engine to generate instance, normal, and depth maps</li>
-<li>Render data generation: based on the scene and camera, use the Vray engine to generate rgb images</li>
-<li>Information extraction (Structure): extract scene or camera information to an output json file</li>
-</ul>
-<h2><a class="header" href="#introduction-to-kssdk" id="introduction-to-kssdk">Introduction to KsSDK</a></h2>
-<h1><a class="header" href="#dsl-description" id="dsl-description">DSL description</a></h1>
-<!-- toc -->
-<h2><a class="header" href="#introduction-to-dsl" id="introduction-to-dsl">Introduction to DSL</a></h2>
-<p>The essence of DSL writing is that the user customizes one or more subclasses in the py file. The subclasses:</p>
-<ul>
-<li>Three subclasses of the Processor class inherited from KsSDK</li>
-</ul>
-<ul>
-<li>Borrow the interface provided by the SDK and inherited attributes to implement custom functions in the <code>process()</code> function</li>
-</ul>
-<h2><a class="header" href="#three-types" id="three-types">Three types</a></h2>
-<ol>
-<li>EntityProcessor, provides custom editing of CC world data</li>
-</ol>
-<pre><code class="language-python">from ksecs.ECS.processors.entity_processor import EntityProcessor
-class entityDsl(EntityProcessor):
-	def process(self, *args, **kwargs):
-		pass
-</code></pre>
-<ol start="2">
-<li>PixelProcessor, provides custom editing of rasterized image results</li>
-</ol>
-<pre><code class="language-python">from ksecs.ECS.processors.pixel_processor import PixelProcessor
-class pixelDsl(PixelProcessor):
-	def process(self, *args, **kwargs):
-		pass
-</code></pre>
-<ol start="3">
-<li>StructureProcessor, edit the output structured data</li>
-</ol>
-<pre><code class="language-python">from ksecs.ECS.processors.structure_processor import StructureProcessor
-class structureDsl(StructureProcessor):
-	def process(self, *args, **kwargs):
-		pass
-</code></pre>
-<h2><a class="header" href="#an-attribute---shader" id="an-attribute---shader">An attribute - shader</a></h2>
-<p>The user-defined class inherits the attribute shader, which connects to the underlying data structure of the SDK.
-Shader is an instantiated object of class <code>Shader</code>, which has attributes world and image_handler</p>
-<h3><a class="header" href="#world" id="world">World</a></h3>
-<p>World is an instantiated object of class World, which is used to store the &quot;database&quot; of the input data of CC world, which is composed of various entities of Elment.</p>
-<h4><a class="header" href="#element" id="element">Element</a></h4>
-<p>Currently supports six elements <code>Instance</code>, <code>Light</code>, <code>Room</code>, <code>Level</code>, <code>Trajectory</code>, and <code>Camera</code>.
-Each element corresponds to a class, with its own attributes and methods</p>
-<h3><a class="header" href="#imagehandler" id="imagehandler">ImageHandler</a></h3>
-<p>image_handler is an instantiated object of class ImageHandler, mainly used to process image-related operations</p>
-<h1><a class="header" href="#camera" id="camera">Camera</a></h1>
-<p>DSL supports the addition of three types of cameras, including perspective cameras, orthographic cameras, and panoramic cameras.</p>
-<p>When adding a camera, you need to set the camera's parameters, including the common parameters of all types of cameras and the unique parameters of specific types of cameras.</p>
-<h3><a class="header" href="#general-parameters" id="general-parameters">General parameters</a></h3>
-<table><thead><tr><th>Attribute</th><th>Description</th><th>Default value</th><th>Required</th></tr></thead><tbody>
-<tr><td>id</td><td>Camera ID, users need to add a prefix to ensure that the ID is unique</td><td></td><td>Yes</td></tr>
-<tr><td>cameraType</td><td>Camera type, support PERSPECTIVE (perspective camera), ORTHO (orthogonal camera), PANORAMA (panoramic camera)</td><td>&quot;PERSPECTIVE&quot;</td><td></td></tr>
-<tr><td>position</td><td>Camera coordinates, the format is {'x':1,'y':2,'z':3}, the unit is mm</td><td></td><td>Yes</td></tr>
-<tr><td>lookAt</td><td>Target coordinates, the format is {'x':1,'y':2,'z':3}, the unit is mm</td><td>position+{'x':1,'y':0,'z': 0}</td><td></td></tr>
-<tr><td>up</td><td>Camera up direction, the format is {'x':1,'y':2,'z':3}, the unit is mm</td><td>{'x':0,'y':0,'z': 1}</td><td></td></tr>
-<tr><td>imageWidth</td><td>Width of the image</td><td></td><td>Yes</td></tr>
-<tr><td>imageHeight</td><td>The height of the image</td><td></td><td>Yes</td></tr>
-<tr><td>near</td><td>Cut plane near</td><td>200</td><td></td></tr>
-<tr><td>far</td><td>Cut plane far</td><td>2000000</td><td></td></tr>
-<tr><td>iso</td><td>Indicates the sensitivity of the camera</td><td></td><td></td></tr>
-<tr><td>fnumber</td><td>f value, indicating the aperture size</td><td></td><td></td></tr>
-<tr><td>shutterSpeed</td><td>The shutter speed of the camera, the unit is s^-1</td><td></td><td></td></tr>
-</tbody></table>
-<h3><a class="header" href="#perspective-specific-parameters" id="perspective-specific-parameters">PERSPECTIVE specific parameters</a></h3>
-<table><thead><tr><th>Attribute</th><th>Description</th><th>Default value</th><th>Required</th></tr></thead><tbody>
-<tr><td>vfov</td><td>Vertical fov, that is, fov in OpenGL, angle value</td><td>none</td><td>yes</td></tr>
-<tr><td>hfov</td><td>Horizontal fov, when it coexists with vfov, vfov shall prevail, the angle value</td><td>none</td><td></td></tr>
-</tbody></table>
-<h3><a class="header" href="#ortho-specific-parameters" id="ortho-specific-parameters">ORTHO specific parameters</a></h3>
-<table><thead><tr><th>Attribute</th><th>Description</th><th>Default value</th><th>Required</th></tr></thead><tbody>
-<tr><td>orthoWidth</td><td>The width of the camera displayed in the model space, in millimeters</td><td>none</td><td>yes</td></tr>
-<tr><td>orthoHeight</td><td>The height displayed by the camera in the model space, in millimeters</td><td>none</td><td>yes</td></tr>
-</tbody></table>
-<h1><a class="header" href="#light" id="light">Light</a></h1>
-<p>The SDK provides the adjustment of lighting effects in the form of interfaces, so the attributes that can be directly adjusted are only the following list</p>
-<h2><a class="header" href="#general-parameters-1" id="general-parameters-1">General parameters</a></h2>
-<table><thead><tr><th>Attribute</th><th>Description</th></tr></thead><tbody>
-<tr><td>directionU</td><td>The format is {&quot;x&quot;: 0.0, &quot;y&quot;: -291.0, &quot;z&quot;: 0.0}</td></tr>
-<tr><td>normalDirection</td><td>The format is {&quot;x&quot;: -0.0, &quot;y&quot;: -0.0, &quot;z&quot;: -1.0}</td></tr>
-<tr><td>position</td><td>The format is {&quot;x&quot;: 191.20065,&quot;y&quot;: 9078.513,&quot;z&quot;: 69.999985}, the unit is mm</td></tr>
-</tbody></table>
-<h1><a class="header" href="#instance" id="instance">Instance</a></h1>
-<h2><a class="header" href="#general-parameters-2" id="general-parameters-2">General parameters</a></h2>
-<table><thead><tr><th>Property</th><th>Description</th><th>Default value</th><th>Required</th></tr></thead><tbody>
-<tr><td>id</td><td>Instance ID, users need to add their own prefix to ensure that the ID is unique</td><td></td><td>Yes</td></tr>
-<tr><td>label</td><td>The label of the instance, indicating the category to which the instance belongs</td><td></td><td>Yes</td></tr>
-<tr><td>transform</td><td>The transformation matrix of the instance, which is a list type of a 4 x 4 matrix transformed according to <strong>row first</strong></td><td></td><td>Yes</td></tr>
-<tr><td>type</td><td>Possible values are MESH | ASSET| CC_OBJECT| COMPOSITE</td><td></td><td>Yes</td></tr>
-<tr><td>size</td><td>Properties only available when type is ASSET</td><td></td><td></td></tr>
-</tbody></table>
-<h1><a class="header" href="#function-list" id="function-list">function list</a></h1>
-<h1><a class="header" href="#entity-operation" id="entity-operation">Entity operation</a></h1>
-<h2><a class="header" href="#get-entity" id="get-entity">Get Entity</a></h2>
-<p>TODO</p>
-<h2><a class="header" href="#delete-entity" id="delete-entity">Delete Entity</a></h2>
-<p>Function Description</p>
-<ul>
-<li><code>self.shader.world.delete_entity((entity))</code>: delete entity from the scene</li>
-</ul>
-<p>example</p>
-<pre><code class="language-python">class DeleteCameraDsl(EntityProcessor):
-     def process(self):
-         # loop all camera
-         for camera in self.shader.world.cameras:
-             # delete camera
-             entityId = self.shader.world.delete_entity(camera)
-</code></pre>
-<h2><a class="header" href="#create-entity" id="create-entity">Create Entity</a></h2>
-<h1><a class="header" href="#camera-operations" id="camera-operations">Camera operations</a></h1>
-<!-- toc -->
-<h2><a class="header" href="#get-the-camera-and-its-attributes" id="get-the-camera-and-its-attributes">Get the camera and its attributes</a></h2>
-<p>Function Description</p>
-<ul>
-<li><code>self.shader.world.cameras</code>: Get the camera list of the scene</li>
-<li><code>self.shader.world.camera_ids</code>: get a list of camera ids of the scene</li>
-<li><code>camera.{attr_name}</code>: Get the attributes of the camera, see the name of the camera attribute: <a href="functionality/../dsl/camera.html">Camera</a></li>
-</ul>
-<p>example</p>
-<pre><code class="language-python">class ReadCameraDsl(EntityProcessor):
-    def process(self):
-        # loop all camera
-        for camera in self.shader.world.cameras:
-            cameraType = camera.cameraType
-</code></pre>
-<h2><a class="header" href="#createadd-camera" id="createadd-camera">Create/Add Camera</a></h2>
-<p>Function Description</p>
-<ul>
-<li><code>self.shader.world.add_camera({attr_name}={attr_value})</code>: create a new camera and add it to the scene</li>
-<li><code>self.shader.world.create_camera({attr_name}={attr_value})</code>: create a camera</li>
-</ul>
-<p>example</p>
-<pre><code class="language-python">class CreateCameraDsl(EntityProcessor):
-    def process(self):
-        # add camera
-        camera = self.shader.world.add_camera(
-        id=&quot;test_camera&quot;,
-        cameraType=&quot;PERSPECTIVE&quot;,
-        position={'x':0,'y':0,'z':1000},
-        lookAt={'x':100,'y':0,'z':1000},
-        imageWidth=1280,
-        imageHeight=720,
-        vfov=90
-        hfov=105
-        )
-</code></pre>
-<h2><a class="header" href="#modify-camera" id="modify-camera">Modify camera</a></h2>
-<p>Function Description</p>
-<ul>
-<li><code>camera.set_attr({attr_name}, *args, **kwargs)</code><sup class="footnote-reference"><a href="#args description">1</a></sup>: modify the attributes of the camera
-example</li>
-</ul>
-<pre><code class="language-python">class SetCameraDsl(EntityProcessor):
-    def process(self):
-        for camera in self.shader.world.cameras:
-            # set camera attr
-            camera.set_attr('position', x=100, y=0, z=1000)
-            camera.set_attr('imageWidth', 1280)
-            camera.set_attr('hfov', 90, &quot;degree&quot;)
-</code></pre>
-<div class="footnote-definition" id="args description"><sup class="footnote-definition-label">1</sup>
-<p><code>*args</code> may have multiple input parameters, in addition to the value of hfov, vfov, you can also specify the unit as <code>&quot;degree&quot;</code>/<code>&quot;rad&quot;</code>; <code>**kwargs</code> is used as a dictionary Type of attributes, such as position, etc.</p>
-</div>
-<h1><a class="header" href="#example-operation" id="example-operation">Example operation</a></h1>
-<!-- toc -->
-<h2><a class="header" href="#get-the-instance-and-its-attributes" id="get-the-instance-and-its-attributes">Get the instance and its attributes</a></h2>
-<p>Function Description</p>
-<ul>
-<li><code>self.shader.world.instances</code>: Get a list of instances of the scene</li>
-<li><code>instance.{attr_name}</code>: Get the attributes of the instance, see the name of the instance attribute: <a href="functionality/../dsl/instance.html">Instance</a></li>
-</ul>
-<p>example</p>
-<pre><code class="language-python">class ReadInstanceDsl(EntityProcessor):
-    def process(self):
-        # loop all instances
-        for instance in self.shader.world.instances:
-            label = instance.label
-</code></pre>
-<h2><a class="header" href="#add-instance" id="add-instance">Add instance</a></h2>
-<p>Function Description</p>
-<p><code>self.shader.world.add_instance({attr_name}={attr_value})</code>: Create a new instance and add it to the scene</p>
-<p>example:</p>
-<pre><code class="language-python">class AddInstance(EntityProcessor):
-    def process(self, *args, **kwargs):
-        ins = self.shader.world.add_instance(
-            id=&quot;test&quot;, label=1107, path=&quot;meshId&quot;, type=&quot;ASSET&quot;,
-            transform=[1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]
-        )
-</code></pre>
-<h2><a class="header" href="#modify-instance-properties" id="modify-instance-properties">Modify instance properties</a></h2>
-<h3><a class="header" href="#modify-the-instance-transformation-matrix" id="modify-the-instance-transformation-matrix">Modify the instance transformation matrix</a></h3>
-<p>When modifying this attribute, it is achieved by rotating, panning and zooming, and one or more of the following operations can be performed</p>
-<h4><a class="header" href="#rotation-example" id="rotation-example">Rotation example</a></h4>
-<p><code>instance.set_rotation(rotation_list)</code>
-<em>rotation_list: 3 x 3 matrix converted according to <strong>row first</strong> list</em></p>
-<h4><a class="header" href="#scaling-example" id="scaling-example">Scaling example</a></h4>
-<p><code>instance.set_scale(scale_list)</code>
-<em>scale_list: a list of scaling factors</em></p>
-<h4><a class="header" href="#translation-example" id="translation-example">Translation example</a></h4>
-<p><code>instance.set_position(position_list)</code>
-<em>position_list: a list of position coordinates</em></p>
-<p>example:</p>
-<pre><code class="language-python">class SetInstance(EntityProcessor):
-    def process(self, *args, **kwargs):
-        for ins in self.shader.world.instances():
-            ins.set_position(
-                [0, 0, 50]
-            ).set_rotation(
-                [1, 0, 0, 0, 1, 0, 0, 0, 1]
-            ).set_scale([1, 1, 1])
-
-</code></pre>
-<h1><a class="header" href="#light-operation" id="light-operation">Light operation</a></h1>
-<!-- toc -->
-<h2><a class="header" href="#get-the-light-and-the-attributes-of-the-light" id="get-the-light-and-the-attributes-of-the-light">Get the light and the attributes of the light</a></h2>
-<p>Function Description</p>
-<ul>
-<li><code>self.shader.world.lights</code>: Get the light list of the scene</li>
-<li><code>light.{attr_name}</code>: Get the attributes of the light. For the name of the light attribute, see: <a href="functionality/../dsl/light.html">Light</a></li>
-</ul>
-<p>example</p>
-<pre><code class="language-python">class ReadLightDsl(EntityProcessor):
-    def process(self):
-        # loop all lights
-        for light in self.shader.world.lights:
-            position = light.position
-</code></pre>
-<h2><a class="header" href="#modify-the-lighting-attributes-directly" id="modify-the-lighting-attributes-directly">Modify the lighting attributes directly</a></h2>
-<p>Function Description
-<code>light.set_attr({attr_name}, **kwargs)</code><sup class="footnote-reference"><a href="#args description">1</a></sup>: modify light attributes</p>
-<p>example</p>
-<pre><code class="language-python">class SetLightDsl(EntityProcessor):
-    def process(self):
-        for light in self.shader.world.lights:
-            # set light attr
-            light.set_attr('position', x=100, y=0, z=1000)
-</code></pre>
-<div class="footnote-definition" id="args description"><sup class="footnote-definition-label">1</sup>
-<p><code>**kwargs</code> is used for attributes of dictionary type, such as position, etc.</p>
-</div>
-<h2><a class="header" href="#illumination-adjustment-interface" id="illumination-adjustment-interface">Illumination adjustment interface</a></h2>
-<h3><a class="header" href="#single-light-adjustment" id="single-light-adjustment">Single light adjustment</a></h3>
-<h4><a class="header" href="#tune_temp" id="tune_temp">tune_temp</a></h4>
-<p>-Function: adjust color temperature
--Entry: delta</p>
-<h4><a class="header" href="#tune_random" id="tune_random">tune_random</a></h4>
-<p>-Function: Random light, 50% probability attenuates according to ratio, 50% probability is uniformly sampled from the interval [0.1, 0.3] to get the attenuation coefficient.
--Entry: ratio, see above for usage</p>
-<h4><a class="header" href="#tune_intensity" id="tune_intensity">tune_intensity</a></h4>
-<p>-Function: adjust brightness
--Input parameters: ratio, brightness adjustment multiple</p>
-<p>Example of use:</p>
-<pre><code class="language-python">class TuneLight(EntityProcessor):
-    def process(self, *args, **kwargs):
-        for light in self.shader.world.lights:
-            # Adjust color temperature
-            light.tune_temp(1)
-            # Randomly adjust the light
-            light.tune_random(0.5)
-            # Randomly adjust the light intensity
-            light.tune_intensity(0.2)
-</code></pre>
-<h3><a class="header" href="#the-overall-light-intensity-adjustment-of-the-scene" id="the-overall-light-intensity-adjustment-of-the-scene">The overall light intensity adjustment of the scene</a></h3>
-<h4><a class="header" href="#tune_brightness__all_lights" id="tune_brightness__all_lights">tune_brightness__all_lights</a></h4>
-<p>-Function: adjust the brightness of all lights in the scene
--Input parameters: ratio, brightness adjustment multiple</p>
-<h4><a class="header" href="#tune_brightness__sunlight" id="tune_brightness__sunlight">tune_brightness__sunlight</a></h4>
-<p>-Function: adjust the multiple of natural light and turn off other light sources
--Input parameters: ratio, brightness adjustment multiple</p>
-<p>Example of use:</p>
-<pre><code class="language-python">class TuneLights(EntityProcessor):
-    def process(self, *args, **kwargs):
-        self.tune_brightness__all_lights(0.8)
-</code></pre>
-<h1><a class="header" href="#room-sampler" id="room-sampler">Room Sampler</a></h1>
-<h2><a class="header" href="#features" id="features">Features</a></h2>
-<p>For a given ccworld room, transform the space position of the CCInstance in the room to randomly generate a room layout. The new layout satisfies certain constraints and rules.</p>
-<h2><a class="header" href="#use" id="use">Use</a></h2>
-<pre><code class="language-python">class RandomizeLayout(EntityProcessor):
-     def process(self):
-         room = self.shader.world.get_room(&quot;room_id&quot;)
-         room.randomize_layout(self.shader.world)
-</code></pre>
-<h2><a class="header" href="#use-constraints" id="use-constraints">Use constraints</a></h2>
-<p>The main limitation at present is that it can only take effect for scenarios where the label is KJL. There are two main reasons:</p>
-<ol>
-<li>At present, only the instance with type=Asset supports modification of transform to render on the server side, and currently only the furniture instance of the scene with the KJL tag satisfies the conditions.</li>
-<li>In the logic implemented by layout_sampler, a large number of Kujiale categories are used to make logical judgments (such as judging whether furniture should be posted on the wall according to the category). This point needs to be improved in the future, adding related attributes in CCInstance.</li>
-</ol>
-<h1><a class="header" href="#randomly-replace-materials" id="randomly-replace-materials">Randomly replace materials</a></h1>
-<p><strong>command_type value: material_replace</strong></p>
-<p>Requirements and background:</p>
-<p>The main logic is a function that implements three related functions:</p>
-<ol>
-<li>Enter CCInstance to randomly replace the material corresponding to each part (each part is sampled separately from the preset material library).</li>
-<li>Enter CCInstance and the designated material category, and randomly replace the material of each part to the material of the corresponding material category. (Each part is sampled separately from the designated category of the preset material library)</li>
-<li>Enter the CCInstance and the specified material id list, and randomly replace the material of each part to the material in the list.</li>
-</ol>
-<h2><a class="header" href="#parameter-list" id="parameter-list">parameter list</a></h2>
-<table><thead><tr><th align="left">First name</th><th align="left">Required or not</th><th align="left">Value</th><th align="left">Remarks</th></tr></thead><tbody>
-<tr><td align="left">id</td><td align="left">Yes</td><td align="left">String</td><td align="left">Identifies the CCInstance to be modified</td></tr>
-<tr><td align="left">type</td><td align="left">yes</td><td align="left">REPLACE_ALL | REPLACE_BY_CATEGORY | REPLACE_TO_GIVEN_LIST</td><td align="left">replacement type</td></tr>
-<tr><td align="left">category</td><td align="left">Required when type=REPLACE_BY_CATEGORY</td><td align="left">String</td><td align="left">Category name to be replaced</td></tr>
-<tr><td align="left">ids</td><td align="left">type=REPLACE_TO_GIVEN_LIST Required when</td><td align="left">List of String</td><td align="left">ID list to be replaced</td></tr>
-</tbody></table>
-<p>example</p>
-<pre><code class="language-python">class ReplaceMaterial(EntityProcessor):
-    def process(self, *args, **kwargs):
-        for instance in self.shader.world.instances:
-            self.shader.world.replace_material(
-                id=instance.id,
-                type='REPLACE_BY_CATEGORY',
-                category='METAL'
-            )
-</code></pre>
-<h1><a class="header" href="#randomly-replace-the-parameter-list-of-the-model" id="randomly-replace-the-parameter-list-of-the-model">Randomly replace the parameter list of the model</a></h1>
-<p><strong>command_type value: model_replace</strong></p>
-<h2><a class="header" href="#needs-and-background" id="needs-and-background">Needs and background</a></h2>
-<p>The main function is: input a CCInstance and randomly select a label with the same label from our preset model library to replace the CCInstance.</p>
-<p>Random replacement is valid for a given CCInstance (type=Asset only takes effect), other types of CCInstance may be ignored or an error may be reported. Then there are currently the following constraints (this part of the constraints can be gradually released with subsequent function development):</p>
-<ol>
-<li>The size of the furniture before and after the replacement is kept the same (aligned by the scale parameter)</li>
-<li>A furniture library needs to be preset, and only the model in the preset furniture library will be replaced. (This logic will be used as a bottom-up logic to ensure the robustness of the service)
-<ol>
-<li>Models whose categories are not in the preset furniture library cannot be replaced.</li>
-</ol>
-</li>
-</ol>
-<h2><a class="header" href="#parameter-list-1" id="parameter-list-1">parameter list</a></h2>
-<table><thead><tr><th align="left">First name</th><th align="left">Required or not</th><th align="left">Value</th><th align="left">Remarks</th></tr></thead><tbody>
-<tr><td align="left">id</td><td align="left">Yes</td><td align="left">String</td><td align="left">Identifies the CCInstance to be replaced</td></tr>
-</tbody></table>
-<p>example:</p>
-<pre><code class="language-python">class ReplaceModel(EntityProcessor):
-    def process(self, *args, **kwargs):
-        for instance in self.shader.world.instances:
-            self.shader.world.replace_model(
-                id=instance.id
-            )
-</code></pre>
-<h1><a class="header" href="#noise-simulation" id="noise-simulation">Noise simulation</a></h1>
-<p>Currently, it supports to simulate four common image noises and add them to the depth map output, namely:</p>
-<ol>
-<li>Gaussian noise</li>
-<li>Poisson noise</li>
-<li>Salt and pepper noise</li>
-<li>kinect noise</li>
-</ol>
-<h2><a class="header" href="#instructions-for-use" id="instructions-for-use">Instructions for use</a></h2>
-<h3><a class="header" href="#example" id="example">Example</a></h3>
-<pre><code class="language-python">class TestPixelDsl(PixelProcessor):
-     def process(self, **kwargs):
-         for cid, img in self.shader.image_handler.load_images(&quot;camera_depth.png&quot;, mode=&quot;pillow&quot;):
-             img_after_noise = self.shader.image_handler.add_depth_noise(img, 3)
-             self.shader.image_handler.save_files(
-                 cid, content=img_after_noise, suffix=&quot;png&quot;, name='depth'
-             )
-</code></pre>
-<h3><a class="header" href="#description" id="description">Description</a></h3>
-<p><code>add_depth_noise(img, noise_type)</code> can be called according to the above use cases
-among them</p>
-<ol>
-<li><code>noise_type</code> is an integer flag, and the corresponding relationship with the noise model is:</li>
-</ol>
-<pre><code class="language-bash">0: GaussianNoiseModel
-1: PoissonNoiseModel
-2: SaltAndPepperNoiseModel
-3: KinectNoiseModel
-</code></pre>
-<ol start="2">
-<li>The data type of <code>img</code> is <code>numpy.ndarray</code> with <code>dtype=uint16</code></li>
-</ol>
-<h1><a class="header" href="#js-query-sample-code" id="js-query-sample-code">Js Query Sample Code</a></h1>
+                        <h1><a class="header" href="#js-query-sample-code" id="js-query-sample-code">Js Query Sample Code</a></h1>
 <p>World screening jsQuery sample</p>
 <h3><a class="header" href="#world-with-more-than-400-objects" id="world-with-more-than-400-objects">World with more than 400 Objects</a></h3>
 <pre><code class="language-javascript">function() {
@@ -845,6 +460,10 @@ among them</p>
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                            <a rel="prev" href="functionality/noise.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
 
                         
 
@@ -854,6 +473,10 @@ among them</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="functionality/noise.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
                 
 
                 
@@ -888,14 +511,6 @@ among them</p>
         <!-- Custom JS scripts -->
         
 
-        
-        
-        <script type="text/javascript">
-        window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
-        });
-        </script>
-        
         
 
     </body>
