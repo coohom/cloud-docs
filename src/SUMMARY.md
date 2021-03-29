@@ -5,6 +5,7 @@
   - [Camera](dsl/camera.md)
   - [Light](dsl/light.md)
   - [Instance](dsl/instance.md)
+  - [DSL Sample Code](dsl/dsl_sample_code.md)
 - [Function List](./functionality.md)
   - [Entity Operations](./functionality/entity_operations.md)
     - [Camera Operations](functionality/camera_operations.md)
