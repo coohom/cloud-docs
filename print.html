@@ -268,7 +268,7 @@ Each element corresponds to a class, with its own attributes and methods</p>
 <tr><td>size</td><td>Properties only available when type is ASSET</td><td></td><td></td></tr>
 </tbody></table>
 <h1><a class="header" href="#dsl-sample-code" id="dsl-sample-code">DSL Sample Code</a></h1>
-<p>This example simulates a sweeping robot traveling in a room with a bow-shaped trajectory at a fixed rate, and it takes 15 sets of pictures per second </p>
+<p>This example simulates a sweeping robot traveling in a room with a bow-shaped trajectory at a fixed rate, and it takes 3 sets of pictures per second </p>
 <pre><code class="language-python">from ksecs.ECS.processors.pixel_processor import PixelProcessor
 from ksecs.ECS.processors.entity_processor import EntityProcessor
  
@@ -304,7 +304,7 @@ class TestEntityDsl(EntityProcessor):
                 imageHeight=512,
  
                 # Set camera position
-                position={'x':room_center_x, 'y':room_center_y, 'z':70},
+                position={'x':room_center_x, 'y':room_center_y, 'z':60},
  
                 # Set picture brightness
                 # fnumber --&gt; Aperture size
@@ -327,22 +327,37 @@ class TestEntityDsl(EntityProcessor):
                 fps=3,
  
                 # Track speed (unit mm/s)
-                speed=1500,
+                speed=1200,
  
                 # Track pitch angle (angle value)
                 pitch=0,
  
                 # Camera height (mm)
-                height=70,
+                height=60,
  
                 # Collision detection radius (mm)
-                collisionPadding=350,
+                collisionPadding=300,
  
                 # Limit range of trajectory
                 boundary=room.boundary,
  
                 # The trajectory type is bow font
                 type=&quot;COVERAGE&quot;
+            )
+
+class TestStructureDSL(StructureProcessor):
+
+    def process(self):
+
+        for camera in self.shader.world.cameras:
+
+            self.shader.world.pick(
+
+                id=camera.id,
+
+                # Output the two-dimensional trajectory coordinates of the camera
+                location=[camera.position['x'], camera.position['y']]
+
             )
 </code></pre>
 <h1><a class="header" href="#function-list" id="function-list">function list</a></h1>
