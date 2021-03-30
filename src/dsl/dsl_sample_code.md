@@ -4,6 +4,7 @@ This example simulates a sweeping robot traveling in a room with a bow-shaped tr
 ```python
 from ksecs.ECS.processors.pixel_processor import PixelProcessor
 from ksecs.ECS.processors.entity_processor import EntityProcessor
+from ksecs.ECS.processors.structure_processor import StructureProcessor
  
 ID_PREFIX = 'USER'
  
