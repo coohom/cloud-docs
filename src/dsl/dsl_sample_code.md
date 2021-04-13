@@ -1,5 +1,11 @@
 # DSL Sample Code
-This example simulates a sweeping robot traveling in a room with a bow-shaped trajectory at a fixed rate, and it takes 3 sets of pictures per second 
+## Code description
+
+This example simulates a sweeping robot traveling in a room with a bow-shaped trajectory at a fixed rate, and it takes 3 sets of pictures per second.
+
+
+
+## Sample code
 
 ```python
 from ksecs.ECS.processors.pixel_processor import PixelProcessor
