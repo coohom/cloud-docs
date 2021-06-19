@@ -56,21 +56,32 @@ The first step of set the simulation task
 
 
 1. you can use the filter to search scene
+
 2. click here to choose scene
+
 3. click on the cover image to view the scene details
+
 4. click here to go to the next step
+
+   
 
 ![Manage Scene](images/scene filter.png)
 
+
+
 ## Task-set 2  Shooting & Track  
 
-
-
 1. you can choose track type，such as random track here
+
 2. you can set the  random track parameter here
+
 3. you can click here if you need manually generate trajectories
+
 4. click here to enter track editing mode
+
 5. you can set the  track parameter here
+
+   
 
 ![Manage Scene](images/track.png)
 
