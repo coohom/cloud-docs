@@ -35,7 +35,7 @@ To change the password, you need to enter the Kujiale homepage（https://www.kuj
 
 After successful login, you will enter the EUS homepage-Scene Management.
 
-1. You can create simulation task with click here.
+1. click here to create a new simulation task.
 
 
 ![Manage Scene](images/task_entry.png)
@@ -44,10 +44,10 @@ After successful login, you will enter the EUS homepage-Scene Management.
 
 The first step of set the simulation task
 
-1. You can input task name here.
+1. click here to input task name.
 2. The default setting is No, at this time, click Next to enter the visual configuration interface
 3. Choose Yes to enter the dsl file configuration mode, you can complete the task configuration through the dsl file
-4. click Next to enter the next step
+4. click here to enter the next step
 
 ![Manage Scene](images/task_set.png)
 
@@ -55,7 +55,7 @@ The first step of set the simulation task
 
 
 
-1. you can use the filter to search scene
+1. use the filter to search scene
 
 2. click here to choose scene
 
@@ -71,19 +71,19 @@ The first step of set the simulation task
 
 ## Task-set 2  Shooting & Track  
 
-1. you can choose track type，such as random track here
+1. click here to choose track type，such as random track here
 
-2. you can set the  random track parameter here
+2. click here to set the  random track parameter 
 
-3. you can click here if you need manually generate trajectories
+3. click here to choose manually generate trajectories mode
 
 4. click here to enter track editing mode
 
-5. you can set the  track parameter here
+5. click here to set the  custom track parameter
 
    
 
-![Manage Scene](images/Track.png)
+![Manage Scene](images/track1.png)
 
 ![Manage Scene](images/track2.png)
 
