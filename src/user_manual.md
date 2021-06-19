@@ -65,7 +65,7 @@ The first step of set the simulation task
 
    
 
-![Manage Scene](images/scene filter.png)
+![Manage Scene](images/scene_filter.png)
 
 
 
