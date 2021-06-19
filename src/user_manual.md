@@ -31,25 +31,54 @@ To change the password, you need to enter the Kujiale homepage（https://www.kuj
 ![Security Information](images/security_information.png)
 ![Password Change](images/password_change.png)
 
-## Scene management
+## Create simulation task
 
 After successful login, you will enter the EUS homepage-Scene Management.
 
-1. You can choose scenes of different areas here
+1. You can create simulation task with click here.
 
-2. You can also choose different styles of scenes, such as Jane European, New Chinese, Mediterranean, etc.
 
-3. After selecting the conditions, click search to perform filtering
+![Manage Scene](images/task_entry.png)
 
-4. Check the scenes that meet the conditions and click Create to create the simulation task.
+## Task-set 0 choose mode
 
-5. Check the eligible scenes, or click Export to import the scenes to RW (RoboWizard product needs to be activated first. If it is not activated, the export button will be hidden and invisible. The full name of RW product is based on cloud native robot cloud development and simulation solution. Program, detailed introduction can be obtained by contacting the business)
+The first step of set the simulation task
 
-![Manage Scene](images/manage_scene.png)
+1. You can input task name here.
+2. The default setting is No, at this time, click Next to enter the visual configuration interface
+3. Choose Yes to enter the dsl file configuration mode, you can complete the task configuration through the dsl file
+4. click Next to enter the next step
 
-## Create simulation task
+![Manage Scene](images/task_set.png)
 
-After checking the scene that meets the requirements, you can create a simulation task and enter the simulation task setting pop-up window.
+## Task-set 1  Scene filter 
+
+
+
+1. you can use the filter to search scene
+2. click here to choose scene
+3. click on the cover image to view the scene details
+4. click here to go to the next step
+
+![Manage Scene](images/scene filter.png)
+
+## Task-set 2  Shooting & Track  
+
+
+
+1. you can choose track type，such as random track here
+2. you can set the  random track parameter here
+3. you can click here if you need manually generate trajectories
+4. click here to enter track editing mode
+5. you can set the  track parameter here
+
+![Manage Scene](images/track.png)
+
+![Manage Scene](images/track2.png)
+
+## Create simulation task with DSL file
+
+you can also create a simulation task with DSL file and enter the simulation task setting pop-up window.
 
 1. The name of the task is required, which can record the main purpose of the task and facilitate the subsequent search for the task
 
