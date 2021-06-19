@@ -83,7 +83,7 @@ The first step of set the simulation task
 
    
 
-![Manage Scene](images/track.png)
+![Manage Scene](images/Track.png)
 
 ![Manage Scene](images/track2.png)
 
