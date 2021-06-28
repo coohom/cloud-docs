@@ -130,3 +130,13 @@ class TuneLights(EntityProcessor):
     def process(self, *args, **kwargs):
         self.tune_brightness__all_lights(0.8)
 ```
+
+## Example
+```python
+class LightSampler(EntityProcessor):
+    def process(self):
+        for light in self.shader.world.lights:
+            # K值，可以根据K与rgb的map来设置，行业标准，越小越暖，越大越冷
+            light.tune_temp(5000)
+```
+![light_sampler](./../examples_figs/light_sampler.png)

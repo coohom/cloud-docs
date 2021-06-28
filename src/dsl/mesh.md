@@ -28,3 +28,14 @@ class ReplaceModel(EntityProcessor):
                 id=instance.id
             )
 ```
+
+## Example
+```python
+class MeshSampler(EntityProcessor):
+    def process(self):
+        for instance in self.shader.world.instances:
+            # FIXME: 这个地方需要加入想要替换的家具(e.g. table and sofa)标签
+            if instance.label in []:
+                self.shader.world.replace_model(id=instance.id)
+```
+![mesh_sampler](../examples_figs/mesh_sampler.png)

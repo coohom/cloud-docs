@@ -30,3 +30,22 @@ class ReplaceMaterial(EntityProcessor):
                 category='METAL'
             )
 ```
+
+## Example
+
+```python
+class MaterialSampler(EntityProcessor):
+    def process(self):
+        for instance in self.shader.world.instances:
+            # FIXME: 这个地方需要加入想要替换的家具(e.g. floor, sofa and carpet)标签
+            if instance.label in []:
+                self.shader.world.replace_material(
+                    id=instance.id,
+                    # TODO: 选更合适的方式
+                    type='REPLACE_TO_GIVEN_LIST',
+                    ids=['5be44369c3f6261793457411']
+                    # type='REPLACE_BY_CATEGORY',
+                    # category='METAL'
+                )
+```
+![material_sampler](../examples_figs/material_sampler.png)

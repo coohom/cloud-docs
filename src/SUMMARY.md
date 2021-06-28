@@ -23,4 +23,4 @@
   - [Layout Estimation](./examples/layout_estimation.md)
   - [Semantic Segmentation](./examples/semantic_segmentation.md)
   - [Depth Estimation](./examples/depth_estimation.md)
-  - [Trajectory Sampling](./examples/trajectory_sampling.md)
+  - [SLAM](./examples/trajectory_sampling.md)

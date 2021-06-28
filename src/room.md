@@ -57,3 +57,13 @@ The main limitation at present is that it can only take effect for scenarios whe
 
 1. At present, only the instance with type=Asset supports modification of transform to render on the server side, and currently only the furniture instance of the scene with the KJL tag satisfies the conditions.
 2. In the logic implemented by layout_sampler, a large number of Kujiale categories are used to make logical judgments (such as judging whether furniture should be posted on the wall according to the category). This point needs to be improved in the future, adding related attributes in CCInstance.
+
+
+## Example
+```python
+class RoomSampler(EntityProcessor):
+    def process(self):
+        for room in self.shader.world.rooms:
+            room.randomize_layout(self.shader.world)
+```
+![room_sampler](./examples_figs/layout_sampler.png)
