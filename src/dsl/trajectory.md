@@ -51,6 +51,27 @@ Two type of trajectory are supported in the DSL.
 |orthoHeight| vertical field of view (the unit is mm) | | No | Required if camera type is default or 'PERSPECTIVE' |
 |heightMode| Mode of camera height, 0: initial randomization, 1: procedual randomization | | Yes ||
 
+
+## Get trajectory and its attributes
+
+Function explanation
+* `self.shader.world.trajectories`: Get trajectory list in the scene.
+* `trajectory.{attr_name}`: Get attributes of trajectory.
+
+example:
+```python
+from ksecs.ECS.processors.entity_processor import EntityProcessor
+class ReadTrajDsl(EntityProcessor):
+    def process(self):
+        # loop all trajectories
+        for traj in self.shader.world.trajectories:
+            cameraHeight = traj.height
+```
+
+## Add trajectory
+### Add Random trajectory
+* `self.shader.world.add_trajectory({attr_name}={attr_value})`: create a new trajectory and add to the scene.
+
 example:
 ```python
 from ksecs.ECS.processors.entity_processor import EntityProcessor
@@ -115,5 +136,17 @@ class CreateTrajDsl(EntityProcessor):
 
                 # 轨迹类型为弓字型
                 type="COVERAGE"
+                # type="RANDOM"
             )
 ```
+
+## Add Customized trajectory
+
+```python
+from ksecs.ECS.processors.entity_processor import EntityProcessor
+class CreateTrajDsl(EntityProcessor):
+    def process(self):
+        self.make_traj(**param)
+```
+
+Explanation of **param: See attributes of Customized trajectory above.
