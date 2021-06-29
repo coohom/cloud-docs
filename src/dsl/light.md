@@ -39,7 +39,7 @@ Sun light is direction light. It radiates a specified power per unit area along 
 
 ### IESspotLight
 IESspotlight is a spotlight with IES profile.
-<span style="color:blue">*Comments:* IES profile can be selected? Or it always remains the default IES profile.</span>.
+<span style="color:blue">*Comments:* IES profile can be selected? Or it always uses a default IES profile.</span>.
 
 |Attribute|Description|
 |---|---|
@@ -51,7 +51,7 @@ IESspotlight is a spotlight with IES profile.
 
 <!-- toc -->
 
-## Get the light and the attributes of the light
+## Get the attributes of light
 
 Function Description
 
@@ -132,6 +132,7 @@ class TuneLights(EntityProcessor):
 ```
 
 ## Example
+<span style="color:blue">*Comments:* `tune_temp` is not consistent with API above. Use color temperature or delta? </span>.
 ```python
 class LightSampler(EntityProcessor):
     def process(self):

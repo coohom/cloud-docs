@@ -1,9 +1,9 @@
-
-# Randomly replace the parameter list of the model
+# Model
+## Randomly replace the parameter list of the model
 
 **command_type value: model_replace**
 
-## Needs and background
+Requirements and background:
 
 The main function is: input a CCInstance and randomly select a label with the same label from our preset model library to replace the CCInstance.
 
@@ -13,7 +13,7 @@ Random replacement is valid for a given CCInstance (type=Asset only takes effect
 2. A furniture library needs to be preset, and only the model in the preset furniture library will be replaced. (This logic will be used as a bottom-up logic to ensure the robustness of the service)
    1. Models whose categories are not in the preset furniture library cannot be replaced.
 
-## parameter list
+## Parameter list
 
 | First name | Required or not | Value | Remarks |
 | :--------- | :------- | :----- | :--------------------- |
@@ -34,8 +34,9 @@ class ReplaceModel(EntityProcessor):
 class MeshSampler(EntityProcessor):
     def process(self):
         for instance in self.shader.world.instances:
-            # FIXME: 这个地方需要加入想要替换的家具(e.g. table and sofa)标签
-            if instance.label in []:
+            # table category_id: 1032
+            # sofa category_id: 1068 
+            if instance.label in [1032, 1068]:
                 self.shader.world.replace_model(id=instance.id)
 ```
 ![mesh_sampler](../examples_figs/mesh_sampler.png)

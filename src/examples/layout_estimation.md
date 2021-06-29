@@ -50,7 +50,7 @@ class ManhattanSceneFilter(EntityProcessor):
         if self.filter_scene():
             print("get the expected scene")
         else:
-            exit(0) # Don't process this scene anymore.
+            sys.exit(7) # Don't process this scene anymore.
 ```
 
 For this task, we set the type of camera to panorama in the Entity Process Stage, and output the corner and camera parameters in the Entity Process Stage.

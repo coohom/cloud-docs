@@ -1,6 +1,6 @@
 # Instance
 
-<span style="color:blue">*Comments:* 1. Contents here? 2. Property or Attribute?</span>.
+<span style="color:blue">*Comments:* Add introduction of `Instance`</span>.
 
 ## General parameters
 | Property | Description | Default value | Required |
@@ -21,7 +21,7 @@ Function Description
 * ```self.shader.world.instances```: Get a list of instances of the scene
 * ```instance.{attr_name}```: Get the attributes of the instance, see the name of the instance attribute: [Instance](../dsl/instance.md)
 
-example
+Example
 ```python
 class ReadInstanceDsl(EntityProcessor):
     def process(self):
@@ -35,7 +35,7 @@ Function Description
 
 ```self.shader.world.add_instance({attr_name}={attr_value})```: Create a new instance and add it to the scene
 
-example:
+Example:
 
 ```python
 class AddInstance(EntityProcessor):
@@ -45,6 +45,9 @@ class AddInstance(EntityProcessor):
             transform=[1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]
         )
 ```
+
+
+<span style="color:blue">*Comments:* Delete `Instance`</span>.
 ## Modify instance properties
 ### Modify the instance transformation matrix
 When modifying this attribute, it is achieved by rotating, panning and zooming, and one or more of the following operations can be performed

@@ -5,6 +5,14 @@
 The entity process stage is designed for batch processing entities in the scene set. 
 Users can implement an `EntityProcessor` to control the entity process stage.
 
+Also, many components can be manipulated in this processor, including:
+- [Camera](dsl/camera.md)
+- [Light](dsl/light.md)
+- [Material](dsl/material.md)
+- [Mesh](dsl/mesh.md)
+- [Trajectory](dsl/trajectory.md)
+- [Instance](dsl/instance.md)
+
 <!-- ### Function
 
 |Function   |Description    |
@@ -37,6 +45,7 @@ class EntityExample(EntityProcessor):
 
 # Entity operation
 
+<span style="color:blue">*Comments:* Need more details.</span>
 ## Get Entity
 TODO
 
