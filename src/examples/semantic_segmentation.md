@@ -15,9 +15,6 @@ First, we import some necessary packages.
 ```python
 from ksecs.ECS.processors.pixel_processor import PixelProcessor
 from ksecs.ECS.processors.entity_processor import EntityProcessor
-from ksecs.ECS.processors.structure_processor import StructureProcessor
-import copy
-import glm
 ```
 
 For the semantic segmentation task, we set the type of camera to panorama in the Entity Process Stage, and output the semantic label image in the Pixel Process Stage.

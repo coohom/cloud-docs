@@ -1,5 +1,6 @@
 # Depth Estimation
 ## Introduction
+Depth estimiation is an
 
 ## DSL code
 <!-- For room layout estimation task, we create a
@@ -12,11 +13,7 @@ camera parameters. -->
 
 First, we import some necessary packages.
 ```python
-from ksecs.ECS.processors.pixel_processor import PixelProcessor
 from ksecs.ECS.processors.entity_processor import EntityProcessor
-from ksecs.ECS.processors.structure_processor import StructureProcessor
-import copy
-import glm
 ```
 
 We filter scenes that contain rooms for manhattan layout estimation in the Scene Process Stage.

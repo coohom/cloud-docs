@@ -14,8 +14,9 @@ camera parameters. -->
 
 First, we import some necessary packages.
 ```python
-from ksecs.ECS.processors.pixel_processor import PixelProcessor
+from ksecs.ECS.processors.scene_processor import SceneProcessor
 from ksecs.ECS.processors.entity_processor import EntityProcessor
+from ksecs.ECS.processors.pixel_processor import PixelProcessor
 from ksecs.ECS.processors.structure_processor import StructureProcessor
 import copy
 import glm
@@ -24,7 +25,7 @@ import glm
 We filter scenes that contain rooms for manhattan layout estimation in the Scene Process Stage.
 
 ```python
-class ManhattanSceneFilter(EntityProcessor):
+class ManhattanSceneFilter(SceneProcessor):
     def filter_scene(self):
         Valid = False
         for room in self.shader.world.rooms:
