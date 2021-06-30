@@ -1,5 +1,6 @@
 # DSL description
 
+<span style="color:blue">*Comments:* Many formats in DSL description is not unified. </span>
 <!-- toc -->
 
 ## Introduction to DSL

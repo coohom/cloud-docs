@@ -87,3 +87,14 @@ class SetCameraDsl(EntityProcessor):
             camera.set_attr('hfov', 90, "degree")
 ```
 [^args description]: `*args` may have multiple input parameters, in addition to the value of hfov, vfov, you can also specify the unit as `"degree"`/`"rad"`; `**kwargs` is used as a dictionary Type of attributes, such as position, etc.
+
+
+## Viewport selection
+
+### Top-down view
+Usage:
+```python
+class TopView(EntityProcessor):
+    def process(self):
+        self.gen_topview(width, height)
+```

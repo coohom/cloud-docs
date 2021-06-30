@@ -5,6 +5,8 @@ What is the default output if PixelProcessor is not specified?
 
 <span style="color:blue">*Comments:* Argument list and description of each funtion should be added.</span>
 
+
+<span style="color:blue">*Comments:* Differences between `RenderProcessor` and `PixelProcessor`.</span>
 ## RGB rendering
 
 Output format:
@@ -41,7 +43,7 @@ class NormalDsl(PixelProcessor):
 
 Output format:
 1. 1 channel * 16 bit
-2. Each pixel value represent the instance id.
+2. Each pixel value represent a instance_id.
     * The mapping of pixel value and instance id can be found in `instance_map.json`.
 
 Usage:
@@ -53,4 +55,70 @@ class InstanceDsl(PixelProcessor):
 ```
 
 Notes:
-1. 
+<span style="color:blue">*Comments:* TODO.</span>
+1. normal_threshold:
+2. merge_bias
+
+
+## Semantic map
+
+Output format:
+1. 1 channel * 16 bit
+2. Each pixel value represents a label_id
+
+Usage:
+```python
+from ksecs.ECS.processors.pixel_processor import PixelProcessor
+class SemanticDsl(PixelProcessor):
+    def process(self, **kwargs):
+        self.gen_semantic(normal_threshold=230, distort=0, noise=0)
+```
+
+Notes:
+<span style="color:blue">*Comments:* TODO.</span>
+1. normal_threshold:
+
+## Depth map
+
+Output format:
+1. 1 channel * 16 bit
+
+Usage:
+```python
+from ksecs.ECS.processors.pixel_processor import PixelProcessor
+class DepthDsl(PixelProcessor):
+    def process(self, **kwargs):
+        self.gen_depth(distort=0, noise=0)
+```
+
+## Trajectory map
+Visualize trajectory in the top-down view rendering result. Customized trajectory and bow-shape trajectory are currently supported.
+
+Usage:
+```python
+from ksecs.ECS.processors.render_processor import RenderProcessor
+class TrajDSL(RenderProcessor):
+    def process(self, *args, **kwargs):
+        self.gen_traj(**params)
+```
+
+Notes:
+**params can be:
+1. type: int. Select trajectory type.
+    * 0: Customized trajectory
+    * 1: Bow-shape trajectory
+    * 2: Random trajectory
+
+<span style="color:blue">*Comments:* More parameters?.</span>
+
+## Albedo map
+
+Ouput format:
+4 channel * 8 bits
+
+```python
+from ksecs.ECS.processors.render_processor import RenderProcessor
+class Render(RenderProcessor):
+    def process(self, *args, **kwargs):
+        self.gen_rgb(distort=0, noise=0)
+```
