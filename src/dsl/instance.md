@@ -2,7 +2,9 @@
 
 <span style="color:blue">*Comments:* Add introduction of `Instance`</span>.
 
-## General parameters
+Each object in the scene is an `Instance`. User can add/delete some instance, or changing the transformation/scale for each instance.
+
+## Parameters List
 | Property | Description | Default value | Required |
 | --------- | --------------------------------------- ---------------- | ------ | -------- |
 | id | Instance ID, users need to add their own prefix to ensure that the ID is unique | | Yes |
@@ -12,7 +14,7 @@
 |size|Properties only available when type is ASSET|||
 
 
-# Example operation
+# Operation
 
 <!-- toc -->
 

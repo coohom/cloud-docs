@@ -1,4 +1,5 @@
 # Trajectory
+DSL supports add trajectory to the entity. Trajectory is an important component especially for robotic related tasks. Users could sample a random trajectory or add a handcrafted trajectory to the camera.
 
 ## Trajectory types
 Two type of trajectory are supported in the DSL.

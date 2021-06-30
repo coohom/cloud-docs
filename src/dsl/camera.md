@@ -91,6 +91,9 @@ class SetCameraDsl(EntityProcessor):
 
 ## Viewport selection
 
+Our system also provide some pre-defined viewport for users.
+<span style="color:blue">*Comments:* Any more view? </span>
+
 ### Top-down view
 Usage:
 ```python

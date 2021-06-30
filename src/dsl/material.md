@@ -1,9 +1,9 @@
 # Material 
+Material is also an important component for every object in the scene. Our DSL supports sampling new materials for each object for domain randomization.
+Since the material is the core asset of the database, we only explore its index in the database and do not allow users to access the raw data.
 ## Randomly replace materials
-
-**command_type value: material_replace**
-
-Requirements and background:
+<!-- **command_type value: material_replace** -->
+<!-- Requirements and background: -->
 
 The main logic is a function that implements three related functions:
 
@@ -11,7 +11,7 @@ The main logic is a function that implements three related functions:
 2. Enter CCInstance and the designated material category, and randomly replace the material of each part to the material of the corresponding material category. (Each part is sampled separately from the designated category of the preset material library)
 3. Enter the CCInstance and the specified material id list, and randomly replace the material of each part to the material in the list.
 
-## Parameter list
+## Parameters list
 <span style="color:blue">*Comments:* Candidate mateiral categories need to be provided.</span>.
 
 | First name | Required or not | Value | Remarks |
@@ -49,10 +49,10 @@ class MaterialSampler(EntityProcessor):
                 self.shader.world.replace_material(
                     id=instance.id,
                     # TODO: 选更合适的方式
-                    # type='REPLACE_TO_GIVEN_LIST',
-                    # ids=['5be44369c3f6261793457411'], # Get material list from API.
-                    type='REPLACE_BY_CATEGORY',
-                    category='METAL'
+                    type='REPLACE_TO_GIVEN_LIST',
+                    ids=['5be44369c3f6261793457411'], # Get material list from API.
+                    # type='REPLACE_BY_CATEGORY',
+                    # category='METAL'
                 )
 ```
 ![material_sampler](../examples_figs/material_sampler.png)

@@ -1,9 +1,13 @@
 # Model
-## Randomly replace the parameter list of the model
+In our system, the CAD model of each object in the scene can be easily replaced by user. 
+The category of object remains the same for reasonable result.
+Since the mesh is the core asset of the database, we only explore its index in the database and do not allow users to access the raw data.
+## Randomly replace the model
 
-**command_type value: model_replace**
+<!-- **command_type value: model_replace** -->
 
-Requirements and background:
+<!-- Requirements and background: -->
+<span style="color:blue">*Comments:* CCInstance? Unify the name across the doc.</span>.
 
 The main function is: input a CCInstance and randomly select a label with the same label from our preset model library to replace the CCInstance.
 

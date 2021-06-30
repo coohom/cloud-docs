@@ -9,7 +9,7 @@
     - [Camera](dsl/camera.md)
     - [Light](dsl/light.md)
     - [Material](dsl/material.md)
-    - [Mesh](dsl/mesh.md)
+    - [Model](dsl/mesh.md)
     - [Trajectory](dsl/trajectory.md)
     - [Instance](dsl/instance.md)
     <!-- - [Transform](dsl/transform.md) -->

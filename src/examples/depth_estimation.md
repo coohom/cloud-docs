@@ -1,6 +1,6 @@
 # Depth Estimation
 ## Introduction
-Depth estimiation is an
+Depth estimiation is an essential task in indoor scene understanding. We show the performance gain by generating dataset using our system.
 
 ## DSL code
 <!-- For room layout estimation task, we create a

@@ -5,7 +5,7 @@ DSL supports four types of lights. There are PointLight, RectangleLight, Sunligh
 
 The SDK provides the adjustment of lighting effects in the form of interfaces, so the attributes that can be directly adjusted are only the following list
 
-<span style="color:blue">*Comments:* **emission** attrubtion is missing?</span>.
+<span style="color:blue">*Comments:* **emission (intensity, color temperature)** attribute is missing?</span>.
 
 ## General parameters
 |Attribute|Description|
@@ -39,7 +39,7 @@ Sun light is direction light. It radiates a specified power per unit area along 
 
 ### IESspotLight
 IESspotlight is a spotlight with IES profile.
-<span style="color:blue">*Comments:* IES profile can be selected? Or it always uses a default IES profile.</span>.
+<span style="color:blue">*Comments:* IES profile can be selected? Or it always uses a default IES profile. More discussion about IES may be added here.</span>.
 
 |Attribute|Description|
 |---|---|
@@ -98,19 +98,6 @@ class SetLightDsl(EntityProcessor):
 -Function: adjust brightness
 -Input parameters: ratio, brightness adjustment multiple
 
-Example of use:
-
-```python
-class TuneLight(EntityProcessor):
-    def process(self, *args, **kwargs):
-        for light in self.shader.world.lights:
-            # Adjust color temperature
-            light.tune_temp(1)
-            # Randomly adjust the light
-            light.tune_random(0.5)
-            # Randomly adjust the light intensity
-            light.tune_intensity(0.2)
-```
 
 ### The overall light intensity adjustment of the scene
 
@@ -133,11 +120,24 @@ class TuneLights(EntityProcessor):
 
 ## Example
 <span style="color:blue">*Comments:* `tune_temp` is not consistent with API above. Use color temperature or delta? </span>.
-```python
+<!-- ```python
 class LightSampler(EntityProcessor):
     def process(self):
         for light in self.shader.world.lights:
             # K值，可以根据K与rgb的map来设置，行业标准，越小越暖，越大越冷
             light.tune_temp(5000)
+``` -->
+<!-- Example of use: -->
+
+```python
+class LightsSampler(EntityProcessor):
+    def process(self, *args, **kwargs):
+        for light in self.shader.world.lights:
+            # Adjust the color temperature
+            light._tune_temp(1)
+            # Adjust the light intensity
+            light.tune_intensity(0.2)
+            # Randomly adjust the light
+            light.tune_random(0.5)
 ```
 ![light_sampler](./../examples_figs/light_sampler.png)

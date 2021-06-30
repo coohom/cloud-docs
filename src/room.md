@@ -32,7 +32,7 @@ The room's information is encapsulated as `Room`.
 
 For a given ccworld room, transform the space position of the CCInstance in the room to randomly generate a room layout. The new layout satisfies certain constraints and rules.
 
-## Use
+## Usage
 
 ```python
 class RandomizeLayout(SceneProcessor):
