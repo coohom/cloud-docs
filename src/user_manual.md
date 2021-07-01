@@ -1,8 +1,10 @@
-# Introduction
+# Introduction to Minervas Online System
 
-EUS (Environment Understanding Solution) is a scene cognitive training data set solution for the indoor agent industry. Users use EUS to generate large-scale low-cost scene recognition data sets based on KJL's massive scene sets.
+EUS (Environment Understanding Solution) is a scene cognitive training data set solution for the indoor agent industry. Users use EUS to generate large-scale low-cost scene recognition data sets based on Coohom's massive scene sets.
 
 <span style="color:blue">*Comments:* Some figs contain Chinese needs to be removed.</span>
+
+<span style="color:red">*Comments:* will refine it</span>
 
 # Basic configuration
 
@@ -181,45 +183,45 @@ This task is only open to users who have activated RW products. Users who have n
 
 # Common problem
 
-Q: Is the scene list empty?
+### Q: Is the scene list empty?
 
-A: If you have purchased the scene, please contact the customer to confirm whether it is faulty. If you have not purchased the scene, please contact the sales to purchase it.
+If you have purchased the scene, please contact the customer to confirm whether it is faulty. If you have not purchased the scene, please contact the sales to purchase it.
 
  
 
-Q: When the page is refreshed, it prompts that the permissions are insufficient?
+### Q: When the page is refreshed, it prompts that the permissions are insufficient?
 
-A: The login is invalid and you need to log in again.
+The login is invalid and you need to log in again.
 
 ![Login Failure](images/login_failure.png)
 
-Q: When logging in to the system, I did not enter the login page, but directly entered a form filling page?
+## Q: When logging in to the system, I did not enter the login page, but directly entered a form filling page?
 
-A: This is a reminder page for customers who are not logged in or who have not purchased EUS and directly access other pages of the system (such as the task list) through the URL to help potential customers send emails to establish contact with sales. For customers who have purchased, please visit the system homepage, or log in to the Kujiale website first, and then visit the system homepage.
+This is a reminder page for customers who are not logged in or who have not purchased EUS and directly access other pages of the system (such as the task list) through the URL to help potential customers send emails to establish contact with sales. For customers who have purchased, please visit the system homepage, or log in to the Kujiale website first, and then visit the system homepage.
 
 ![Contact Us](images/contact_us.png)
 
-Q: How to buy more scenes?
+## Q: How to buy more scenes?
 
-A: Currently, online purchase is not supported, please contact the sales directly to purchase more scenarios
+Currently, online purchase is not supported, please contact the sales directly to purchase more scenarios
 
 
 
-Q: What should I do if the task data expires?
+## Q: What should I do if the task data expires?
 
-A: Tasks with expired data support one-click restart tasks and generate data again. Please download the data in time. 
+Tasks with expired data support one-click restart tasks and generate data again. Please download the data in time. 
 
 ![Data Out of Date](images/data_out_of_date.png)
 
-Q: How long does it take to run a task?
+## Q: How long does it take to run a task?
 
-A: It is mainly related to two factors. One is whether it is during the day or at night. During the day, the cluster has an upper limit of concurrent tasks, and it is easy to encounter queues. There are fewer queues at night. The second is the settings of the task itself, such as the number of scenes included, and the scenes. The size, specific task parameters, etc. are related. Trajectory tasks usually take a long time. A scene needs to wait 3 to 6 hours on average. If there are multiple scenes, the waiting time is even more uncertain. Cross-day tasks will be limited due to peak hours during the day Frequent queuing during the day, which consumes much more time than a task that can be run at night. Since the task data retention period is 2 weeks, it is not recommended that a single task exceeds 200 scenarios.
+It is mainly related to two factors. One is whether it is during the day or at night. During the day, the cluster has an upper limit of concurrent tasks, and it is easy to encounter queues. There are fewer queues at night. The second is the settings of the task itself, such as the number of scenes included, and the scenes. The size, specific task parameters, etc. are related. Trajectory tasks usually take a long time. A scene needs to wait 3 to 6 hours on average. If there are multiple scenes, the waiting time is even more uncertain. Cross-day tasks will be limited due to peak hours during the day Frequent queuing during the day, which consumes much more time than a task that can be run at night. Since the task data retention period is 2 weeks, it is not recommended that a single task exceeds 200 scenarios.
 
 
 
-Q: How is the machine time calculated? Why is it sometimes far greater than the task waiting time, and sometimes it is less than the task waiting time?
+## Q: How is the machine time calculated? Why is it sometimes far greater than the task waiting time, and sometimes it is less than the task waiting time?
 
-A: The rendering machine mainly includes two parts. One part is the generation of RGB images. The rendering cluster is a multi-threaded cluster. The rendering task itself can be disassembled into multiple threads for parallel processing. The cluster server is a 72-core server, which will accumulate all tasks. The processing time is the rendering machine time, so sometimes there will be a situation of waiting for 5 minutes from the task creation to the end of the task, the rendering machine time is 2 hours, and the other part of the machine time is the auxiliary image (depth map, semantic map, normal map, etc.) Processing time, this part cannot be processed in parallel by the cluster, and it will encounter queuing, which sometimes leads to a situation of waiting 4 hours from task creation to completion, and 2 hours of machine time calculation. The final machine time consumption is the sum of the two, rendering machine time + auxiliary image processing machine time, that is, the task queue waiting time is not counted.
+The rendering machine mainly includes two parts. One part is the generation of RGB images. The rendering cluster is a multi-threaded cluster. The rendering task itself can be disassembled into multiple threads for parallel processing. The cluster server is a 72-core server, which will accumulate all tasks. The processing time is the rendering machine time, so sometimes there will be a situation of waiting for 5 minutes from the task creation to the end of the task, the rendering machine time is 2 hours, and the other part of the machine time is the auxiliary image (depth map, semantic map, normal map, etc.) Processing time, this part cannot be processed in parallel by the cluster, and it will encounter queuing, which sometimes leads to a situation of waiting 4 hours from task creation to completion, and 2 hours of machine time calculation. The final machine time consumption is the sum of the two, rendering machine time + auxiliary image processing machine time, that is, the task queue waiting time is not counted.
 
 
 

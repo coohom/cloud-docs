@@ -1,4 +1,5 @@
 # Depth Estimation
+
 ## Introduction
 Depth estimiation is an essential task in indoor scene understanding. We show the performance gain by generating dataset using our system.
 
@@ -33,7 +34,8 @@ class CameraSetting(EntityProcessor):
 ## Minervas output sample
 
 ## Experimental Setup
-In this experiment, we use NYUv2 as
+
+In this experiment, we use NYUv2 as 
 the real data. We split the images into 795 for training and
 654 for testing. Then, we synthesize 14k images using our
 system.

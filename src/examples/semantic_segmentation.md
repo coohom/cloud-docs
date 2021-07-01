@@ -43,6 +43,7 @@ class LabelMapping(PixelProcessor):
 ## Minervas output sample
 
 ## Experimental Setup
+
 In this experiment, we use 2D-3D-S [[1]](#1) as the real data. We split the images into 955 for
 training, 84 for validation, and 373 for testing. Then, we
 synthesize 12k panoramic images using our system. Each
@@ -54,9 +55,8 @@ and weight decay of 10−4. We set the mini-batch size to
 dataset and 4 from the synthetic dataset. For each strategy,
 we train the whole network for 10k iterations.
 
-
-
 ## Results
+
 We show more qualitative results of semantic segmentation in Figure 5. As can be seen, training
 on the synthetic and real dataset achieves the best result.
 The boundary is more clear in semantic segmentation. It

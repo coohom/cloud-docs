@@ -1,7 +1,8 @@
 # Layout Estimation
 
 ## Introduction
-Layout estimiation is a challenging task in 3D vision. Some datasets are proposed to tackle this problem, including the large scale synthetic dataset Structured3D. We will show th ability of Minvervas by agumentating the layout estimation task, which obtains state-of-the-art results.
+
+Layout estimiation is a challenging task in 3D vision. Several datasets are proposed to tackle this problem, including the large scale synthetic dataset Structured3D. We will show the ability of Minvervas by agumentating the layout estimation task, which obtains state-of-the-art results.
 
 ## DSL code
 <!-- For room layout estimation task, we create a
@@ -54,7 +55,7 @@ class ManhattanSceneFilter(SceneProcessor):
             sys.exit(7) # Don't process this scene anymore.
 ```
 
-For this task, we set the type of camera to panorama in the Entity Process Stage, and output the corner and camera parameters in the Entity Process Stage.
+For this task, we set the type of camera to `PANORAMA` in Entity Process Stage, and output the corner and camera parameters in the Entity Process Stage.
 
 ```python
 class CameraSetting(EntityProcessor):
@@ -107,8 +108,9 @@ ment, i.e., “r” and “s + r”. In “s + r”, each batch contains
 dataset. For each strategy, we train the whole network for
 30K iterations
 
-## Results
-Results are reported in Table 1. As can be seen, the model trained on both the synthetic and real datasets achieves the best result. After augmenting the synthetic data, the network can predict the corners position more accurately. Meanwhile, the predicted number of corners is more accurate. It demonstrates that our synthetic data could be used to improve the performance of the network. Qualitative results are shown in Figure 2.
+## Experiment Results
+
+Results are reported in Table 1. As can be seen, the model trained on both the synthetic and real datasets achieves the best result. After augmenting the synthetic data, the network can predict the corner's position more accurately. Meanwhile, the predicted number of corners is more accurate. It demonstrates that our synthetic data could be used to improve the performance of the network. Qualitative results are shown in Figure 2.
 
 ![fig_layout](./../examples_figs/fig_layout.png)
 ![table_layout](./../examples_figs/table_layout.png)

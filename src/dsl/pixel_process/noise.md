@@ -1,9 +1,11 @@
 # Noise simulation
+
 Currently, it supports to simulate four common image noises and add them to the depth map output, namely:
-1. Gaussian noise
-2. Poisson noise
-3. Salt and pepper noise
-4. kinect noise
+
+1. Gaussian Noise
+2. Poisson Noise
+3. Salt and Pepper Noise
+4. Kinect Noise
 
 ## Instructions for use
 

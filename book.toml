@@ -3,7 +3,7 @@ authors = ["nanfang", "yaodao"]
 language = "en"
 multilingual = false
 src = "src"
-title = "MINERVAS Help document"
+title = "MINERVAS Help Document"
 
 [output.html]
 default-theme = "rust"
