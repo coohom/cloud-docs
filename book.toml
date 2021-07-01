@@ -3,7 +3,7 @@ authors = ["nanfang", "yaodao"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Ks-Sdk Help document"
+title = "MINERVAS Help document"
 
 [output.html]
 default-theme = "rust"

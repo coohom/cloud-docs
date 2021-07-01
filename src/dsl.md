@@ -1,5 +1,7 @@
 # DSL description
 
+Minervas has a programmable dataset generation pipeline with Domain-Specific Language. As the main interface for users to cutomize the dataset generation for different task, we describe our DSL in this section.
+
 <span style="color:blue">*Comments:* Many formats in DSL description is not unified. </span>
 <!-- toc -->
 
