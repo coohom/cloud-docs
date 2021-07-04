@@ -43,13 +43,13 @@ class EntityExample(EntityProcessor):
                 self.delete(entity)
 ``` -->
 
-# Entity operation
+## Entity operation
 
 <span style="color:blue">*Comments:* Need more details.</span>
 ## Get Entity
 TODO
 
-## Delete Entity
+### Delete Entity
 Function Description
 * ```self.shader.world.delete_entity((entity))```: delete entity from the scene
 
@@ -63,4 +63,4 @@ class DeleteCameraDsl(EntityProcessor):
              entityId = self.shader.world.delete_entity(camera)
 ```
 
-## Create Entity
+### Create Entity

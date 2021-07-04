@@ -34,4 +34,4 @@ class SceneFilterExample(SceneProcessor):
 
 Note that exit value 7 represents the exit is caused by unstatisfying scene.
 
-A [web GUI](https://www.kujiale.com/coohomcloud/kloudscene#/) for scene filtering is more user-friendly. We recommend users to use filtering GUI instead of filtering in `SceneProcessor`. The `SceneProcessor` is optional.
+A [Web GUI](https://www.kujiale.com/coohomcloud/kloudscene#/) for scene filtering is more user-friendly. We recommend users to use filtering GUI instead of filtering in `SceneProcessor`. The `SceneProcessor` is optional.

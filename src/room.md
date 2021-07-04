@@ -50,10 +50,12 @@ The main limitation at present is that it can only take effect for scenarios whe
 
 
 ## Example
+
 ```python
 class RoomSampler(SceneProcessor):
     def process(self):
         for room in self.shader.world.rooms:
             room.randomize_layout(self.shader.world)
 ```
+
 ![room_sampler](./examples_figs/layout_sampler.png)
