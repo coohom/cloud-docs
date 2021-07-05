@@ -15,7 +15,7 @@ Each image is an instance of `class RenderResult`.
 Based on these, users could modify image outputs.
 
 More description about [RenderResult](./image.md)
-
+<!-- 
 ## Example
 
 ```python
@@ -26,4 +26,4 @@ class PixelExample(PixelProcessor):
         depth = images.get('depth')
         normal = images.get('normal')
         ...
-```
+``` -->

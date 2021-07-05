@@ -31,11 +31,8 @@ class CameraSetting(EntityProcessor):
 ```
 
 ```python
-# TODO: WAIT FOR SUPPORT
 class LabelMapping(PixelProcessor):
-    # skip mapping detail
     def process(self, **kwargs):
-        NYU40_Mapping = {1238: 65535}
         self.gen_semantic(label_arch=NYU40_Mapping)
 ```
 
