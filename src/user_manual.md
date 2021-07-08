@@ -23,13 +23,6 @@ Tips： It is recommended to use Google Chrome to log in
 
 ![User Login](images/user_login.png)
 
-## Change Passworod
-
-To change the password, you need to enter the Kujiale homepage（https://www.kujiale.com/）, And then click the person’s avatar in the upper right corner of the system page, click Account Settings in the personal information pop-up window, click Account Security in the account settings page, and then click [Modify Password] in the Security Information Module. In the Modify Password pop-up window, enter the original password And the new password, the new password format requirements: ①The length is 8-16 characters; ②Cannot use spaces; ③Contain at least two combinations of numbers/letters/characters; ④Cannot contain illegal characters.。
-
-![User Center](images/user_center.png)
-![Security Information](images/security_information.png)
-![Password Change](images/password_change.png)
 
 ## Create simulation task
 
