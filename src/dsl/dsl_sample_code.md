@@ -11,6 +11,7 @@ This example simulates a sweeping robot traveling in a room with a bow-shaped tr
 from ksecs.ECS.processors.pixel_processor import PixelProcessor
 from ksecs.ECS.processors.entity_processor import EntityProcessor
 from ksecs.ECS.processors.structure_processor import StructureProcessor
+from ksecs.ECS.processors.render_processor import RenderProcessor
  
 ID_PREFIX = 'USER'
  
@@ -85,6 +86,10 @@ class TestEntityDsl(EntityProcessor):
                 type="COVERAGE"
             )
 
+class Render(RenderProcessor):
+    def process(self, *args, **kwargs):
+        self.gen_rgb(distort=0, noise=0)
+        
 class TestStructureDSL(StructureProcessor):
 
     def process(self):
