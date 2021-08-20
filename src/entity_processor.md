@@ -1,11 +1,11 @@
 # Entity Processor
 
-## Description
+<!-- ## Description -->
 
 The entity process stage is designed for batch processing entities in the scene set. 
 Users can implement an `EntityProcessor` to control the entity process stage.
 
-Also, many components can be manipulated in this processor, including:
+Also, attributes (component) of each object (entity) can be manipulated in this processor, including:
 - [Camera](dsl/camera.md)
 - [Light](dsl/light.md)
 - [Material](dsl/material.md)
@@ -64,3 +64,24 @@ class DeleteCameraDsl(EntityProcessor):
 ```
 
 ### Create Entity
+
+## Entity filtering
+We filter out cameras in the room with few furniture.
+```python
+from ksecs.ECS.processors.entity_processor import EntityProcessor
+from shapely.geometry import Point
+class CameraFilterProcessor(EntityProcessor):
+    def process(self):
+        for room in self.shader.world.rooms:
+            polygon = room.gen_polygon()
+            furniture_count = 0
+            for ins in self.shader.world.instances:
+                if not ins.type == 'ASSET':
+                    continue
+                if polygon.contains(Point([ins.transform[i] for i in [3, 7, 11]])):
+                    furniture_count += 1
+            if furniture_count < 5: # We only use room with more than or equal to 5 assets
+                for camera in self.shader.world.cameras:
+                    if polygon.contains(Point([camera.position[axis] for axis in "xyz"])):
+                        self.shader.world.delete_entity(camera)
+```

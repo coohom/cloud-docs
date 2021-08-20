@@ -1,7 +1,7 @@
 # Summary
 - [Introduction](./introduction.md)
   - [Getting Started](./user_manual.md)
-- [DSL Description](./dsl.md)
+- [DSL Programing Guide](./dsl.md)
   - [Scene Processor](./scene_processor.md)
     - [Room](./room.md)
     <!-- - [Js Query Sample Code](./js_query_sample.md) -->
@@ -13,11 +13,13 @@
     - [Trajectory](dsl/trajectory.md)
     - [Instance](dsl/instance.md)
     <!-- - [Transform](dsl/transform.md) -->
+  - [Render Processor](./render_processor.md)
   - [Pixel Processor](./pixel_processor.md)
     - [Output Selection](./dsl/pixel_process/output_selection.md)
     - [Noise Simulation](./dsl/pixel_process/noise.md)
     - [Distortion Simulation](./dsl/pixel_process/distortion.md)
     - [Structure Visualization](./dsl/pixel_process/show_structure.md)
+  - [Structure Processor](./structure_processor.md)
 - [Examples](./examples.md)
   - [Layout Estimation](./examples/layout_estimation.md)
   - [Semantic Segmentation](./examples/semantic_segmentation.md)

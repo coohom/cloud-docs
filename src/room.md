@@ -1,6 +1,6 @@
 # Room
 
-## Description
+<!-- ## Description -->
 
 The room's information is encapsulated as `Room`.
 <!-- Users could sample furniture layout using function `sample()`. -->
@@ -24,34 +24,37 @@ The room's information is encapsulated as `Room`.
 |id     |id of the room (`str`)   |
 |type   |type name of the room (`str`) | -->
 
-# Room Sampler
+## Domain randomization - Room Sampler
 
-## Features
+<!-- ## Features -->
 
-<span style="color:blue">*Comments:* `World/ccworld` and `Instance/CCInstance` should be consistent across the doc.</span>
+<!-- <span style="color:blue">*Comments:* `World/ccworld` and `Instance/CCInstance` should be consistent across the doc.</span> -->
 
-For a given ccworld room, transform the space position of the CCInstance in the room to randomly generate a room layout. The new layout satisfies certain constraints and rules.
+Minervas has a scene level sampler to generate novel furniture arrangements. Users can generate various reasonable furniture arrangements for domain randomization with this sampler.
 
-## Usage
+Sampler code:
+<!-- For a given ccworld room, transform the space position of the CCInstance in the room to randomly generate a room layout. The new layout satisfies certain constraints and rules. -->
+
+<!-- ## Usage
 
 ```python
 class RandomizeLayout(SceneProcessor):
      def process(self):
          room = self.shader.world.get_room("room_id")
          room.randomize_layout(self.shader.world)
-```
+``` -->
 
-## Use constraints
+<!-- ## Use constraints
 
 The main limitation at present is that it can only take effect for scenarios where the label is KJL. There are two main reasons:
 
 1. At present, only the instance with type=Asset supports modification of transform to render on the server side, and currently only the furniture instance of the scene with the KJL tag satisfies the conditions.
-2. In the logic implemented by layout_sampler, a large number of Kujiale categories are used to make logical judgments (such as judging whether furniture should be posted on the wall according to the category). This point needs to be improved in the future, adding related attributes in CCInstance.
+2. In the logic implemented by layout_sampler, a large number of Kujiale categories are used to make logical judgments (such as judging whether furniture should be posted on the wall according to the category). This point needs to be improved in the future, adding related attributes in CCInstance. -->
 
 
-## Example
-
+<!-- ## Example -->
 ```python
+from ksecs.ECS.processors.scene_processor import SceneProcessor
 class RoomSampler(SceneProcessor):
     def process(self):
         for room in self.shader.world.rooms:

@@ -4,7 +4,8 @@ DSL supports the addition of three types of cameras, including perspective camer
 
 When adding a camera, you need to set the camera's parameters, including the common parameters of all types of cameras and the unique parameters of specific types of cameras.
 
-### General parameters
+## Attributes
+### General attributes
 |Attribute|Description|Default value|Required|
 |---|---|---|---|
 |id|Camera ID, users need to add a prefix to ensure that the ID is unique| |Yes|
@@ -19,20 +20,23 @@ When adding a camera, you need to set the camera's parameters, including the com
 |iso|Indicates the sensitivity of the camera||
 |fnumber|f value, indicating the aperture size||
 |shutterSpeed|The shutter speed of the camera, the unit is s^-1||
-### PERSPECTIVE specific parameters
+
+### Specific attributes
+#### PERSPECTIVE camera
 |Attribute|Description|Default value|Required|
 |---|---|---|---|
 |vfov|Vertical fov, that is, fov in OpenGL, angle value|none|yes|
 |hfov|Horizontal fov, when it coexists with vfov, vfov shall prevail, the angle value|none||
 
-### ORTHO specific parameters
+#### ORTHO camera
 |Attribute|Description|Default value|Required|
 |---|---|---|---|
 |orthoWidth|The width of the camera displayed in the model space, in millimeters|none|yes|
 |orthoHeight|The height displayed by the camera in the model space, in millimeters|none|yes|
 
 
-# Camera operations
+<!-- # Camera operations -->
+## Function
 
 <!-- toc -->
 ## Get the camera and its attributes
@@ -101,3 +105,5 @@ class TopView(EntityProcessor):
     def process(self):
         self.gen_topview(width, height)
 ```
+
+## Domain randomization - Camera Sampler
