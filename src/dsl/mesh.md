@@ -2,7 +2,8 @@
 In our system, the CAD model of each object in the scene can be easily replaced by user. 
 The category of object remains the same for reasonable result.
 Since the mesh is the core asset of the database, we only explore its index in the database and do not allow users to access the raw data.
-## Randomly replace the model
+<!-- ## Randomly replace the model -->
+## Domain randomization - Model sampler
 
 <!-- **command_type value: model_replace** -->
 
@@ -17,13 +18,13 @@ Random replacement is valid for a given CCInstance (type=Asset only takes effect
 2. A furniture library needs to be preset, and only the model in the preset furniture library will be replaced. (This logic will be used as a bottom-up logic to ensure the robustness of the service)
    1. Models whose categories are not in the preset furniture library cannot be replaced.
 
-## Parameter list
+## Function parameters
 
 | First name | Required or not | Value | Remarks |
 | :--------- | :------- | :----- | :--------------------- |
 | id | Yes | String | Identifies the CCInstance to be replaced |
 
-example:
+<!-- example:
 ```python
 class ReplaceModel(EntityProcessor):
     def process(self, *args, **kwargs):
@@ -31,7 +32,7 @@ class ReplaceModel(EntityProcessor):
             self.shader.world.replace_model(
                 id=instance.id
             )
-```
+``` -->
 
 ## Example
 ```python

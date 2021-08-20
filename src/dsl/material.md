@@ -1,18 +1,19 @@
 # Material 
 
-Material is also an important component for every object in the scene. Our DSL supports sampling new materials for each object for domain randomization.
+Material is an important component for every object in the scene. Our DSL also supports sampling new materials for each object for domain randomization.
 
 Since the material is the core asset of the database, we only explore its index in the database and do not allow users to access the raw data.
 
-## Material Replacement API
+## Domain randomization - Material Sampler
+<!-- ## Material Replacement API -->
 
 Minervas provides `replace_material` method, which will provides following functionality:
 
-1. Enter `Model` to randomly replace the material corresponding to each part (each part is sampled separately from the preset material library).
-2. Enter `Model` and the desired material category, and randomly replace the material of each part to the material of the corresponding material category. (Each part is sampled separately from the desired category of the preset material library)
-3. Enter the `Model` and the specified material id list, and randomly replace the material of each part to the material in the list.
+1. `REPLACE_ALL`: Given a `Model` to randomly replace the material corresponding to each part (each part is sampled separately from the preset material library).
+2. `REPLACE_BY_CATEGORY`: Given a `Model` and the desired material category, and randomly replace the material of each part to the material of the corresponding material category. (Each part is sampled separately from the desired category of the preset material library)
+3. `REPLACE_TO_GIVEN_LIST`: Given a `Model` and the specified material id list, and randomly replace the material of each part to the material in the list.
 
-## Parameters
+### Function parameters
 
 <span style="color:blue">*Comments:* Candidate mateiral categories need to be provided.</span>.
 
@@ -23,7 +24,7 @@ Minervas provides `replace_material` method, which will provides following funct
 | category | Required when type=`REPLACE_BY_CATEGORY` | String | Category name to be replaced |
 |ids|Required when type=`REPLACE_TO_GIVEN_LIST` |List of String|ID list to be replaced|
 
-Usage:
+<!-- Usage:
 
 ```python
 class ReplaceMaterial(EntityProcessor):
@@ -34,14 +35,13 @@ class ReplaceMaterial(EntityProcessor):
                 type='REPLACE_BY_CATEGORY',
                 category='METAL'
             )
-```
+``` -->
 
-## Example
+### Example
 
+<!-- <span style="color:blue">*Comments:* TODO(@xuanfeng) Add information about material list api</span>. -->
 
-<span style="color:blue">*Comments:* TODO(@xuanfeng) Add information about material list api</span>.
-
-<span style="color:blue">*Comments:* Code needs revision</span>.
+<!-- <span style="color:blue">*Comments:* Code needs revision</span>. -->
 ```python
 class MaterialSampler(EntityProcessor):
     def process(self):
@@ -52,10 +52,7 @@ class MaterialSampler(EntityProcessor):
             if instance.label in [1227, 1068, 1080]:
                 self.shader.world.replace_material(
                     id=instance.id,
-                    type='REPLACE_TO_GIVEN_LIST',
-                    ids=['5be44369c3f6261793457411'], # Get material list from API.
-                    # type='REPLACE_BY_CATEGORY',
-                    # category='METAL'
+                    type='REPLACE_ALL',
                 )
 ```
 ![material_sampler](../examples_figs/material_sampler.png)
