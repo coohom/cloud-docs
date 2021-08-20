@@ -19,7 +19,7 @@ Based on the large-scale (more than 50 million) high-quality (professional artis
 
 The pipeline of Minervas includes the following parts:
 * `Scene Process Stage`: In this stage, users can filter scenes by their condition and re-arrange the layout of 3D scenes for domain randomization.
-* `Entity Process Stage`: This Stage is designed for batch processing entities in the scene. Users can easily use entity-level samplers to randomize attributes of each entity, including furniture (\eg, CAD model, material, transformation), light (\eg, intensity, color), and camera (\eg, camera model, transformation). Modifying the attribute of each object manually is also supported.
+* `Entity Process Stage`: This Stage is designed for batch processing entities in the scene. Users can easily use entity-level samplers to randomize attributes of each entity, including furniture (e.g., CAD model, material, transformation), light (e.g., intensity, color), and camera (e.g., camera model, transformation). Modifying the attribute of each object manually is also supported.
 * `Render Stage`: the system uses the generated scenes to generate 2D renderings with the photo-realistic rendering engine. 
 * `Pixel Process Stage`: In this stage, users can apply pixel-wise processing operations on the imagery data.
 

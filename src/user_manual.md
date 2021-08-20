@@ -1,30 +1,31 @@
-# Introduction to Minervas Online System
+# Getting started with Minervas Online System
 
 Since the Minervas is deployed on [Coohom](https://www.coohom.com/) ([Kujiale](https://www.kujiale.com) is the Chinese brand of Coohom), a web-based 3D design platform, user might need to register and login to Minervas online system for further usage. 
 
 > **TODO**: TO BE UPDATE AFTER MINERVAS ACCOUNT UPDATED
 
 ## Account Related Usage
+Click [here](https://share.hsforms.com/1JqF4gRE2Ri2z7ul1eY5rMw4irvw?kpm=qkWL.9b0955304addf074.a289e9d.1629387341506) to apply for an free trial account.
 
-1. Visit [https://www.kujiale.com/coohomcloud/minervas#/scene](https://www.kujiale.com/coohomcloud/minervas#/scene)
+<!-- 1. Visit [https://www.kujiale.com/coohomcloud/minervas#/scene](https://www.kujiale.com/coohomcloud/minervas#/scene)
 2. Login Account： Same as the Kujiale account, if it is a trial account, it will be allocated by the business separately
 3. Login Password： Same as the Kujiale account password, if it is a trial account, it will be notified by the business separately
 
-> Tips： It is recommended to use Google Chrome to log in
+> Tips： It is recommended to use Google Chrome to log in -->
 
-### Account login
+<!-- ### Account login
 
  Click the account login on the system page, enter the account and password, and click login to log in to the home page of the EUS system.
 
-![User Login](images/user_login.png)
+![User Login](images/user_login.png) -->
 
-### Change Password
+<!-- ### Change Password
 
 To change the password, you need to enter the Kujiale homepage（https://www.kujiale.com/）, And then click the person’s avatar in the upper right corner of the system page, click Account Settings in the personal information pop-up window, click Account Security in the account settings page, and then click [Modify Password] in the Security Information Module. In the Modify Password pop-up window, enter the original password And the new password, the new password format requirements: ①The length is 8-16 characters; ②Cannot use spaces; ③Contain at least two combinations of numbers/letters/characters; ④Cannot contain illegal characters.。
 
 ![User Center](images/user_center.png)
 ![Security Information](images/security_information.png)
-![Password Change](images/password_change.png)
+![Password Change](images/password_change.png) -->
 
 ## System Related Usage
 
@@ -33,6 +34,7 @@ After successfully login, you will enter the Minervas online system. Click *New 
 ![Manage Scene](images/task_entry.png)
 
 ### Step-1
+<span style="color:red">*TODO:* 图片需要更新成新版本的</span>
 
 The first step to set the simulation task
 
