@@ -59,6 +59,7 @@ class structureDsl(StructureProcessor):
 	def process(self, *args, **kwargs):
 		pass
 ```
+> **Tips**: Don't forget to import the corresponding processor class from `ksces.ECS.processors` before use.
 
 <!-- ## An attribute - shader -->
 ## Attribute: shader
@@ -96,5 +97,5 @@ Each element corresponds to a class, with its own attributes and methods -->
 
 `image_handler` object is an instance of class `ImageHandler`. This class contains severl image-related operations which we will introduce in [Noise Simulation](dsl/pixel_process/noise.md).
 
-### ECS-D
+## ECS-D
 Since our system supports customization to the scene, the user should easily access the scene with a suitable 3D scene representation. Thus, we employ the Entity Component System (ECS) architecture to represent and organize the 3D scene in our system. Additionally, to facilitate the randomness of scene synthesis, we integrate random distributions into the original ECS architecture, ie, attaching a distribution to depict each component. The newly proposed architecture is named as ECS-D, where D denotes distributions on components.
