@@ -13,6 +13,9 @@ The core workflow of Minervas includes the following parts: -->
 
 Minervas is a *Massive INterior EnviRonments VirtuAl Synthesis* system. It aims to facilitate various vision problems by providing a programmable imagery data synthesis platform.
 
+<!-- Here are some example outputs:
+![Outputs](images/minervas_output_example.png) -->
+
 Based on the large-scale (more than 50 million) high-quality (professional artist designed) database of [Kujiale.com](https://www.kujiale.com), Minervas provides a way for all users to access and manipulate them for facilitating their data-driven task.
 
 ![System Pipeline](images/Pipeline.png)

@@ -1,27 +1,31 @@
 # Output selection
-There are servel renderer output we support: RGB renderings, instance map, depth map, normal map. Image based operation like noise, distortion, structure visualization are also supported.
+In the MINERVAS system, there are several rendering output we support: 
+* RGB renderings 
+* Normal map 
+* Instance map 
+* Semantic map
+* Depth map
+* Trajectory map
+<!-- * Image based operation like noise  -->
+<!-- * distortion, structure visualization are also supported. -->
 
-What is the default output if PixelProcessor is not specified? 
+<!-- What is the default output if PixelProcessor is not specified?  -->
 
 <span style="color:blue">*Comments:* Argument list and description of each funtion should be added.</span>
 
+## Function list
+|Function|Description|
+|---|---|
+|gen_normal(distort=0, noise=0)||
+|gen_instance(normal_threshold=230, distort=0, noise=0)||
+|gen_semantic(normal_threshold=230, distort=0, noise=0)||
+|gen_depth(distort=0, noise=0)||
+|gen_traj(**params)||
+|gen_albedo(distort=0, noise=0)||
 
-<span style="color:blue">*Comments:* Differences between `RenderProcessor` and `PixelProcessor`.</span>
-## RGB rendering
-
-Output format:
-3 channel * 8 bit
-
-Usage:
-
-```python
-from ksecs.ECS.processors.render_processor import RenderProcessor
-class Render(RenderProcessor):
-    def process(self, *args, **kwargs):
-        self.gen_rgb(distort=0, noise=0)
-```
-
-## Normal map
+<!-- <span style="color:blue">*Comments:* Differences between `RenderProcessor` and `PixelProcessor`.</span> -->
+## Examples:
+### Normal map
 
 Output format:
 1. 3 channel * 8 bit
@@ -39,7 +43,7 @@ class NormalDsl(PixelProcessor):
 ```
 
 
-## Instance map
+### Instance map
 
 Output format:
 1. 1 channel * 16 bit
@@ -60,7 +64,7 @@ Notes:
 2. merge_bias
 
 
-## Semantic map
+### Semantic map
 
 Output format:
 1. 1 channel * 16 bit
@@ -78,7 +82,7 @@ Notes:
 <span style="color:blue">*Comments:* TODO.</span>
 1. normal_threshold:
 
-## Depth map
+### Depth map
 
 Output format:
 1. 1 channel * 16 bit
@@ -91,7 +95,7 @@ class DepthDsl(PixelProcessor):
         self.gen_depth(distort=0, noise=0)
 ```
 
-## Trajectory map
+### Trajectory map
 Visualize trajectory in the top-down view rendering result. Customized trajectory and bow-shape trajectory are currently supported.
 
 Usage:
@@ -105,20 +109,20 @@ class TrajDSL(RenderProcessor):
 Notes:
 **params can be:
 1. type: int. Select trajectory type.
-    * 0: Customized trajectory
-    * 1: Bow-shape trajectory
-    * 2: Random trajectory
+    * 0: (DEFINED) Customized trajectory
+    * 1: (COVERAGE) Bow-shape trajectory
+    * 2: (RANDOM) Random trajectory
 
 <span style="color:blue">*Comments:* More parameters?.</span>
 
-## Albedo map
+### Albedo map
 
 Ouput format:
 4 channel * 8 bits
 
 ```python
-from ksecs.ECS.processors.render_processor import RenderProcessor
-class Render(RenderProcessor):
-    def process(self, *args, **kwargs):
-        self.gen_rgb(distort=0, noise=0)
+from ksecs.ECS.processors.pixel_processor import PixelProcessor
+class AlbedoDsl(PixelProcessor):
+    def process(self, **kwargs):
+        self.gen_albedo(distort=0, noise=0)
 ```

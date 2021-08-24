@@ -1,20 +1,20 @@
 # Pixel Processor
 
-## Description
+<!-- ## Description -->
 
-The pixel process stage modifies image output pixel-wisely and generates the final dataset.
+In the pixel process stage, the system modifies imagery output pixel-wisely and generates the final dataset.
 Users can implement a `PixelProcessor` to control the pixel process stage.
-Users could get:
-1. rgb
-2. depth
-3. normal
-4. instance
-5. semantic
 
-Each image is an instance of `class RenderResult`.
-Based on these, users could modify image outputs.
+Specifically, users can 
+1. select the output information with interest. (e.g., normal map, semantic map)
+2. generate randomized image noise.
+3. add distortion to rendered image.
+4. visualize strucutre of room.
 
-More description about [RenderResult](./image.md)
+<!-- Each image is an instance of `class RenderResult`. -->
+<!-- Based on these, users could modify image outputs. -->
+
+<!-- More description about [RenderResult](./image.md) -->
 <!-- 
 ## Example
 

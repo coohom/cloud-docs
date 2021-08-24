@@ -17,7 +17,7 @@ Minervas provides `replace_material` method, which will provides following funct
 
 <span style="color:blue">*Comments:* Candidate mateiral categories need to be provided.</span>.
 
-| First name | Required or not | Value | Remarks |
+| First name | Required or not | Type | Description |
 | :--------------- | :------------------------------- ------- | :----------------------------------------- ----------------- | :--------------------- |
 | id | Yes | String | Identifies the `Model` to be modified |
 | type | Yes | `REPLACE_ALL` \| `REPLACE_BY_CATEGORY` \| `REPLACE_TO_GIVEN_LIST` | replacement type |

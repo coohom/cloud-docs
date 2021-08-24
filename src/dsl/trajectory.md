@@ -1,52 +1,52 @@
 # Trajectory
-DSL supports add trajectory to the entity. Trajectory is an important component especially for robotic related tasks. Users could sample a random trajectory or add a handcrafted trajectory to the camera.
+DSL supports adding trajectory to the entity. Trajectory is an important component especially for robotic related tasks. In the MINERVAS system, users could sample a random trajectory or add a handcrafted trajectory to the camera.
 
-## Trajectory types
+## Attributes
+<!-- ## Trajectory types
 Two type of trajectory are supported in the DSL.
 1. Random trajectory. It can also be classified by the shape of trajectory.
 * Bow-shape trajectory
 * Pure random trajectory
-2. Customized trajectory. User can generate the customize trajectory by tapping the key frame in the scene.
+2. Customized trajectory. User can generate the customize trajectory by tapping the key frame in the scene. -->
 
-<span style="color:blue">*Comments:* Default values are missing in the following forms.</span>.
+<!-- <span style="color:blue">*Comments:* Default values are missing in the following forms.</span>. -->
 
-## General parameters
-|Attribute|Description|Default value|Required|
-|---|---|---|---|
-|type|RANDOM; COVERAGE; DEFINED||Yes|
-|pitch| The angle of pitch | | Yes |
-|height| The height of camera. The unit is mm.|| Yes |
+### General attributes
+|Attribute|Description|
+|---|---|
+|type|RANDOM (random trajectory); COVERAGE (bow-shape trajectory); DEFINED (user customized trajectory, usually by tapping the key frame in the scene).|
+|pitch| The angle of pitch |
+|height| The height of camera. The unit is mm.|
 
-## General parameters for Random trajectory
-|Attribute|Description|Default value|Required|
-|---|---|---|---|
-|initCamera|Initialize camera. Input arguments are the same as [Camera](dsl/camera.md). | | Yes |
-|fps| Frames per second | | Yes |
-|speed| trajectory speed (the unit is mm/s) | | Yes |
-|colisionPadding| The radius of collision detection | | Yes |
+### General attributes for RANDOM and COVERAGE type trajectory
+|Attribute|Description|
+|---|---|
+|initCamera|Initialize camera. Input arguments are the same as [Camera](dsl/camera.md). |
+|fps| Frames per second |
+|speed| trajectory speed (the unit is mm/s) |
+|colisionPadding| The radius of collision detection |
 
-### Bow-shape trajectory
-|Attribute|Description|Default value|Required|
-|---|---|---|---|
-|boundary|Restriction range of trajectory|provided by SDK|Yes|
+#### Specific attributes for RANDOM type trajectory
+|Attribute|Description|
+|---|---|
+|time|duration of time (the unit is s)|
 
-### Pure random trajectory
-|Attribute|Description|Default value|Required|
-|---|---|---|---|
-|time|duration of time (the unit is s)||Yes|
-
-## Specific parameters for Customized trajectory
-<span style="color:blue">*Comments:* This parameter list needs revision (e.g., description of keyPoints is incorrect).</span>. 
+#### Specific attributes for COVERAGE type trajectory
+|Attribute|Description|
+|---|---|
+|boundary|Restriction range of trajectory|
+### Specific attributes for DEFINED type trajectory
+<!-- <span style="color:blue">*Comments:* This parameter list needs revision (e.g., description of keyPoints is incorrect).</span>.  -->
 
 |Attribute|Description|Default value|Required|Remark|
 |---|---|---|---|---|
 |imageWidth|The width of rendered image||Yes||
 |imageHeight|The height of rendered image||Yes||
-|keyPoints| ? (关键帧位置信息，实为图像向上的pixel index，格式：[[[[x1, y1], [x2, y2], ...]]]) | | Yes | Three layer architecture. <span style="color:blue">*Comments:* TBD Not understand.</span>.|
-|fps| Frames per second | | No | Required if <span style="color:blue">*Comments:* TBD Not understand.</span>. |
-|speed| trajectory speed (the unit is mm/s) | | No | <span style="color:blue">*Comments:* TBD Not understand.</span>. |
-|speedMode| Mode for randomized speed, 0: initial randomization 1: procedual randomization | | No | Required if has speed |
-|frameCount| Total frame count | | No | ? |
+|keyPoints| (Key points in image space. pixel indicies: [[[[x1, y1], [x2, y2], ...]]]) | | Yes | Three dimensional list. 1. list of keypoints set 2. list of pixel coordinates. 3. pixel coordinates|
+|fps| Frames per second | | No | Required if `frameCount` is not specified |
+|speed| trajectory speed (the unit is mm/s) | | No | Required if `frameCount` is not specified|
+|speedMode| Mode for randomized speed, 0: initial randomization 1: procedual randomization | | No | Required if `speed` is specified |
+|frameCount| Total frame count | | No | Required if `fps` is not specified |
 |pitchMode| Mode of pitch randomization, 0: initial randomization, 1: procedual randomization | | Yes ||
 |hfow| Horizontal field of view (the unit is degree) | | No | Required if camera type is default or 'PERSPECTIVE' |
 |vfow| Vertical field of view (the unit is degree) | | No | Required if camera type is default or 'PERSPECTIVE' |
@@ -55,7 +55,7 @@ Two type of trajectory are supported in the DSL.
 |heightMode| Mode of camera height, 0: initial randomization, 1: procedual randomization | | Yes ||
 
 
-## Get trajectory and its attributes
+### Get trajectory and its attributes
 
 Function explanation
 * `self.shader.world.trajectories`: Get trajectory list in the scene.
@@ -137,4 +137,4 @@ Explanation of **param: See attributes of Customized trajectory above.
 
 ## Example
 The example for customized trajectory is shown in [SLAM](../examples/trajectory_sampling.md) section.
-<span style="color:blue">*Comments:* Default values are missing in the following forms.</span>.
+<!-- <span style="color:blue">*Comments:* Default values are missing in the following forms.</span>. -->
