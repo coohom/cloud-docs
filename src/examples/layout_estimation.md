@@ -92,7 +92,7 @@ class UserOutput(StructureProcessor):
             )
 ```
 
-## Minervas output sample
+## MINERVAS output sample
 
 ## Experimental Setup
 

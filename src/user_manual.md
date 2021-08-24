@@ -1,6 +1,6 @@
-# Getting started with Minervas Online System
+# Getting started with MINERVAS Online System
 
-Since the Minervas is deployed on [Coohom](https://www.coohom.com/) ([Kujiale](https://www.kujiale.com) is the Chinese brand of Coohom), a web-based 3D design platform, user might need to register and login to Minervas online system for further usage. 
+Since the MINERVAS is deployed on [Coohom](https://www.coohom.com/) ([Kujiale](https://www.kujiale.com) is the Chinese brand of Coohom), a web-based 3D design platform, user might need to register and login to MINERVAS online system for further usage. 
 
 > **TODO**: TO BE UPDATE AFTER MINERVAS ACCOUNT UPDATED
 
@@ -29,7 +29,7 @@ To change the password, you need to enter the Kujiale homepage（https://www.kuj
 
 ## System Related Usage
 
-After successfully login, you will enter the Minervas online system. Click *New Simulation Task* will create a new task. 
+After successfully login, you will enter the MINERVAS online system. Click *New Simulation Task* will create a new task. 
 
 ![Manage Scene](images/task_entry.png)
 
@@ -40,7 +40,7 @@ The first step to set the simulation task
 
 1. click here to input task name.
 2. The default setting is No, at this time, click Next to enter the visual configuration interface
-3. Choose Yes to enter the dsl file configuration mode, you can complete the task configuration through the dsl file
+3. Choose Yes to enter the DSL file configuration mode, you can complete the task configuration through the DSL file
 4. click here to enter the next step
 
 ![Manage Scene](images/task_set.png)
@@ -156,5 +156,5 @@ This task is only open to users who have activated RW products. Users who have n
 
 <br/>
 
-> NOTE: if you have any usage issue about Minervas system, please contact <minervas@qunhemail.com>.
+> NOTE: if you have any usage issue about MINERVAS system, please contact <minervas@qunhemail.com>.
 

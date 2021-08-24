@@ -63,7 +63,7 @@ Two ways:
 ```python
 if __name__ =='__main__':
     from ksecs import apply
-    apply(_is_dsl=True) # As long as it is directly debugged in dsl, _is_dsl is True. If you want to directly use the demo data in resources,
+    apply(_is_dsl=True) # As long as it is directly debugged in DSL, _is_dsl is True. If you want to directly use the demo data in resources,
 ```
 2. Open the main function comment directly in demoDSL.py
 
@@ -86,7 +86,7 @@ optional arguments:
               1 --> PIXEL;
               2 --> STRUCTURE
   -i I Enter path of cc world data
-  -d D Eneter path of dsl file
+  -d D Eneter path of DSL file
   -o O Eneter path of output folder
   -s S Enter scene task id
   -p P Enter path of rasterization result
@@ -114,13 +114,13 @@ optional arguments:
 	- Use specific task resources
 		- Command Line
 		```bash
-		python ksecs/app.py -i path of ccworld.json -d path of dsl.py -o path of output folder -t 1 -p path of rasterizeOutput # Take pixel processor as an example
+		python ksecs/app.py -i path of ccworld.json -d path of DSL.py -o path of output folder -t 1 -p path of rasterizeOutput # Take pixel processor as an example
 		```
 		-IDE
 		Take Pycharm as an example, add in the `Parameters` of `Run/Debug Configuration`
 		```bash
 		-i path of ccworld.json
-		-d path of dsl.py
+		-d path of DSL.py
 		-o path of output folder
 		-t 1
 		-p path of rasterizeOutput
@@ -155,8 +155,8 @@ optional arguments:
   -t T Type of resources to download
               Options:
               0 --> only json.gz;
-              1 --> json.gz and dsl file;
-              2 --> json.gz, dsl file and rasterizeOutput
+              1 --> json.gz and DSL file;
+              2 --> json.gz, DSL file and rasterizeOutput
   -e E Eneter env for cc-manage
   -s S Enter scene task id
   -p P Enter local path for download resources
@@ -169,7 +169,7 @@ optional arguments:
 	- -t: The choice of downloading resources, the complete works of downloadable resources are ccWorld.json.gz, rasterize.json.gz, task_config.json.gz
 	To
 		- 0: Only download the above json.gz resource and decompress json to -p
-		- Based on 1:0, generate dsl.py used by the user according to task_config.json
+		- Based on 1:0, generate DSL.py used by the user according to task_config.json
 		- On a 2:1 basis, download all rasterize results to rasterizeOutput according to rasterize.json
 		To
 		The default is 1 when it is not passed in

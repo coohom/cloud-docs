@@ -37,7 +37,7 @@ class LabelMapping(PixelProcessor):
 ```
 
 
-## Minervas output sample
+## MINERVAS output sample
 
 ## Experimental Setup
 

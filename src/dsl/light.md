@@ -53,7 +53,7 @@ IESspotlight is a spotlight with measured IES profile, which can provide realist
 <!-- * ```self.shader.world.lights```: Get the light list of the scene -->
 <!-- * ```light.{attr_name}```: Get the attributes of the light. For the name of the light attribute, see: [Light](../dsl/light.md) -->
 
-example dsl:
+example DSL:
 ```python
 class ReadLightDsl(EntityProcessor):
     def process(self):
@@ -76,7 +76,7 @@ class ReadLightDsl(EntityProcessor):
 <!-- Function Description
 `light.set_attr({attr_name}, **kwargs)`[^args description]: modify light attributes -->
 
-example dsl:
+example DSL:
 ```python
 class SetLightDsl(EntityProcessor):
     def process(self):
@@ -133,7 +133,7 @@ class TuneLights(EntityProcessor):
 ```
 
 ## Domain randomization - Light Sampler
-Example dsl:
+Example DSL:
 <!-- ## Example -->
 <!-- <span style="color:blue">*Comments:* `tune_temp` is not consistent with API above. Use color temperature or delta? </span>. -->
 <!-- ```python

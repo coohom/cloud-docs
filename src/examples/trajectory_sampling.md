@@ -80,7 +80,7 @@ class CustomTrajectorySampler(EntityProcessor):
         )
 ```
 
-## Minervas output sample
+## MINERVAS output sample
 After running with the DSL above, we can get a sequence of images (color and depth) along camera trajectory as shown below.
 
 ![trajectory_output](./../examples_figs/trajectory.png)

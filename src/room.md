@@ -30,7 +30,7 @@ The room's information is encapsulated as `Room`.
 
 <!-- <span style="color:blue">*Comments:* `World/ccworld` and `Instance/CCInstance` should be consistent across the doc.</span> -->
 
-Minervas has a scene level sampler to generate novel furniture arrangements. Users can generate various reasonable furniture arrangements for domain randomization with this sampler.
+MINERVAS has a scene level sampler to generate novel furniture arrangements. Users can generate various reasonable furniture arrangements for domain randomization with this sampler.
 
 Sampler code:
 <!-- For a given ccworld room, transform the space position of the CCInstance in the room to randomly generate a room layout. The new layout satisfies certain constraints and rules. -->

@@ -37,7 +37,7 @@ class ReplaceModel(EntityProcessor):
 ``` -->
 
 ### Example
-Now, we show a dsl code which randomly replace the model of sofa and table.
+Now, we show a DSL code which randomly replace the model of sofa and table.
 ```python
 class MeshSampler(EntityProcessor):
     def process(self):

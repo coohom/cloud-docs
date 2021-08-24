@@ -31,7 +31,7 @@ class CameraSetting(EntityProcessor):
             camera.set_attr("hfov", 53)
 ```
 
-## Minervas output sample
+## MINERVAS output sample
 
 ## Experimental Setup
 

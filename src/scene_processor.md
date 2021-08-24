@@ -10,10 +10,13 @@ Users need to implement a class inherite from `SceneProcessor` to control the sc
 Each room is an instance of the `class Room`.
 Based on these, users could filter scenes and modify the furniture layout of a room.
 
+|Attributes |Type | Description    |
+|---    |---    |--- |
+| -|-|- |
 
 |Function   |Description    |
 |---    |---    |
-|get_rooms()  |return the room list (list of `class Room`)|
+<!-- |get_rooms()  |return the room list (list of `class Room`)| -->
 
 More description about [Room](./room.md)
 

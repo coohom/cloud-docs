@@ -1,15 +1,15 @@
 # DSL Programming Guide
 
-Minervas has a programmable dataset generation pipeline with Domain-Specific Language. As the main interface for users to cutomize the dataset generation for different task, we describe our DSL in this section.
+MINERVAS has a programmable dataset generation pipeline with Domain-Specific Language. As the main interface for users to cutomize the dataset generation for different task, we describe our DSL in this section.
 
-<span style="color:blue">*Comments:* Many formats in DSL description is not unified. </span>
+<!-- <span style="color:blue">*Comments:* Many formats in DSL description is not unified. </span> -->
 <!-- toc -->
 
-## Introduction to Minervas DSL
+## Introduction to DSL of MINERVAS
 
-The DSL (Domain-Specific Language) of Minervas is kind of inernal DSL, it is based on Python programming languages. 
+The DSL (Domain-Specific Language) of MINERVAS is kind of inernal DSL, it is based on Python programming languages. 
 
-Each DSL file submitted to Minervas system is a Python file ended with `.py`. 
+Each DSL file submitted to MINERVAS system is a Python file ended with `.py`. 
 
 In the Python file, users need to:
 * Declare one or more classes inheriting from corresponding built-in processor class.
@@ -20,9 +20,9 @@ The subclasses:
 - Borrow the interface provided by the SDK and inherited attributes to implement custom functions in the `process()` function -->
 
 ## Processor classes
-There are currently four processor classes in Minervas system, which reflect different stages of the dataset generation pipeline.
+There are currently four processor classes in MINERVAS system, which reflect different stages of the dataset generation pipeline.
 
-<span style="color:blue">TODO: Need updates. </span>
+<!-- <span style="color:blue">TODO: Need updates. </span> -->
 
 1. SceneProcessor, provides custom filtering and modifying 3D scenes in scene-level.
 ```python

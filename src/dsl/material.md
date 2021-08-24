@@ -7,7 +7,7 @@ Since the material is the core asset of the database, we only explore its index 
 ## Domain randomization - Material Sampler
 <!-- ## Material Replacement API -->
 
-Minervas provides `replace_material` method, which will provides following functionality:
+MINERVAS provides `replace_material` method, which will provides following functionality:
 
 1. `REPLACE_ALL`: Given a `Model` to randomly replace the material corresponding to each part (each part is sampled separately from the preset material library).
 2. `REPLACE_BY_CATEGORY`: Given a `Model` and the desired material category, and randomly replace the material of each part to the material of the corresponding material category. (Each part is sampled separately from the desired category of the preset material library)
