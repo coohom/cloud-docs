@@ -1,6 +1,11 @@
 # Trajectory
 DSL supports adding trajectory to the entity. Trajectory is an important component especially for robotic related tasks. In the MINERVAS system, users could sample a random trajectory or add a handcrafted trajectory to the camera.
 
+There are three types of trajectories:
+* [Random Trajectory](../dsl/random_trajectory.md)
+* [Coverage Trajectory](../dsl/converage_trajectory.md)
+* [Defined Trajectory](../dsl/defined_trajectory.md)
+
 ## Attributes
 <!-- ## Trajectory types
 Two type of trajectory are supported in the DSL.
@@ -11,7 +16,7 @@ Two type of trajectory are supported in the DSL.
 
 <!-- <span style="color:blue">*Comments:* Default values are missing in the following forms.</span>. -->
 
-### General attributes
+<!-- ### General attributes -->
 |Attribute|Type|Description|
 |---|---|---|
 |type||RANDOM (random trajectory); COVERAGE (bow-shape trajectory); DEFINED (user customized trajectory, usually by tapping the key frame in the scene).|
