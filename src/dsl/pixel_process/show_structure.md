@@ -1,6 +1,6 @@
 # Room Structure Visualization
 
-Minvervas also support visualize structure of room (wall, floor and ceiling) in rgb rendering image using lines.
+MINERVAS also support visualize structure of room (wall, floor and ceiling) in rgb rendering image using lines.
 
 * Note that this function are only supported under perspective camera.
 
