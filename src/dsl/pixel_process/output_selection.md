@@ -11,17 +11,19 @@ In the MINERVAS system, there are several rendering output we support:
 
 <!-- What is the default output if PixelProcessor is not specified?  -->
 
-<span style="color:blue">*Comments:* Argument list and description of each funtion should be added.</span>
+<!-- <span style="color:blue">*Comments:* Argument list and description of each funtion should be added.</span> -->
 
 ## Function list
+`PixelProcessor` has several functions for selecting different output.
+
 |Function|Description|
 |---|---|
-|gen_normal(distort=0, noise=0)||
-|gen_instance(normal_threshold=230, distort=0, noise=0)||
-|gen_semantic(normal_threshold=230, distort=0, noise=0)||
-|gen_depth(distort=0, noise=0)||
-|gen_traj(**params)||
-|gen_albedo(distort=0, noise=0)||
+|gen_normal(distort=0, noise=0)|Generate normal map. (distort: `int`, noise: `int`)|
+|gen_instance(normal_threshold=230, merge_bias=30, distort=0, noise=0)|Generate intance map. (normal_threshold: `int`, merge_bias=30, distort: `int`, noise: `int`) |
+|gen_semantic(normal_threshold=230, distort=0, noise=0)| Generate semantic map. (normal_threshold: `int`, distort: `int`, noise: `int`)|
+|gen_depth(distort=0, noise=0)|Generate depth map. (distort: `int`, noise: `int`)|
+|gen_traj(**params)|Generate trajectory visualization (top-down view). (params: `dict`: parameter list from each type of [Trajectory](dsl/../../trajectory.md))|
+|gen_albedo(distort=0, noise=0)|Generate albedo map. (distort: `int`, noise: `int`)|
 
 <!-- <span style="color:blue">*Comments:* Differences between `RenderProcessor` and `PixelProcessor`.</span> -->
 ## Examples:

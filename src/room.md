@@ -7,19 +7,22 @@ The room's information is encapsulated as `Room`.
 <!-- Also, users could use functions, such as `get_polygon()`, to get room polygon for further processing. -->
 
 <span style="color:blue">*Comments:* More info about `room` needs here.</span>
+
+### Attributes
+
+|Attributes | Type | Description    |
+|---    |---    |---    |
+|-|-|-|
 ### Function
 
 |Function   |Description    |
 |---    |---    |
+|-|-|
 <!-- |get_height()   |return the height of the room  |
 |get_floor_corners()    |return the floor corners of the room   |
 |get_ceiling_corners()  |return the ceiling corners of the room | -->
 <!-- |get_polygon()  |return the polygon of the rooom using `shapely`| -->
 
-### Attributes
-
-|Function   |Description    |
-|---    |---    |
 <!-- |height |height of the room (`int`)  |
 |id     |id of the room (`str`)   |
 |type   |type name of the room (`str`) | -->

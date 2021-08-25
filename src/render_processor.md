@@ -1,6 +1,10 @@
 # Render Processor
-Render Stage: the system uses the generated scenes to generate 2D renderings with the photo-realistic rendering engine.
+In the Render Stage, MINERVAS system uses the generated scenes to generate 2D renderings with the photo-realistic rendering engine.
 
+## Attributes
+|Attributes |Type | Description    |
+|---    |---    |--- |
+| -|-|- |
 ## Function
 |Function|Description|
 |---|---|

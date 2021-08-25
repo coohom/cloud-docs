@@ -4,6 +4,7 @@
 - [DSL Programing Guide](./dsl.md)
   - [Scene Processor](./scene_processor.md)
     - [Room](./room.md)
+    - [Level](./level.md)
     <!-- - [Js Query Sample Code](./js_query_sample.md) -->
   - [Entity Processor](./entity_processor.md)
     - [Camera](dsl/camera.md)

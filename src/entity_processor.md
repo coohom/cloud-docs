@@ -8,11 +8,19 @@ Users can implement an `EntityProcessor` to control the entity process stage.
 Also, attributes (component) of each object (entity) can be manipulated in this processor, including:
 - [Camera](dsl/camera.md)
 - [Light](dsl/light.md)
+- [Trajectory](dsl/trajectory.md)
+- [Transform](dsl/transform.md)
 - [Material](dsl/material.md)
 - [Mesh](dsl/mesh.md)
-- [Trajectory](dsl/trajectory.md)
-- [Instance](dsl/instance.md)
 
+## Attributes
+|Attributes |Type | Description    |
+|---    |---    |--- |
+| -|-|- |
+## Function
+|Function|Description|
+|---|---|
+|-|-| 
 <!-- ### Function
 
 |Function   |Description    |

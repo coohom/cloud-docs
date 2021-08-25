@@ -66,7 +66,7 @@ class structureDsl(StructureProcessor):
 `shader` is a common attribute of all `Processor` classes. It is an instance of class `Shader`, which provides interface for accessing all 3D data assets and built-in function.
 
 Concretly, the class `Shader` has two attributes: `world` and `image_handler` which are instances of class `World` and class `ImageHandler`.
-
+<span style="color:blue">*Comments:* `Shader` has any functions? </span>
 ### `World` class
 
 <!-- The user-defined class inherits the attribute shader, which connects to the underlying data structure of the SDK. -->
@@ -93,9 +93,24 @@ We will introduce each class in the following parts.
 Currently supports six elements `Instance`, `Light`, `Room`, `Level`, `Trajectory`, and `Camera`.
 Each element corresponds to a class, with its own attributes and methods -->
 
+|Function|Description|
+|---|---|
+|tune_brightness__all_lights(ratio) | adjust the brightness of all lights in the scene(ratio: brightness adjustment multiple)|
+|tune_brightness__sunlight(ratio) | adjust the multiple of natural light and turn off other light sources. (ratio: brightness adjustment multiple) |
+|(TBD)|-|
+
 ### `ImageHandler` class
 
 `image_handler` object is an instance of class `ImageHandler`. This class contains severl image-related operations which we will introduce in [Noise Simulation](dsl/pixel_process/noise.md).
+
+| Attribute | Type | Description    |
+|---    |---  |---   |
+| (TBD) | - | - |
+
+| Function | Description    |
+|---    |---   |
+| save_files(cid, content, suffix, name) | - |
+|(TBD)|-|
 
 ## ECS-D
 Since our system supports customization to the scene, the user should easily access the scene with a suitable 3D scene representation. Thus, we employ the Entity Component System (ECS) architecture to represent and organize the 3D scene in our system. Additionally, to facilitate the randomness of scene synthesis, we integrate random distributions into the original ECS architecture, ie, attaching a distribution to depict each component. The newly proposed architecture is named as ECS-D, where D denotes distributions on components.
