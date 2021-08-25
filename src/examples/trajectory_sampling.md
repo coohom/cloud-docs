@@ -86,10 +86,10 @@ After running with the DSL above, we can get a sequence of images (color and dep
 ![trajectory_output](./../examples_figs/trajectory.png)
 
 
-## Experimental Setup
-We evaluated the usability of our system in this field based on the open source SLAM algorithm Bundlefusion [[2]](#2)
+<!-- ## Experimental Setup -->
 
 ## Result
+We evaluated the usability of our system in this field based on the open source SLAM algorithm Bundlefusion [[2]](#2)
 A qualitative result is shown below. Scenes can 
 be robustly reconstructed, as well as the textures of objects. 
 This demonstrates that our pipeline can output the proposed 
