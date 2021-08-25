@@ -1,0 +1,16 @@
+# This file is a template, and might need editing before it works on your project.
+# Full project: https://gitlab.com/pages/plain-html
+image: registry.qunhequnhe.com/kate/michaelfbryan/mdbook-docker-image:latest
+
+pages:
+  stage: deploy
+  tags:
+    - kube-runner
+  script:
+  - mdbook build
+  - mv book public
+  artifacts:
+    paths:
+    - public
+  only:
+  - doc
