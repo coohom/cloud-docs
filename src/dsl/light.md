@@ -8,13 +8,13 @@ DSL supports four types of lights. There are PointLight, RectangleLight, Sunligh
 <span style="color:blue">*Comments:* **emission (intensity, color temperature)** attribute is missing?</span>.
 
 ## Attributes
-### General attributes
-|Attribute|Description|
-|---|---|
-|lightType|PointLight, RectangleLight, SunLight, IESspotLight|
+<!-- ### General attributes -->
+|Attribute|Type|Description|
+|---|---|---|
+|lightType||PointLight, RectangleLight, SunLight, IESspotLight|
 
-### Specific attributes
-
+<!-- ### Specific attributes -->
+<!-- 
 #### RectangleLight
 The size of rectangel light is determined by U and V vectors. The normal direction is a unit vector with the direction of cross prodcut of U and V vector.
 
@@ -22,30 +22,30 @@ The size of rectangel light is determined by U and V vectors. The normal directi
 |---|---|
 |directionU|The format is {"x": 0.0, "y": -291.0, "z": 0.0}|
 |normalDirection|The format is {"x": -0.0, "y": -0.0, "z": -1.0}|
-|position|The format is {"x": 191.20065,"y": 9078.513,"z": 69.999985}, the unit is mm|
+|position|The format is {"x": 191.20065,"y": 9078.513,"z": 69.999985}, the unit is mm| -->
 
-#### PointLight
+<!-- #### PointLight
 Point light radiates illumination into all directions uniformly.
 
 |Attribute|Description|
 |---|---|
-|position|The format is {"x": 191.20065,"y": 9078.513,"z": 69.999985}|
+|position|The format is {"x": 191.20065,"y": 9078.513,"z": 69.999985}| -->
 
-#### SunLight
+<!-- #### SunLight
 Sun light is direction light. It radiates a specified power per unit area along a fixed direction.
 
 |Attribute|Description|
 |---|---|
-|direction|The format is {"x": -0.57735026, "y": 0.57735026, "z": 0.57735026}|
+|direction|The format is {"x": -0.57735026, "y": 0.57735026, "z": 0.57735026}| -->
 
-#### IESspotLight
-IESspotlight is a spotlight with measured IES profile, which can provide realistic lighting effect.
+<!-- #### IESspotLight -->
+<!-- IESspotlight is a spotlight with measured IES profile, which can provide realistic lighting effect. -->
 <!-- <span style="color:blue">*Comments:* IES profile can be selected? Or it always uses a default IES profile. More discussion about IES may be added here.</span>. -->
 
-|Attribute|Description|
-|---|---|
-|direction|The format is {"x": -0.57735026, "y": 0.57735026, "z": 0.57735026}|
-|position|The format is {"x": 191.20065,"y": 9078.513,"z": 69.999985}, the unit is mm|
+<!-- |Attribute|Description| -->
+<!-- |---|---| -->
+<!-- |direction|The format is {"x": -0.57735026, "y": 0.57735026, "z": 0.57735026}| -->
+<!-- |position|The format is {"x": 191.20065,"y": 9078.513,"z": 69.999985}, the unit is mm| -->
 
 ### Access the attributes of light
 
@@ -72,6 +72,7 @@ class ReadLightDsl(EntityProcessor):
 | tune_intensity(ratio) | Set brightness attenutation. (ratio: brightness adjustment multiple)|
 <!-- toc -->
 
+<span style="color:blue">*Comments:* Any function for creating a new light?</span>.
 ### Modify the lighting attributes directly
 <!-- Function Description
 `light.set_attr({attr_name}, **kwargs)`[^args description]: modify light attributes -->

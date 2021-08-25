@@ -1,27 +1,30 @@
 # Camera
 
-DSL supports the addition of three types of cameras, including perspective cameras, orthographic cameras, and panoramic cameras.
+DSL supports the addition of three types of cameras, including:
+* [Perspective Camera](../dsl/perspective_camera.md)
+* [Orthographic Camera](../dsl/orthographic_camera.md)
+* [Panoramic Camera](../dsl/panoramic_camera.md)
 
 When adding a camera, you need to set the camera's parameters, including the common parameters of all types of cameras and the unique parameters of specific types of cameras.
 
 ## Attributes
-### General attributes
-|Attribute|Description|Default value|Required|
-|---|---|---|---|
-|id|Camera ID, users need to add a prefix to ensure that the ID is unique| |Yes|
-|cameraType|Camera type, support PERSPECTIVE (perspective camera), ORTHO (orthogonal camera), PANORAMA (panoramic camera)|"PERSPECTIVE"|
-|position|Camera coordinates, the format is {'x':1,'y':2,'z':3}, the unit is mm| |Yes|
-|lookAt|Target coordinates, the format is {'x':1,'y':2,'z':3}, the unit is mm|position+{'x':1,'y':0,'z': 0}|
-|up|Camera up direction, the format is {'x':1,'y':2,'z':3}, the unit is mm|{'x':0,'y':0,'z': 1}|
-|imageWidth|Width of the image| |Yes|
-|imageHeight|The height of the image| |Yes|
-|near|Cut plane near| 200|
-|far|Cut plane far|2000000|
-|iso|Indicates the sensitivity of the camera||
-|fnumber|f value, indicating the aperture size||
-|shutterSpeed|The shutter speed of the camera, the unit is s^-1||
+<!-- ### General attributes -->
+|Attribute|Type|Description|Default value|Required|
+|---|---|---|---|---|
+|id||Camera ID, users need to add a prefix to ensure that the ID is unique| |Yes|
+|cameraType||Camera type, support PERSPECTIVE (perspective camera), ORTHO (orthogonal camera), PANORAMA (panoramic camera)|"PERSPECTIVE"|
+|position||Camera coordinates, the format is {'x':1,'y':2,'z':3}, the unit is mm| |Yes|
+|lookAt||Target coordinates, the format is {'x':1,'y':2,'z':3}, the unit is mm|position+{'x':1,'y':0,'z': 0}|
+|up||Camera up direction, the format is {'x':1,'y':2,'z':3}, the unit is mm|{'x':0,'y':0,'z': 1}|
+|imageWidth||Width of the image| |Yes|
+|imageHeight||The height of the image| |Yes|
+|near||Cut plane near| 200|
+|far||Cut plane far|2000000|
+|iso||Indicates the sensitivity of the camera||
+|fnumber||f value, indicating the aperture size||
+|shutterSpeed||The shutter speed of the camera, the unit is s^-1||
 
-### Specific attributes
+<!-- ### Specific attributes
 #### PERSPECTIVE camera
 |Attribute|Description|Default value|Required|
 |---|---|---|---|
@@ -32,11 +35,14 @@ When adding a camera, you need to set the camera's parameters, including the com
 |Attribute|Description|Default value|Required|
 |---|---|---|---|
 |orthoWidth|The width of the camera displayed in the model space, in millimeters|none|yes|
-|orthoHeight|The height displayed by the camera in the model space, in millimeters|none|yes|
+|orthoHeight|The height displayed by the camera in the model space, in millimeters|none|yes| -->
 
 
 <!-- # Camera operations -->
 ## Function
+|Function   |Description    |
+|---    |---    |
+|set_attr({attr_name}, *args, **kwargs)|-|
 
 <!-- toc -->
 ## Get the camera and its attributes
@@ -107,3 +113,15 @@ class TopView(EntityProcessor):
 ```
 
 ## Domain randomization - Camera Sampler
+Randomize camera position and view direction for `PanoramicCamera`.
+```python
+import numpy as np
+class CameraRandomizer(EntityProcessor):
+    def process(self):
+        for camera in self.shader.world.cameras:
+            random_vec = np.random.normal(0, 1, size=3)
+            camera_pos = np.array(list(camera.position.values()))
+            randomized_pos = camera_pos + random_vec * np.array([500.0, 500.0, 50.0])
+            camera.set_attr('position', x=randomized_pos[0], y=randomized_pos[1], z=randomized_pos[2])
+            camera.set_attr('lookAt', z=randomized_pos[2])
+```

@@ -12,13 +12,13 @@ Two type of trajectory are supported in the DSL.
 <!-- <span style="color:blue">*Comments:* Default values are missing in the following forms.</span>. -->
 
 ### General attributes
-|Attribute|Description|
-|---|---|
-|type|RANDOM (random trajectory); COVERAGE (bow-shape trajectory); DEFINED (user customized trajectory, usually by tapping the key frame in the scene).|
-|pitch| The angle of pitch |
-|height| The height of camera. The unit is mm.|
+|Attribute|Type|Description|
+|---|---|---|
+|type||RANDOM (random trajectory); COVERAGE (bow-shape trajectory); DEFINED (user customized trajectory, usually by tapping the key frame in the scene).|
+|pitch|| The angle of pitch |
+|height|| The height of camera. The unit is mm.|
 
-### General attributes for RANDOM and COVERAGE type trajectory
+<!-- ### General attributes for RANDOM and COVERAGE type trajectory
 |Attribute|Description|
 |---|---|
 |initCamera|Initialize camera. Input arguments are the same as [Camera](dsl/camera.md). |
@@ -34,11 +34,11 @@ Two type of trajectory are supported in the DSL.
 #### Specific attributes for COVERAGE type trajectory
 |Attribute|Description|
 |---|---|
-|boundary|Restriction range of trajectory|
-### Specific attributes for DEFINED type trajectory
+|boundary|Restriction range of trajectory| -->
+<!-- ### Specific attributes for DEFINED type trajectory -->
 <!-- <span style="color:blue">*Comments:* This parameter list needs revision (e.g., description of keyPoints is incorrect).</span>.  -->
 
-|Attribute|Description|Default value|Required|Remark|
+<!-- |Attribute|Description|Default value|Required|Remark|
 |---|---|---|---|---|
 |imageWidth|The width of rendered image||Yes||
 |imageHeight|The height of rendered image||Yes||
@@ -52,8 +52,12 @@ Two type of trajectory are supported in the DSL.
 |vfow| Vertical field of view (the unit is degree) | | No | Required if camera type is default or 'PERSPECTIVE' |
 |orthoWidth| horizontal field of view (the unit is mm) | | No | Required if camera type is default or 'PERSPECTIVE' |
 |orthoHeight| vertical field of view (the unit is mm) | | No | Required if camera type is default or 'PERSPECTIVE' |
-|heightMode| Mode of camera height, 0: initial randomization, 1: procedual randomization | | Yes ||
+|heightMode| Mode of camera height, 0: initial randomization, 1: procedual randomization | | Yes || -->
 
+## Function
+|Function   |Description    |
+|---    |---    |
+|{attr_name}| Get attributes of trajectory.|
 
 ### Get trajectory and its attributes
 
@@ -120,11 +124,10 @@ class CreateTrajDsl(EntityProcessor):
                 boundary=room.boundary,
 
                 type="COVERAGE"
-                # type="RANDOM"
             )
 ```
 
-## Add Customized trajectory
+### Add Customized trajectory
 
 ```python
 from ksecs.ECS.processors.entity_processor import EntityProcessor
