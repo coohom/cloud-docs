@@ -9,18 +9,19 @@ Also, attributes (component) of each object (entity) can be manipulated in this 
 - [Camera](dsl/camera.md)
 - [Light](dsl/light.md)
 - [Trajectory](dsl/trajectory.md)
-- [Transform](dsl/transform.md)
+- [Transform](dsl/instance.md)
 - [Material](dsl/material.md)
 - [Mesh](dsl/mesh.md)
 
-## Attributes
+<!-- ## Attributes
 |Attributes |Type | Description    |
 |---    |---    |--- |
 | -|-|- |
 ## Function
 |Function|Description|
 |---|---|
-|-|-| 
+|-|-|  -->
+
 <!-- ### Function
 
 |Function   |Description    |
@@ -51,30 +52,30 @@ class EntityExample(EntityProcessor):
                 self.delete(entity)
 ``` -->
 
-## Entity operation
+<!-- ## Entity operation -->
 
-<span style="color:blue">*Comments:* Need more details.</span>
-## Get Entity
-TODO
+<!-- <span style="color:blue">*Comments:* Need more details.</span> -->
+<!-- ## Get Entity
+TODO -->
 
-### Delete Entity
+<!-- ### Delete Entity
 Function Description
 * ```self.shader.world.delete_entity((entity))```: delete entity from the scene
 
-example
-```python
+example -->
+<!-- ```python
 class DeleteCameraDsl(EntityProcessor):
      def process(self):
          # loop all camera
          for camera in self.shader.world.cameras:
              # delete camera
              entityId = self.shader.world.delete_entity(camera)
-```
+``` -->
 
-### Create Entity
+<!-- ### Create Entity -->
 
 ## Entity filtering
-We filter out cameras in the room with few furniture.
+We filter out cameras in the room with few furniture in the following example DSL.
 ```python
 from ksecs.ECS.processors.entity_processor import EntityProcessor
 from shapely.geometry import Point

@@ -6,18 +6,24 @@ The room's information is encapsulated as `Room`.
 <!-- Users could sample furniture layout using function `sample()`. -->
 <!-- Also, users could use functions, such as `get_polygon()`, to get room polygon for further processing. -->
 
-<span style="color:blue">*Comments:* More info about `room` needs here.</span>
+<!-- <span style="color:blue">*Comments:* More info about `room` needs here.</span> -->
 
 ### Attributes
 
 |Attributes | Type | Description    |
 |---    |---    |---    |
-|-|-|-|
-### Function
+|roomId|str| String for identifing the room.|
+|position|list| 2D coordinates of room center.|
+|boundary|list| Boundary of room represented by corners in 2D coordinates.|
+|name|str| The name of room.|
+|area|str| The area of room.|
+
+<!-- ### Function
 
 |Function   |Description    |
 |---    |---    |
-|-|-|
+|-|-| -->
+
 <!-- |get_height()   |return the height of the room  |
 |get_floor_corners()    |return the floor corners of the room   |
 |get_ceiling_corners()  |return the ceiling corners of the room | -->

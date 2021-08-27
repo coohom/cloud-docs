@@ -29,13 +29,13 @@ import copy
 import glm
 ``` -->
 
-We filter scenes that contain rooms for manhattan layout estimation in the Scene Process Stage, as implemented in the `ManhattanSceneFilter`.
+First, we filter scenes which get rooms with manhattan layout assumption in the Scene Process Stage, as implemented in the `ManhattanSceneFilter`.
 
-In the entity process stage, we first filter cameras in the relative empty rooms as whon in `CameraFilter`.
+In the entity process stage, we first filter cameras in the relative empty rooms as shown in `CameraFilter`.
 
-We setup the camera parameters in `CameraSetting`. We adopt randomization for camera as shown in `CameraRandomizer`.
+Then, we setup the camera parameters in `CameraSetting`. We also adopt domain randomization for cameras as shown in `CameraRandomizer`.
 
-After rendering process stage, we setup customized output for generating information about room structure as shown in `StructureOutput`.
+After the rendering process stage, we setup customized output for generating information about room structure as shown in `StructureOutput`.
 
 <!-- For this task, we set the type of camera to `PANORAMA` in Entity Process Stage, and output the corner and camera parameters in the Entity Process Stage. -->
 

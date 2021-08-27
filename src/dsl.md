@@ -41,7 +41,7 @@ class entityDsl(EntityProcessor):
 3. RenderProcessor, provides customization in the rendering process. 
 ```python
 from ksecs.ECS.processors.render_processor import RenderProcessor
-class pixelDsl(RenderProcessor):
+class renderDsl(RenderProcessor):
 	def process(self, *args, **kwargs):
 		pass
 ```
@@ -65,8 +65,9 @@ class structureDsl(StructureProcessor):
 ## Attribute: shader
 `shader` is a common attribute of all `Processor` classes. It is an instance of class `Shader`, which provides interface for accessing all 3D data assets and built-in function.
 
-Concretly, the class `Shader` has two attributes: `world` and `image_handler` which are instances of class `World` and class `ImageHandler`.
-<span style="color:blue">*Comments:* `Shader` has any functions? </span>
+<!-- Concretly, the class `Shader` has two attributes: `world` and `image_handler` which are instances of class `World` and class `ImageHandler`.
+
+<span style="color:blue">*Comments:* `Shader` has any functions? </span> -->
 ### `World` class
 
 <!-- The user-defined class inherits the attribute shader, which connects to the underlying data structure of the SDK. -->
@@ -77,6 +78,7 @@ Concretly, the class `Shader` has two attributes: `world` and `image_handler` wh
 
 <!-- World is an instantiated object of class World, which is used to store the "database" of the input data of CC world, which is composed of various entities of Elment. -->
 
+The class `Shader` has an attribute: `world`.
 `world` object is an instance of class `World`. The `World` class is an interface for a whole 3D scene in the database. It contains serveral elements:
 
 | Attribute | Type | Description    |
@@ -95,11 +97,12 @@ Each element corresponds to a class, with its own attributes and methods -->
 
 |Function|Description|
 |---|---|
+|delete_entity((entity)) |delete entity from the scene.|
 |tune_brightness__all_lights(ratio) | adjust the brightness of all lights in the scene(ratio: brightness adjustment multiple)|
 |tune_brightness__sunlight(ratio) | adjust the multiple of natural light and turn off other light sources. (ratio: brightness adjustment multiple) |
 |(TBD)|-|
 
-### `ImageHandler` class
+<!-- ### `ImageHandler` class
 
 `image_handler` object is an instance of class `ImageHandler`. This class contains severl image-related operations which we will introduce in [Noise Simulation](dsl/pixel_process/noise.md).
 
@@ -110,7 +113,7 @@ Each element corresponds to a class, with its own attributes and methods -->
 | Function | Description    |
 |---    |---   |
 | save_files(cid, content, suffix, name) | - |
-|(TBD)|-|
+|(TBD)|-| -->
 
 ## ECS-D
 Since our system supports customization to the scene, the user should easily access the scene with a suitable 3D scene representation. Thus, we employ the Entity Component System (ECS) architecture to represent and organize the 3D scene in our system. Additionally, to facilitate the randomness of scene synthesis, we integrate random distributions into the original ECS architecture, ie, attaching a distribution to depict each component. The newly proposed architecture is named as ECS-D, where D denotes distributions on components.

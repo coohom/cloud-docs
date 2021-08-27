@@ -21,7 +21,9 @@ MINERVAS provides `replace_material` method, which will provides following funct
 | :--------------- | :------------------------------- ------- | :----------------------------------------- ----------------- | :--------------------- |
 | id | Yes | String | Identifies the `Model` to be modified |
 | type | Yes | `REPLACE_ALL` \| `REPLACE_BY_CATEGORY` \| `REPLACE_TO_GIVEN_LIST` | replacement type |
-| category | Required when type=`REPLACE_BY_CATEGORY` | String | Category name to be replaced <span style="color:blue">*Comments:* Candidate mateiral categories need to be provided.</span>.|
+| category | Required when type=`REPLACE_BY_CATEGORY` | String | Category name to be replaced. WOOD(0L),
+    METAL(1),
+    STONE(2); <span style="color:blue">*Comments:* Candidate mateiral categories need to be provided.</span>.|
 |ids|Required when type=`REPLACE_TO_GIVEN_LIST` |List of String|ID list to be replaced|
 
 <!-- Usage:

@@ -1,4 +1,4 @@
-## Introduction to MINERVAS
+# Introduction to MINERVAS
 
 <!-- MINERVAS is a scene cognitive training dataset solution for the interior scene agent industry. Users can use MINERVAS to generate large-scale low-cost scene recognition data sets based on Coohom's massive scene sets.
 
@@ -30,4 +30,4 @@ Considering the flexibility and ease of use of the system, MINERVAS provides two
 
 To get started with the web interface of MINERVAS, please read the [*Getting Started* page](user_manual.md). In this documentation, we provide a [DSL programming guide](dsl.md) of MINERVAS along with some [examples](examples.md) of vision tasks.
 
-For more information, please visit our [project page](https://coohom.github.io/MINERVAS/). For any problem in usage or any suggestion, please feel free to contact us <minervas@qunhemail.com>.
+> For more information, please visit our [project page](https://coohom.github.io/MINERVAS/). For any problem in usage or any suggestion, please feel free to contact us <minervas@qunhemail.com>.

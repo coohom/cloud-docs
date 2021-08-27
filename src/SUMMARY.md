@@ -1,6 +1,6 @@
 # Summary
 - [Introduction](./introduction.md)
-  - [Getting Started](./user_manual.md)
+  <!-- - [Getting Started](./user_manual.md) -->
 - [DSL Programing Guide](./dsl.md)
   - [Scene Processor](./scene_processor.md)
     - [Room](./room.md)
