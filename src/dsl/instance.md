@@ -10,7 +10,7 @@ Each object in the scene is an `Instance`. User can add/delete some instance, or
 | id |str| Instance ID, users need to add their own prefix to ensure that the ID is unique |-| Yes |
 | label |int| The label of the instance, indicating the category to which the instance belongs |-| Yes |
 | transform |list| The transformation matrix of the instance, which is a list type of a 4 x 4 matrix transformed according to **row first** |-| Yes |
-| type |str| Possible values are MESH \| ASSET\| CC_OBJECT\| COMPOSITE |-| Yes |
+| type |str| Possible values are MESH \| ASSET\| COMPOSITE |-| Yes |
 <!-- |size|list|Properties only available when type is ASSET<span style="color:blue">*Comments:* more description here.</span>.||| -->
 
 ## Function
