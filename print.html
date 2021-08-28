@@ -1221,12 +1221,12 @@ class PixelExample(PixelProcessor):
 <h2><a class="header" href="#function-list" id="function-list">Function list</a></h2>
 <p><code>PixelProcessor</code> has several functions for selecting different output.</p>
 <table><thead><tr><th>Function</th><th>Description</th></tr></thead><tbody>
-<tr><td>gen_normal(distort=0, noise=0)</td><td>Generate normal map. (distort: <code>int</code>, noise: <code>int</code>)</td></tr>
-<tr><td>gen_instance(distort=0, noise=0)</td><td>Generate intance map. (distort: <code>int</code>, noise: <code>int</code>)</td></tr>
-<tr><td>gen_semantic(distort=0, noise=0)</td><td>Generate semantic map. (distort: <code>int</code>, noise: <code>int</code>)</td></tr>
+<tr><td>gen_normal(distort=0)</td><td>Generate normal map. (distort: <code>int</code>)</td></tr>
+<tr><td>gen_instance(distort=0)</td><td>Generate intance map. (distort: <code>int</code>)</td></tr>
+<tr><td>gen_semantic(distort=0)</td><td>Generate semantic map. (distort: <code>int</code>)</td></tr>
 <tr><td>gen_depth(distort=0, noise=0)</td><td>Generate depth map. (distort: <code>int</code>, noise: <code>int</code>)</td></tr>
 <tr><td>gen_traj(**params)</td><td>Generate trajectory visualization (top-down view). (params: <code>dict</code>: parameter list from each type of <a href="dsl/pixel_process/dsl/../../trajectory.html">Trajectory</a>)</td></tr>
-<tr><td>gen_albedo(distort=0, noise=0)</td><td>Generate albedo map. (distort: <code>int</code>, noise: <code>int</code>)</td></tr>
+<tr><td>gen_albedo(distort=0)</td><td>Generate albedo map. (distort: <code>int</code>)</td></tr>
 </tbody></table>
 <!-- <span style="color:blue">*Comments:* Differences between `RenderProcessor` and `PixelProcessor`.</span> -->
 <h2><a class="header" href="#examples" id="examples">Examples:</a></h2>
@@ -1244,7 +1244,7 @@ class PixelExample(PixelProcessor):
 <pre><code class="language-python">from ksecs.ECS.processors.pixel_processor import PixelProcessor
 class NormalDsl(PixelProcessor):
     def process(self, **kwargs):
-        self.gen_normal(distort=1, noise=2)
+        self.gen_normal(distort=1)
 </code></pre>
 <h3><a class="header" href="#instance-map" id="instance-map">Instance map</a></h3>
 <p>Output format:</p>
@@ -1260,7 +1260,7 @@ class NormalDsl(PixelProcessor):
 <pre><code class="language-python">from ksecs.ECS.processors.pixel_processor import PixelProcessor
 class InstanceDsl(PixelProcessor):
     def process(self, **kwargs):
-        self.gen_instance(distort=0, noise=0)
+        self.gen_instance(distort=0)
 </code></pre>
 <!-- Notes: -->
 <!-- <span style="color:blue">*Comments:* TODO.</span> -->
@@ -1276,7 +1276,7 @@ class InstanceDsl(PixelProcessor):
 <pre><code class="language-python">from ksecs.ECS.processors.pixel_processor import PixelProcessor
 class SemanticDsl(PixelProcessor):
     def process(self, **kwargs):
-        self.gen_semantic(distort=0, noise=0)
+        self.gen_semantic(distort=0)
 </code></pre>
 <!-- Notes: -->
 <!-- <span style="color:blue">*Comments:* TODO.</span> -->
@@ -1290,7 +1290,7 @@ class SemanticDsl(PixelProcessor):
 <pre><code class="language-python">from ksecs.ECS.processors.pixel_processor import PixelProcessor
 class DepthDsl(PixelProcessor):
     def process(self, **kwargs):
-        self.gen_depth(distort=0, noise=0)
+        self.gen_depth(distort=0, noise=1)
 </code></pre>
 <h3><a class="header" href="#trajectory-map" id="trajectory-map">Trajectory map</a></h3>
 <p>Visualize trajectory in the top-down view rendering result. Customized trajectory and bow-shape trajectory are currently supported.</p>
@@ -1313,7 +1313,7 @@ class TrajDSL(RenderProcessor):
 <pre><code class="language-python">from ksecs.ECS.processors.pixel_processor import PixelProcessor
 class AlbedoDsl(PixelProcessor):
     def process(self, **kwargs):
-        self.gen_albedo(distort=0, noise=0)
+        self.gen_albedo(distort=0)
 </code></pre>
 <h1><a class="header" href="#noise-simulation" id="noise-simulation">Noise simulation</a></h1>
 <p>MINERVAS system supports to simulate four common image noises:</p>
