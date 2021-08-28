@@ -28,6 +28,7 @@ The pipeline of MINERVAS includes the following parts:
 
 Considering the flexibility and ease of use of the system, MINERVAS provides two ways of usage: a user-friendly GUI mode and a flexible programmable mode. In the programmable mode, the pipeline is fully controlled by the Domain-Specific Language (DSL). The DSL of MINERVAS is based on Python programming languages and contains multiple useful built-in functions as we will introduce in the next chapter. Moreover, as the diversity of the data is crucial for learning-based methods, MINERVAS also supports domain randomization both in GUI mode and programmable mode.
 
-To get started with the web interface of MINERVAS, please read the [*Getting Started* page](user_manual.md). In this documentation, we provide a [DSL programming guide](dsl.md) of MINERVAS along with some [examples](examples.md) of vision tasks.
+<!-- To get started with the web interface of MINERVAS, please read the [*Getting Started* page](user_manual.md).  -->
+In this documentation, we provide a [DSL programming guide](dsl.md) of MINERVAS along with some [examples](examples.md) of vision tasks.
 
 > For more information, please visit our [project page](https://coohom.github.io/MINERVAS/). For any problem in usage or any suggestion, please feel free to contact us <minervas@qunhemail.com>.

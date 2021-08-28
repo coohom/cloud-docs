@@ -26,7 +26,7 @@ MINERVAS system supports to simulate four common image noises:
 <!-- `add_depth_noise(img, noise_type)` can be called according to the above use cases -->
 <!-- among them -->
 
-### Example
+<!-- ### Example
 Following DSL shows the procedure of adding the noise to an exising image.
 ```python
 class TestPixelDsl(PixelProcessor):
@@ -36,4 +36,4 @@ class TestPixelDsl(PixelProcessor):
              self.shader.image_handler.save_files(
                  cid, content=img_after_noise, suffix="png", name='depth'
              )
-```
+``` -->

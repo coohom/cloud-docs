@@ -11,10 +11,10 @@ Specifically, users can
 3. add distortion to rendered image.
 4. visualize strucutre of room.
 
-## Attributes
+<!-- ## Attributes
 |Attributes |Type | Description    |
 |---    |---    |--- |
-| -|-|- |
+| -|-|- | -->
 ## Function
 |Function|Description|
 |---|---|

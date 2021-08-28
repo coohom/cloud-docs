@@ -4,6 +4,5 @@ IESspotlight is a spotlight with measured IES profile, which can provide realist
 
 |Attribute|Type|Description|
 |---|---|---|
-|lightType||PointLight, RectangleLight, SunLight, IESspotLight|
-|direction||The format is {"x": -0.57735026, "y": 0.57735026, "z": 0.57735026}|
-|position||The format is {"x": 191.20065,"y": 9078.513,"z": 69.999985}, the unit is mm|
+|direction|dict|The format is {"x": -0.57735026, "y": 0.57735026, "z": 0.57735026}|
+|position|dict|The format is {"x": 191.20065,"y": 9078.513,"z": 69.999985}, the unit is mm|

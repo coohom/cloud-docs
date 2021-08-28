@@ -19,8 +19,8 @@ In the MINERVAS system, there are several rendering output we support:
 |Function|Description|
 |---|---|
 |gen_normal(distort=0, noise=0)|Generate normal map. (distort: `int`, noise: `int`)|
-|gen_instance(normal_threshold=230, merge_bias=30, distort=0, noise=0)|Generate intance map. (normal_threshold: `int`, merge_bias=30, distort: `int`, noise: `int`) |
-|gen_semantic(normal_threshold=230, distort=0, noise=0)| Generate semantic map. (normal_threshold: `int`, distort: `int`, noise: `int`)|
+|gen_instance(distort=0, noise=0)|Generate intance map. (distort: `int`, noise: `int`) |
+|gen_semantic(distort=0, noise=0)| Generate semantic map. (distort: `int`, noise: `int`)|
 |gen_depth(distort=0, noise=0)|Generate depth map. (distort: `int`, noise: `int`)|
 |gen_traj(**params)|Generate trajectory visualization (top-down view). (params: `dict`: parameter list from each type of [Trajectory](dsl/../../trajectory.md))|
 |gen_albedo(distort=0, noise=0)|Generate albedo map. (distort: `int`, noise: `int`)|
@@ -57,13 +57,13 @@ Usage:
 from ksecs.ECS.processors.pixel_processor import PixelProcessor
 class InstanceDsl(PixelProcessor):
     def process(self, **kwargs):
-        self.gen_instance(normal_threshold=230, merge_bias=30, distort=0, noise=0)
+        self.gen_instance(distort=0, noise=0)
 ```
 
-Notes:
-<span style="color:blue">*Comments:* TODO.</span>
-1. normal_threshold:
-2. merge_bias
+<!-- Notes: -->
+<!-- <span style="color:blue">*Comments:* TODO.</span> -->
+<!-- 1. normal_threshold: -->
+<!-- 2. merge_bias -->
 
 
 ### Semantic map
@@ -77,12 +77,12 @@ Usage:
 from ksecs.ECS.processors.pixel_processor import PixelProcessor
 class SemanticDsl(PixelProcessor):
     def process(self, **kwargs):
-        self.gen_semantic(normal_threshold=230, distort=0, noise=0)
+        self.gen_semantic(distort=0, noise=0)
 ```
 
-Notes:
-<span style="color:blue">*Comments:* TODO.</span>
-1. normal_threshold:
+<!-- Notes: -->
+<!-- <span style="color:blue">*Comments:* TODO.</span> -->
+<!-- 1. normal_threshold: -->
 
 ### Depth map
 
@@ -109,13 +109,13 @@ class TrajDSL(RenderProcessor):
 ```
 
 Notes:
-**params can be:
-1. type: int. Select trajectory type.
+**params to be specified are in [Trajectory](./dsl/../../trajectory.md).
+<!-- 1. type: int. Select trajectory type.
     * 0: (DEFINED) Customized trajectory
     * 1: (COVERAGE) Bow-shape trajectory
-    * 2: (RANDOM) Random trajectory
+    * 2: (RANDOM) Random trajectory -->
 
-<span style="color:blue">*Comments:* More parameters?.</span>
+<!-- <span style="color:blue">*Comments:* More parameters?.</span> -->
 
 ### Albedo map
 

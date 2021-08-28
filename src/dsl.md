@@ -52,13 +52,13 @@ class pixelDsl(PixelProcessor):
 	def process(self, *args, **kwargs):
 		pass
 ```
-5. StructureProcessor, edit the output structured data
+<!-- 5. StructureProcessor, edit the output structured data
 ```python
 from ksecs.ECS.processors.structure_processor import StructureProcessor
 class structureDsl(StructureProcessor):
 	def process(self, *args, **kwargs):
 		pass
-```
+``` -->
 > **Tips**: Don't forget to import the corresponding processor class from `ksces.ECS.processors` before use.
 
 <!-- ## An attribute - shader -->
@@ -98,9 +98,14 @@ Each element corresponds to a class, with its own attributes and methods -->
 |Function|Description|
 |---|---|
 |delete_entity((entity)) |delete entity from the scene.|
+|add_camera({attr_name}={attr_value})|create a new camera and add it to the scene|
 |tune_brightness__all_lights(ratio) | adjust the brightness of all lights in the scene(ratio: brightness adjustment multiple)|
 |tune_brightness__sunlight(ratio) | adjust the multiple of natural light and turn off other light sources. (ratio: brightness adjustment multiple) |
-|(TBD)|-|
+|replace_material(id, type, category) |domain randomization for materials. See [Material](./dsl/material.md)|
+|replace_model(id)|domain randomization for models. See [Model](./dsl/mesh.md)|
+|add_trajectory({attr_name}={attr_value})| create a new trajectory and add to the scene. See [Trajectory](./dsl/trajectory.md)|
+|pick(**kwargs)|Save customized attributes as output. See example [Layout Estimation](./examples/layout_estimation.md)|
+<!-- |(TBD)|-| -->
 
 <!-- ### `ImageHandler` class
 

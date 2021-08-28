@@ -11,18 +11,18 @@ When adding a camera, you need to set the camera's parameters, including the com
 <!-- ### General attributes -->
 |Attribute|Type|Description|Default value|Required|
 |---|---|---|---|---|
-|id||Camera ID, users need to add a prefix to ensure that the ID is unique| |Yes|
-|cameraType||Camera type, support PERSPECTIVE (perspective camera), ORTHO (orthogonal camera), PANORAMA (panoramic camera)|"PERSPECTIVE"|
-|position||Camera coordinates, the format is {'x':1,'y':2,'z':3}, the unit is mm| |Yes|
-|lookAt||Target coordinates, the format is {'x':1,'y':2,'z':3}, the unit is mm|position+{'x':1,'y':0,'z': 0}|
-|up||Camera up direction, the format is {'x':1,'y':2,'z':3}, the unit is mm|{'x':0,'y':0,'z': 1}|
-|imageWidth||Width of the image| |Yes|
-|imageHeight||The height of the image| |Yes|
-|near||Cut plane near| 200|
-|far||Cut plane far|2000000|
-|iso||Indicates the sensitivity of the camera||
-|fnumber||f value, indicating the aperture size||
-|shutterSpeed||The shutter speed of the camera, the unit is s^-1||
+|id|str|Camera ID, users need to add a prefix to ensure that the ID is unique|-|Yes|
+|cameraType|str|Camera type, support PERSPECTIVE (perspective camera), ORTHO (orthogonal camera), PANORAMA (panoramic camera)|"PERSPECTIVE"|
+|position|dict|Camera coordinates, the format is {'x':1,'y':2,'z':3}, the unit is mm|-|Yes|
+|lookAt|dict|Target coordinates, the format is {'x':1,'y':2,'z':3}, the unit is mm|position+{'x':1,'y':0,'z': 0}|
+|up|dict|Camera up direction, the format is {'x':1,'y':2,'z':3}, the unit is mm|{'x':0,'y':0,'z': 1}|
+|imageWidth|int|Width of the image|-|Yes|
+|imageHeight|int|The height of the image|-|Yes|
+|near|float|Cut plane near|200|
+|far|float|Cut plane far|2000000|
+<!-- |iso|float|Indicates the sensitivity of the camera|| -->
+<!-- |fnumber|float|f value, indicating the aperture size|| -->
+<!-- |shutterSpeed|float|The shutter speed of the camera, the unit is s^-1|| -->
 
 <!-- ### Specific attributes
 #### PERSPECTIVE camera
@@ -42,14 +42,15 @@ When adding a camera, you need to set the camera's parameters, including the com
 ## Function
 |Function   |Description    |
 |---    |---    |
-|set_attr({attr_name}, *args, **kwargs)|-|
+|set_attr({attr_name}, *args, **kwargs)|Set the attributes of the camera, see the name of the camera attributes|
+<!-- |{attr_name}|Get the attributes of the camera, see the name of the camera attributes.| -->
 
 <!-- toc -->
 ## Get the camera and its attributes
 Function Description
 * ```self.shader.world.cameras```: Get the camera list of the scene
-* `self.shader.world.camera_ids`: get a list of camera ids of the scene
-* ```camera.{attr_name}```: Get the attributes of the camera, see the name of the camera attribute: [Camera](../dsl/camera.md)
+<!-- * `self.shader.world.camera_ids`: get a list of camera ids of the scene -->
+* ```camera.{attr_name}```: Get the attributes of the camera, see the name of the camera attributes.
 
 example
 ```python
@@ -99,7 +100,7 @@ class SetCameraDsl(EntityProcessor):
 [^args description]: `*args` may have multiple input parameters, in addition to the value of hfov, vfov, you can also specify the unit as `"degree"`/`"rad"`; `**kwargs` is used as a dictionary Type of attributes, such as position, etc.
 
 
-## Viewport selection
+<!-- ## Viewport selection
 
 Our system also provide some pre-defined viewport for users.
 <span style="color:blue">*Comments:* Any more view? </span>
@@ -110,7 +111,7 @@ Usage:
 class TopView(EntityProcessor):
     def process(self):
         self.gen_topview(width, height)
-```
+``` -->
 
 ## Domain randomization - Camera Sampler
 Randomize camera position and view direction for `PanoramicCamera`.

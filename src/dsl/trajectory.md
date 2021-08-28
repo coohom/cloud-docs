@@ -17,11 +17,11 @@ Two type of trajectory are supported in the DSL.
 <!-- <span style="color:blue">*Comments:* Default values are missing in the following forms.</span>. -->
 
 <!-- ### General attributes -->
-|Attribute|Type|Description|
-|---|---|---|
-|type||RANDOM (random trajectory); COVERAGE (bow-shape trajectory); DEFINED (user customized trajectory, usually by tapping the key frame in the scene).|
-|pitch|| The angle of pitch |
-|height|| The height of camera. The unit is mm.|
+|Attribute|Type|Description|Default value|Required|
+|---|---|---|---|---|
+|type|str|RANDOM (random trajectory); COVERAGE (bow-shape trajectory); DEFINED (user customized trajectory, usually by tapping the key frame in the scene).|-|Yes|
+|pitch|float| The angle of pitch |-|Yes|
+|height|float| The height of camera. The unit is mm.|-|Yes|
 
 <!-- ### General attributes for RANDOM and COVERAGE type trajectory
 |Attribute|Description|
@@ -59,10 +59,10 @@ Two type of trajectory are supported in the DSL.
 |orthoHeight| vertical field of view (the unit is mm) | | No | Required if camera type is default or 'PERSPECTIVE' |
 |heightMode| Mode of camera height, 0: initial randomization, 1: procedual randomization | | Yes || -->
 
-## Function
+<!-- ## Function
 |Function   |Description    |
 |---    |---    |
-|{attr_name}| Get attributes of trajectory.|
+|{attr_name}| Get attributes of trajectory.| -->
 
 ### Get trajectory and its attributes
 
@@ -141,7 +141,7 @@ class CreateTrajDsl(EntityProcessor):
         self.make_traj(**param)
 ```
 
-Explanation of **param: See attributes of Customized trajectory above.
+<!-- Explanation of **param: See attributes of Customized trajectory above. -->
 
 ## Example
 The example for customized trajectory is shown in [SLAM](../examples/trajectory_sampling.md) section.

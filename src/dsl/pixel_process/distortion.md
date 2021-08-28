@@ -5,8 +5,8 @@ Following function has the parameter for distortion.
 <!-- ``` -->
 * get_rgb(distort=0, noise=0)
 * gen_normal(distort=0, noise=0)
-* gen_instance(normal_threshold=230, distort=0, noise=0)
-* gen_semantic(normal_threshold=230, distort=0, noise=0)
+* gen_instance(distort=0, noise=0)
+* gen_semantic(distort=0, noise=0)
 * gen_depth(distort=0, noise=0)
 * gen_albedo(distort=0, noise=0)
 <!-- ``` -->

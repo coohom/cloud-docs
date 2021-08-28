@@ -1,28 +1,27 @@
 # Instance
 
-<span style="color:blue">*Comments:* Add more introduction of `Instance`</span>.
+<!-- <span style="color:blue">*Comments:* Add more introduction of `Instance`</span>. -->
 
 Each object in the scene is an `Instance`. User can add/delete some instance, or changing the transformation/scale for each instance.
 
 ## Attributes
 | Attribute |Type| Description | Default value | Required |
 | --------- |- | -| ------ | -------- |
-| id || Instance ID, users need to add their own prefix to ensure that the ID is unique | | Yes |
-| label || The label of the instance, indicating the category to which the instance belongs | | Yes |
-| transform || The transformation matrix of the instance, which is a list type of a 4 x 4 matrix transformed according to **row first** | | Yes |
-| type || Possible values are MESH \| ASSET\| CC_OBJECT\| COMPOSITE | | Yes |
-|size||Properties only available when type is ASSET<span style="color:blue">*Comments:* more description here.</span>.|||
+| id |str| Instance ID, users need to add their own prefix to ensure that the ID is unique |-| Yes |
+| label |int| The label of the instance, indicating the category to which the instance belongs |-| Yes |
+| transform |list| The transformation matrix of the instance, which is a list type of a 4 x 4 matrix transformed according to **row first** |-| Yes |
+| type |str| Possible values are MESH \| ASSET\| CC_OBJECT\| COMPOSITE |-| Yes |
+<!-- |size|list|Properties only available when type is ASSET<span style="color:blue">*Comments:* more description here.</span>.||| -->
 
 ## Function
 |Function   |Description    |
 |---    |---    |
-|{attr_name}|Get the attributes of the instance, see the name of the instance|
-|set_rotation(rotation_list)|rotation_list: `list`. 3 x 3 matrix converted according to row first list.|
-|set_scale(scale_list)|scale_list: `list`. a list of scaling factors|
-|set_position(position_list)|position_list: `list`. a list of position coordinates.|
+|set_attr({attr_name}, *args, **kwargs)|Set the attributes of the instance, see the name of the instance attributes|
+|set_rotation(rotation_list)|Set rotation of instance. rotation_list: `list`. 3 x 3 matrix converted according to row first list.|
+|set_scale(scale_list)|Set scale of instance. scale_list: `list`. a list of scaling factors|
+|set_position(position_list)|Set position of instance. position_list: `list`. a list of position coordinates.|
 
-
-<span style="color:blue">*Comments:* `set_attr` not supported? </span>.
+<!-- <span style="color:blue">*Comments:* `set_attr` not supported? </span>. -->
 
 ## Get the instance and its attributes
 <!-- Function Description
@@ -55,7 +54,7 @@ class AddInstance(EntityProcessor):
 ```
 
 
-<span style="color:blue">*Comments:* Delete `Instance`</span>.
+<!-- <span style="color:blue">*Comments:* Delete `Instance`. Unified for entities.</span>. -->
 ## Modify instance properties
 ### Modify the instance transformation matrix
 When modifying this attribute, it is achieved by rotating, panning and zooming, and one or more of the following operations can be performed

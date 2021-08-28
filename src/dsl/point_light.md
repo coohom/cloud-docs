@@ -1,7 +1,6 @@
 # PointLight
-Point light radiates illumination into all directions uniformly.
+Point light radiates illumination into all directions uniformly from a point.
 
 |Attribute|Type|Description|
 |---|---|---|
-|lightType||PointLight, RectangleLight, SunLight, IESspotLight|
-|position||The format is {"x": 191.20065,"y": 9078.513,"z": 69.999985}|
+|position|dict|The format is {"x": 191.20065,"y": 9078.513,"z": 69.999985}|

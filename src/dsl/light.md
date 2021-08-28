@@ -5,13 +5,16 @@ DSL supports four types of lights. There are PointLight, RectangleLight, Sunligh
 
 <!-- The SDK provides the adjustment of lighting effects in the form of interfaces, so the attributes that can be directly adjusted are only the following list -->
 
-<span style="color:blue">*Comments:* **emission (intensity, color temperature)** attribute is missing?</span>.
+<!-- <span style="color:blue">*Comments:* **emission (intensity, color temperature)** attribute is missing?</span>. -->
 
 ## Attributes
 <!-- ### General attributes -->
 |Attribute|Type|Description|
 |---|---|---|
-|lightType||PointLight, RectangleLight, SunLight, IESspotLight|
+|lightType|str|PointLight, RectangleLight, SunLight, IESspotLight|
+|energy|float|The intensity of light.|
+|color|dict|The color of light. The format is {x": 3.4734852, "y": 6.955175, "z": 6.3826585}. It is the normalized rgb multipled by the energy.|
+
 
 <!-- ### Specific attributes -->
 <!-- 
@@ -72,7 +75,7 @@ class ReadLightDsl(EntityProcessor):
 | tune_intensity(ratio) | Set brightness attenutation. (ratio: brightness adjustment multiple)|
 <!-- toc -->
 
-<span style="color:blue">*Comments:* Any function for creating a new light?</span>.
+<!-- <span style="color:blue">*Comments:* Any function for creating a new light?</span>. -->
 ### Modify the lighting attributes directly
 <!-- Function Description
 `light.set_attr({attr_name}, **kwargs)`[^args description]: modify light attributes -->
