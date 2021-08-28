@@ -288,7 +288,7 @@ Each element corresponds to a class, with its own attributes and methods -->
 <tr><td>replace_material(id, type, category)</td><td>domain randomization for materials. See <a href="./dsl/material.html">Material</a></td></tr>
 <tr><td>replace_model(id)</td><td>domain randomization for models. See <a href="./dsl/mesh.html">Model</a></td></tr>
 <tr><td>add_trajectory({attr_name}={attr_value})</td><td>create a new trajectory and add to the scene. See <a href="./dsl/trajectory.html">Trajectory</a></td></tr>
-<tr><td>pick(**kwargs)</td><td>Save customized attributes as output. See example <a href="./examples/layout_estimation.html">Layout Estimation</a></td></tr>
+<tr><td>pick(**kwargs)</td><td>Save customized attributes as output. See example <a href="./examples/layout_estimation.html">Layout Estimation</a>. This function is encouraged to be called in <code>StructureProcessor</code> for robustness.</td></tr>
 </tbody></table>
 <!-- |(TBD)|-| -->
 <!-- ### `ImageHandler` class
@@ -1182,12 +1182,12 @@ Users can implement a <code>PixelProcessor</code> to control the pixel process s
 | -|-|- | -->
 <h2><a class="header" href="#function-4" id="function-4">Function</a></h2>
 <table><thead><tr><th>Function</th><th>Description</th></tr></thead><tbody>
-<tr><td>gen_normal(distort=0, noise=0)</td><td>Generate normal map. (distort: <code>int</code>, noise: <code>int</code>)</td></tr>
-<tr><td>gen_instance(normal_threshold=230, merge_bias=30, distort=0, noise=0)</td><td>Generate intance map. (normal_threshold: <code>int</code>, merge_bias: <code>int</code>, distort: <code>int</code>, noise: <code>int</code>)</td></tr>
-<tr><td>gen_semantic(normal_threshold=230, distort=0, noise=0)</td><td>Generate semantic map. (normal_threshold: <code>int</code>, distort: <code>int</code>, noise: <code>int</code>)</td></tr>
+<tr><td>gen_normal(distort=0)</td><td>Generate normal map. (distort: <code>int</code>)</td></tr>
+<tr><td>gen_instance(distort=0)</td><td>Generate intance map. (distort: <code>int</code>)</td></tr>
+<tr><td>gen_semantic(distort=0)</td><td>Generate semantic map. (distort: <code>int</code>)</td></tr>
 <tr><td>gen_depth(distort=0, noise=0)</td><td>Generate depth map. (distort: <code>int</code>, noise: <code>int</code>)</td></tr>
 <tr><td>gen_traj(**params)</td><td>Generate trajectory visualization (top-down view). (params: <code>dict</code>: parameter list from each type of <a href="dsl/../../trajectory.html">Trajectory</a>)</td></tr>
-<tr><td>gen_albedo(distort=0, noise=0)</td><td>Generate albedo map. (distort: <code>int</code>, noise: <code>int</code>)</td></tr>
+<tr><td>gen_albedo(distort=0)</td><td>Generate albedo map. (distort: <code>int</code>)</td></tr>
 </tbody></table>
 <!-- Each image is an instance of `class RenderResult`. -->
 <!-- Based on these, users could modify image outputs. -->
