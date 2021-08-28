@@ -313,14 +313,14 @@ to filter desired scenes and modify the room layout of selected scenes from the 
 Users need to implement a class inherite from <code>SceneProcessor</code> to control the scene process stage.</p>
 <p>Each room is an instance of the <code>class Room</code>.
 Based on these, users could filter scenes and modify the furniture layout of a room.</p>
-<h2><a class="header" href="#attributes" id="attributes">Attributes</a></h2>
-<table><thead><tr><th>Attributes</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td>-</td><td>-</td><td>-</td></tr>
-</tbody></table>
-<h2><a class="header" href="#function" id="function">Function</a></h2>
-<table><thead><tr><th>Function</th><th>Description</th></tr></thead><tbody>
-<tr><td>-</td><td>-</td></tr>
-</tbody></table>
+<!-- ## Attributes
+|Attributes |Type | Description    |
+|---    |---    |--- |
+| -|-|- |
+## Function
+|Function|Description|
+|---|---|
+|-|-| -->
 <!-- |get_rooms()  |return the room list (list of `class Room`)| -->
 <p>More description about <a href="./room.html">Room</a></p>
 <h2><a class="header" href="#scene-filtering" id="scene-filtering">Scene filtering</a></h2>
@@ -347,7 +347,7 @@ class SceneFilterExample(SceneProcessor):
 <!-- Users could sample furniture layout using function `sample()`. -->
 <!-- Also, users could use functions, such as `get_polygon()`, to get room polygon for further processing. -->
 <!-- <span style="color:blue">*Comments:* More info about `room` needs here.</span> -->
-<h3><a class="header" href="#attributes-1" id="attributes-1">Attributes</a></h3>
+<h3><a class="header" href="#attributes" id="attributes">Attributes</a></h3>
 <table><thead><tr><th>Attributes</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>roomId</td><td>str</td><td>String for identifing the room.</td></tr>
 <tr><td>position</td><td>list</td><td>2D coordinates of room center.</td></tr>
@@ -398,7 +398,7 @@ class RoomSampler(SceneProcessor):
 <h1><a class="header" href="#level" id="level">Level</a></h1>
 <p>Level contains information of different floors in the scene. The height of each level is provided.</p>
 <!-- (introduction here.) -->
-<h3><a class="header" href="#attributes-2" id="attributes-2">Attributes</a></h3>
+<h3><a class="header" href="#attributes-1" id="attributes-1">Attributes</a></h3>
 <table><thead><tr><th>Attributes</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>id</td><td>str</td><td>The string for identifing the level.</td></tr>
 <tr><td>height</td><td>float</td><td>The height of the level.</td></tr>
@@ -502,7 +502,7 @@ class CameraFilterProcessor(EntityProcessor):
 <li><a href="dsl/../dsl/panoramic_camera.html">Panoramic Camera</a></li>
 </ul>
 <p>When adding a camera, you need to set the camera's parameters, including the common parameters of all types of cameras and the unique parameters of specific types of cameras.</p>
-<h2><a class="header" href="#attributes-3" id="attributes-3">Attributes</a></h2>
+<h2><a class="header" href="#attributes-2" id="attributes-2">Attributes</a></h2>
 <!-- ### General attributes -->
 <table><thead><tr><th>Attribute</th><th>Type</th><th>Description</th><th>Default value</th><th>Required</th></tr></thead><tbody>
 <tr><td>id</td><td>str</td><td>Camera ID, users need to add a prefix to ensure that the ID is unique</td><td>-</td><td>Yes</td></tr>
@@ -531,7 +531,7 @@ class CameraFilterProcessor(EntityProcessor):
 |orthoWidth|The width of the camera displayed in the model space, in millimeters|none|yes|
 |orthoHeight|The height displayed by the camera in the model space, in millimeters|none|yes| -->
 <!-- # Camera operations -->
-<h2><a class="header" href="#function-1" id="function-1">Function</a></h2>
+<h2><a class="header" href="#function" id="function">Function</a></h2>
 <table><thead><tr><th>Function</th><th>Description</th></tr></thead><tbody>
 <tr><td>set_attr({attr_name}, *args, **kwargs)</td><td>Set the attributes of the camera, see the name of the camera attributes</td></tr>
 </tbody></table>
@@ -616,7 +616,7 @@ class CameraRandomizer(EntityProcessor):
             camera.set_attr('lookAt', z=randomized_pos[2])
 </code></pre>
 <h1><a class="header" href="#perspectivecamera" id="perspectivecamera">PerspectiveCamera</a></h1>
-<h2><a class="header" href="#attributes-4" id="attributes-4">Attributes</a></h2>
+<h2><a class="header" href="#attributes-3" id="attributes-3">Attributes</a></h2>
 <!-- ### General attributes -->
 <table><thead><tr><th>Attribute</th><th>Type</th><th>Description</th><th>Default value</th><th>Required</th></tr></thead><tbody>
 <tr><td>id</td><td>str</td><td>Camera ID, users need to add a prefix to ensure that the ID is unique</td><td>-</td><td>Yes</td></tr>
@@ -634,7 +634,7 @@ class CameraRandomizer(EntityProcessor):
 <!-- |iso||Indicates the sensitivity of the camera|| -->
 <!-- |fnumber||f value, indicating the aperture size|| -->
 <!-- |shutterSpeed||The shutter speed of the camera, the unit is s^-1|| --><h1><a class="header" href="#orthographiccamera" id="orthographiccamera">OrthographicCamera</a></h1>
-<h2><a class="header" href="#attributes-5" id="attributes-5">Attributes</a></h2>
+<h2><a class="header" href="#attributes-4" id="attributes-4">Attributes</a></h2>
 <!-- ### General attributes -->
 <table><thead><tr><th>Attribute</th><th>Type</th><th>Description</th><th>Default value</th><th>Required</th></tr></thead><tbody>
 <tr><td>id</td><td>str</td><td>Camera ID, users need to add a prefix to ensure that the ID is unique</td><td>-</td><td>Yes</td></tr>
@@ -653,7 +653,7 @@ class CameraRandomizer(EntityProcessor):
 <!-- |fnumber||f value, indicating the aperture size|| -->
 <!-- |shutterSpeed||The shutter speed of the camera, the unit is s^-1|| --><h1><a class="header" href="#panoramiccamera" id="panoramiccamera">PanoramicCamera</a></h1>
 <!-- <span style="color:blue">*Comments:* Any new attributes?.</span> -->
-<h2><a class="header" href="#attributes-6" id="attributes-6">Attributes</a></h2>
+<h2><a class="header" href="#attributes-5" id="attributes-5">Attributes</a></h2>
 <!-- ### General attributes -->
 <table><thead><tr><th>Attribute</th><th>Type</th><th>Description</th><th>Default value</th><th>Required</th></tr></thead><tbody>
 <tr><td>id</td><td>str</td><td>Camera ID, users need to add a prefix to ensure that the ID is unique</td><td>-</td><td>Yes</td></tr>
@@ -674,7 +674,7 @@ class CameraRandomizer(EntityProcessor):
 <!-- Each type of light has its own parameters which we list in the following. -->
 <!-- The SDK provides the adjustment of lighting effects in the form of interfaces, so the attributes that can be directly adjusted are only the following list -->
 <!-- <span style="color:blue">*Comments:* **emission (intensity, color temperature)** attribute is missing?</span>. -->
-<h2><a class="header" href="#attributes-7" id="attributes-7">Attributes</a></h2>
+<h2><a class="header" href="#attributes-6" id="attributes-6">Attributes</a></h2>
 <!-- ### General attributes -->
 <table><thead><tr><th>Attribute</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td>lightType</td><td>str</td><td>PointLight, RectangleLight, SunLight, IESspotLight</td></tr>
@@ -722,7 +722,7 @@ Sun light is direction light. It radiates a specified power per unit area along 
             position = light.position
 </code></pre>
 <!-- # Light operation -->
-<h2><a class="header" href="#function-2" id="function-2">Function</a></h2>
+<h2><a class="header" href="#function-1" id="function-1">Function</a></h2>
 <table><thead><tr><th>Function</th><th>Description</th></tr></thead><tbody>
 <tr><td>set_attr({attr_name}, **kwargs)</td><td>modify light attributes. <code>**kwargs</code> is used for attributes of dictionary type, such as position, etc.</td></tr>
 <tr><td>_tune_temp(delta)</td><td>Random adjust color temperature. (delta: weight for tuned color temperature) (1 - delta) * orig + delta * tuned</td></tr>
@@ -822,7 +822,7 @@ class LightSampler(EntityProcessor):
 <h1><a class="header" href="#instance" id="instance">Instance</a></h1>
 <!-- <span style="color:blue">*Comments:* Add more introduction of `Instance`</span>. -->
 <p>Each object in the scene is an <code>Instance</code>. User can add/delete some instance, or changing the transformation/scale for each instance.</p>
-<h2><a class="header" href="#attributes-8" id="attributes-8">Attributes</a></h2>
+<h2><a class="header" href="#attributes-7" id="attributes-7">Attributes</a></h2>
 <table><thead><tr><th>Attribute</th><th>Type</th><th>Description</th><th>Default value</th><th>Required</th></tr></thead><tbody>
 <tr><td>id</td><td>str</td><td>Instance ID, users need to add their own prefix to ensure that the ID is unique</td><td>-</td><td>Yes</td></tr>
 <tr><td>label</td><td>int</td><td>The label of the instance, indicating the category to which the instance belongs</td><td>-</td><td>Yes</td></tr>
@@ -830,7 +830,7 @@ class LightSampler(EntityProcessor):
 <tr><td>type</td><td>str</td><td>Possible values are MESH | ASSET| CC_OBJECT| COMPOSITE</td><td>-</td><td>Yes</td></tr>
 </tbody></table>
 <!-- |size|list|Properties only available when type is ASSET<span style="color:blue">*Comments:* more description here.</span>.||| -->
-<h2><a class="header" href="#function-3" id="function-3">Function</a></h2>
+<h2><a class="header" href="#function-2" id="function-2">Function</a></h2>
 <table><thead><tr><th>Function</th><th>Description</th></tr></thead><tbody>
 <tr><td>set_attr({attr_name}, *args, **kwargs)</td><td>Set the attributes of the instance, see the name of the instance attributes</td></tr>
 <tr><td>set_rotation(rotation_list)</td><td>Set rotation of instance. rotation_list: <code>list</code>. 3 x 3 matrix converted according to row first list.</td></tr>
@@ -978,7 +978,7 @@ class ReplaceModel(EntityProcessor):
 <li><a href="dsl/../dsl/converage_trajectory.html">Coverage Trajectory</a></li>
 <li><a href="dsl/../dsl/defined_trajectory.html">Defined Trajectory</a></li>
 </ul>
-<h2><a class="header" href="#attributes-9" id="attributes-9">Attributes</a></h2>
+<h2><a class="header" href="#attributes-8" id="attributes-8">Attributes</a></h2>
 <!-- ## Trajectory types
 Two type of trajectory are supported in the DSL.
 1. Random trajectory. It can also be classified by the shape of trajectory.
@@ -1105,7 +1105,7 @@ class CreateTrajDsl(EntityProcessor):
 <h2><a class="header" href="#example-2" id="example-2">Example</a></h2>
 <p>The example for customized trajectory is shown in <a href="dsl/../examples/trajectory_sampling.html">SLAM</a> section.</p>
 <!-- <span style="color:blue">*Comments:* Default values are missing in the following forms.</span>. --><h1><a class="header" href="#randomtrajectory" id="randomtrajectory">RandomTrajectory</a></h1>
-<h2><a class="header" href="#attributes-10" id="attributes-10">Attributes</a></h2>
+<h2><a class="header" href="#attributes-9" id="attributes-9">Attributes</a></h2>
 <table><thead><tr><th>Attribute</th><th>Type</th><th>Description</th><th>Default value</th><th>Required</th></tr></thead><tbody>
 <tr><td>pitch</td><td>float</td><td>The angle of pitch</td><td>-</td><td>Yes</td></tr>
 <tr><td>height</td><td>float</td><td>The height of camera. The unit is mm.</td><td>-</td><td>Yes</td></tr>
@@ -1116,7 +1116,7 @@ class CreateTrajDsl(EntityProcessor):
 <tr><td>time</td><td>float</td><td>duration of time (the unit is s)</td><td>-</td><td>Yes</td></tr>
 </tbody></table>
 <h1><a class="header" href="#coveragetrajectory" id="coveragetrajectory">CoverageTrajectory</a></h1>
-<h2><a class="header" href="#attributes-11" id="attributes-11">Attributes</a></h2>
+<h2><a class="header" href="#attributes-10" id="attributes-10">Attributes</a></h2>
 <table><thead><tr><th>Attribute</th><th>Type</th><th>Description</th><th>Default value</th><th>Required</th></tr></thead><tbody>
 <tr><td>pitch</td><td>float</td><td>The angle of pitch</td><td>-</td><td>Yes</td></tr>
 <tr><td>height</td><td>float</td><td>The height of camera. The unit is mm.</td><td>-</td><td>Yes</td></tr>
@@ -1127,7 +1127,7 @@ class CreateTrajDsl(EntityProcessor):
 <tr><td>boundary</td><td>list</td><td>Restriction range of trajectory</td><td>-</td><td>Yes</td></tr>
 </tbody></table>
 <h1><a class="header" href="#customizedtrajectory" id="customizedtrajectory">CustomizedTrajectory</a></h1>
-<h2><a class="header" href="#attributes-12" id="attributes-12">Attributes</a></h2>
+<h2><a class="header" href="#attributes-11" id="attributes-11">Attributes</a></h2>
 <!-- <span style="color:blue">*Comments:* This parameter list needs revision (e.g., description of keyPoints is incorrect).</span>.  -->
 <table><thead><tr><th>Attribute</th><th>Type</th><th>Description</th><th>Required</th><th>Remark</th></tr></thead><tbody>
 <tr><td>pitch</td><td>float</td><td>The angle of pitch</td><td>Yes</td><td></td></tr>
@@ -1152,7 +1152,7 @@ class CreateTrajDsl(EntityProcessor):
 |Attributes |Type | Description    |
 |---    |---    |--- |
 | -|-|- | -->
-<h2><a class="header" href="#function-4" id="function-4">Function</a></h2>
+<h2><a class="header" href="#function-3" id="function-3">Function</a></h2>
 <table><thead><tr><th>Function</th><th>Description</th></tr></thead><tbody>
 <tr><td>get_rgb(distort=0, noise=0)</td><td>Rendering photo-realistic image. distort(int) represent using distortion or not when rendering. See <a href="dsl/pixel_process/distortion.html">Distortion Simulation</a> for details.  noise (int) represent adding noise or not when rendering. See <a href="dsl/pixel_process/noise.html">Noise Simulation</a> for details.</td></tr>
 </tbody></table>
@@ -1180,7 +1180,7 @@ Users can implement a <code>PixelProcessor</code> to control the pixel process s
 |Attributes |Type | Description    |
 |---    |---    |--- |
 | -|-|- | -->
-<h2><a class="header" href="#function-5" id="function-5">Function</a></h2>
+<h2><a class="header" href="#function-4" id="function-4">Function</a></h2>
 <table><thead><tr><th>Function</th><th>Description</th></tr></thead><tbody>
 <tr><td>gen_normal(distort=0, noise=0)</td><td>Generate normal map. (distort: <code>int</code>, noise: <code>int</code>)</td></tr>
 <tr><td>gen_instance(normal_threshold=230, merge_bias=30, distort=0, noise=0)</td><td>Generate intance map. (normal_threshold: <code>int</code>, merge_bias: <code>int</code>, distort: <code>int</code>, noise: <code>int</code>)</td></tr>
@@ -1325,7 +1325,7 @@ class AlbedoDsl(PixelProcessor):
 </ol>
 <!-- ## Instructions for use -->
 <!-- ### Description -->
-<h2><a class="header" href="#function-6" id="function-6">Function</a></h2>
+<h2><a class="header" href="#function-5" id="function-5">Function</a></h2>
 <table><thead><tr><th>Function</th><th>Description</th></tr></thead><tbody>
 <tr><td>add_depth_noise(img, noise_type)</td><td>img (<code>numpy.ndarray</code> with <code>dtype=uint16</code>) is the image to be processed. <code>noise_type</code> is an integer flag for noise type. See following list.</td></tr>
 </tbody></table>
