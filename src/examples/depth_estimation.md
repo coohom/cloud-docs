@@ -13,7 +13,13 @@ of the transform component to randomly move cameras, and
 use the output component to write out corner positions and
 camera parameters. -->
 
-TBD.
+In this example, we generate cameras by rules and generate depth images.
+
+In the Entity Process Stage, we manually setup cameras in the valid rooms as shown in class `CameraSetter`. Specifially, we set the position by a rule and set the resolution of the image to 640* 480 and horizontal field-of-view (FoV) to 57 to align with Microsoft Kinect used in the NYUv2 dataset. 
+
+In the Pixel Process Stage, we setup the depth output in class `DepthOutput`.
+
+<!-- TBD. -->
 
 ```python
 from ksecs.ECS.processors.entity_processor import EntityProcessor
@@ -104,8 +110,9 @@ class CameraSetting(EntityProcessor):
             camera.set_attr("hfov", 53)
 ``` -->
 
-## MINERVAS output sample
-TBD.
+## MINERVAS output samples
+<!-- TBD. -->
+![depth_samples](../examples_figs/depth_samples.png)
 
 <!-- ## Experimental Setup
 

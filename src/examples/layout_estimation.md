@@ -29,13 +29,21 @@ import copy
 import glm
 ``` -->
 
-First, we filter scenes which get rooms with manhattan layout assumption in the Scene Process Stage, as implemented in the `ManhattanSceneFilter`.
+<!-- First, we filter scenes which get rooms with manhattan layout assumption in the Scene Process Stage, as implemented in the `ManhattanSceneFilter`.
 
 In the entity process stage, we first filter cameras in the relative empty rooms as shown in `CameraFilter`.
 
 Then, we setup the camera parameters in `CameraSetting`. We also adopt domain randomization for cameras as shown in `CameraRandomizer`.
 
-After the rendering process stage, we setup customized output for generating information about room structure as shown in `StructureOutput`.
+After the rendering process stage, we setup customized output for generating information about room structure as shown in `StructureOutput`. -->
+In this example, we generate both panoramic rgb images and scene structure information.
+
+ We first filter scenes with Manhattan-world assumption using `ManhattanSceneFilter` in the Scene Process Stage. 
+ 
+ In the Entity Process Stage, we then remove the cameras in the relatively empty rooms using `CameraFilter`. Next, we set the camera parameters (\eg, camera type and image resolution) using `CameraSetting`. 
+ We randomize the positions of the cameras using `CameraRandomizer`.
+ 
+ After the Rendering Process Stage, we record the positions of room corners and cameras using `StructureOutput`.
 
 <!-- For this task, we set the type of camera to `PANORAMA` in Entity Process Stage, and output the corner and camera parameters in the Entity Process Stage. -->
 
@@ -143,8 +151,9 @@ class StructureOutput(StructureProcessor):
             )
 ```
 
-## MINERVAS output sample
-TBD.
+## MINERVAS output samples
+<!-- TBD. -->
+![layout_samples](./../examples_figs/layout_samples.png)
 <!-- ## Experimental Setup
 
 In this experiment, we use MatterportLayout [[1, 2]](#1) as the real data. The dataset consists of 1,647 images for training, 190 images for validation, and 458 images for testing. Then, we synthesize 120K panorama images from 80K scenes using our system. Each panorama image corresponds to one room in scenes.

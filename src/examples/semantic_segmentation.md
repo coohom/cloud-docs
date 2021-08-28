@@ -13,8 +13,14 @@ the type of camera as “panorama”. We also use the sampler
 of the transform component to randomly move cameras, and
 use the output component to write out corner positions and
 camera parameters. -->
-TBD.
-In this example, we show the domain randomization ability of the MINERVAS system.
+In this example, we generate semantic labels and show the domain randomization ability of the MINERVAS system.
+
+First, in the Entity Process Stage we filter out cameras in the rooms which do not has more than 4 furniture using `CameraFilter`. 
+For each camera, we set the camera model as `panoramar` and the resolution of the image to 640 * 480 in class `CameraSetting`. 
+
+We then utilize the system's ability for domain randomization to generate data. Specifically, we randomize room layout in the Scene Process Stage using `FurnitureLayoutSampler`. Then, we randomize material, model and camera in the Entity Process Stage using `EntityRandomizer`. 
+
+In the Pixel Process Stage, we generate semantic label with NYUv2 40 label set as shown in `SemanticOutput` class.
 
 ```python
 from ksecs.ECS.processors.entity_processor import EntityProcessor
@@ -128,8 +134,9 @@ class LabelMapping(PixelProcessor):
         self.gen_semantic(label_arch=NYU40_Mapping)
 ``` -->
 
-## MINERVAS output sample
-TBD.
+## MINERVAS output samples
+<!-- TBD. -->
+![semantic_samples](./../examples_figs/semantic_samples.png)
 
 <!-- ## Experimental Setup
 
@@ -157,4 +164,4 @@ prove the performance of network.
 
 <!-- ## References
 <a id="1">[1]</a> 
-Iro Armeni, Sasha Sax, Amir R Zamir, and Silvio Savarese. Joint 2d-3d-semantic data for indoor scene understanding. arXiv preprint arXiv:1702.01105, 2017. --> -->
+Iro Armeni, Sasha Sax, Amir R Zamir, and Silvio Savarese. Joint 2d-3d-semantic data for indoor scene understanding. arXiv preprint arXiv:1702.01105, 2017. -->

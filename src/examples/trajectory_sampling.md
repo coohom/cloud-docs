@@ -80,7 +80,7 @@ class CustomTrajectorySampler(EntityProcessor):
         )
 ```
 
-## MINERVAS output sample
+## MINERVAS output samples
 After running with the DSL above, we can get a sequence of images (color and depth) along camera trajectory as shown below.
 
 ![trajectory_output](./../examples_figs/trajectory.png)
@@ -88,18 +88,18 @@ After running with the DSL above, we can get a sequence of images (color and dep
 
 <!-- ## Experimental Setup -->
 
-## Result
+<!-- ## Result
 We evaluated the usability of our system in this field based on the open source SLAM algorithm Bundlefusion [[2]](#2)
 A qualitative result is shown below. Scenes can 
 be robustly reconstructed, as well as the textures of objects. 
 This demonstrates that our pipeline can output the proposed 
-dataset for the SLAM algorithm, and that the generated trajectory provides a good view of the interior. The results of our experiments indicate that our synthetic scenes with configurable attributes and background can be utilized to diagnose the SLAM algorithm.
+dataset for the SLAM algorithm, and that the generated trajectory provides a good view of the interior. The results of our experiments indicate that our synthetic scenes with configurable attributes and background can be utilized to diagnose the SLAM algorithm. -->
 
-![trajectory_output](./../examples_figs/fig_3d_reconstruction.png)
+<!-- ![trajectory_output](./../examples_figs/fig_3d_reconstruction.png) -->
 
 ## References
 <a id="1">[1]</a> 
 wikipedia. Simultaneous localization and mapping. [https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping](https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping).
 
-<a id="2">[2]</a> 
-Angela Dai, Matthias Nießner, Michael Zollhöfer, Shahram Izadi, and Christian Theobalt. Bundlefusion: Real-time globally consistent 3d reconstruction using on-the-fly surface reintegration. ACM Transactions on Graphics (TOG), 36(4):1, 2017.
+<!-- <a id="2">[2]</a> 
+Angela Dai, Matthias Nießner, Michael Zollhöfer, Shahram Izadi, and Christian Theobalt. Bundlefusion: Real-time globally consistent 3d reconstruction using on-the-fly surface reintegration. ACM Transactions on Graphics (TOG), 36(4):1, 2017. -->
