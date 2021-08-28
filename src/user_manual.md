@@ -27,6 +27,10 @@ To change the password, you need to enter the Kujiale homepage（https://www.kuj
 ![Security Information](images/security_information.png)
 ![Password Change](images/password_change.png) -->
 
+## Create simulation task
+
+After successful login, you will enter the EUS homepage-Scene Management.
+
 ## System Related Usage
 
 After successfully login, you will enter the MINERVAS online system. Click *New Simulation Task* will create a new task. 
