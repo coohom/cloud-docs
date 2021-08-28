@@ -18,12 +18,12 @@ Specifically, users can
 ## Function
 |Function|Description|
 |---|---|
-|gen_normal(distort=0, noise=0)|Generate normal map. (distort: `int`, noise: `int`)|
-|gen_instance(normal_threshold=230, merge_bias=30, distort=0, noise=0)|Generate intance map. (normal_threshold: `int`, merge_bias: `int`, distort: `int`, noise: `int`) |
-|gen_semantic(normal_threshold=230, distort=0, noise=0)| Generate semantic map. (normal_threshold: `int`, distort: `int`, noise: `int`)|
+|gen_normal(distort=0)|Generate normal map. (distort: `int`)|
+|gen_instance(distort=0)|Generate intance map. (distort: `int`) |
+|gen_semantic(distort=0)| Generate semantic map. (distort: `int`)|
 |gen_depth(distort=0, noise=0)|Generate depth map. (distort: `int`, noise: `int`)|
 |gen_traj(**params)|Generate trajectory visualization (top-down view). (params: `dict`: parameter list from each type of [Trajectory](dsl/../../trajectory.md))|
-|gen_albedo(distort=0, noise=0)|Generate albedo map. (distort: `int`, noise: `int`)|
+|gen_albedo(distort=0)|Generate albedo map. (distort: `int`)|
 <!-- Each image is an instance of `class RenderResult`. -->
 <!-- Based on these, users could modify image outputs. -->
 

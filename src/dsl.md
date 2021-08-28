@@ -104,7 +104,7 @@ Each element corresponds to a class, with its own attributes and methods -->
 |replace_material(id, type, category) |domain randomization for materials. See [Material](./dsl/material.md)|
 |replace_model(id)|domain randomization for models. See [Model](./dsl/mesh.md)|
 |add_trajectory({attr_name}={attr_value})| create a new trajectory and add to the scene. See [Trajectory](./dsl/trajectory.md)|
-|pick(**kwargs)|Save customized attributes as output. See example [Layout Estimation](./examples/layout_estimation.md)|
+|pick(**kwargs)|Save customized attributes as output. See example [Layout Estimation](./examples/layout_estimation.md). This function is encouraged to be called in `StructureProcessor` for robustness.|
 <!-- |(TBD)|-| -->
 
 <!-- ### `ImageHandler` class
