@@ -18,12 +18,12 @@ In the MINERVAS system, there are several rendering output we support:
 
 |Function|Description|
 |---|---|
-|gen_normal(distort=0, noise=0)|Generate normal map. (distort: `int`, noise: `int`)|
-|gen_instance(distort=0, noise=0)|Generate intance map. (distort: `int`, noise: `int`) |
-|gen_semantic(distort=0, noise=0)| Generate semantic map. (distort: `int`, noise: `int`)|
+|gen_normal(distort=0)|Generate normal map. (distort: `int`)|
+|gen_instance(distort=0)|Generate intance map. (distort: `int`) |
+|gen_semantic(distort=0)| Generate semantic map. (distort: `int`)|
 |gen_depth(distort=0, noise=0)|Generate depth map. (distort: `int`, noise: `int`)|
 |gen_traj(**params)|Generate trajectory visualization (top-down view). (params: `dict`: parameter list from each type of [Trajectory](dsl/../../trajectory.md))|
-|gen_albedo(distort=0, noise=0)|Generate albedo map. (distort: `int`, noise: `int`)|
+|gen_albedo(distort=0)|Generate albedo map. (distort: `int`)|
 
 <!-- <span style="color:blue">*Comments:* Differences between `RenderProcessor` and `PixelProcessor`.</span> -->
 ## Examples:
@@ -41,7 +41,7 @@ Usage:
 from ksecs.ECS.processors.pixel_processor import PixelProcessor
 class NormalDsl(PixelProcessor):
     def process(self, **kwargs):
-        self.gen_normal(distort=1, noise=2)
+        self.gen_normal(distort=1)
 ```
 
 
@@ -57,7 +57,7 @@ Usage:
 from ksecs.ECS.processors.pixel_processor import PixelProcessor
 class InstanceDsl(PixelProcessor):
     def process(self, **kwargs):
-        self.gen_instance(distort=0, noise=0)
+        self.gen_instance(distort=0)
 ```
 
 <!-- Notes: -->
@@ -77,7 +77,7 @@ Usage:
 from ksecs.ECS.processors.pixel_processor import PixelProcessor
 class SemanticDsl(PixelProcessor):
     def process(self, **kwargs):
-        self.gen_semantic(distort=0, noise=0)
+        self.gen_semantic(distort=0)
 ```
 
 <!-- Notes: -->
@@ -94,7 +94,7 @@ Usage:
 from ksecs.ECS.processors.pixel_processor import PixelProcessor
 class DepthDsl(PixelProcessor):
     def process(self, **kwargs):
-        self.gen_depth(distort=0, noise=0)
+        self.gen_depth(distort=0, noise=1)
 ```
 
 ### Trajectory map
@@ -126,5 +126,5 @@ Ouput format:
 from ksecs.ECS.processors.pixel_processor import PixelProcessor
 class AlbedoDsl(PixelProcessor):
     def process(self, **kwargs):
-        self.gen_albedo(distort=0, noise=0)
+        self.gen_albedo(distort=0)
 ```
