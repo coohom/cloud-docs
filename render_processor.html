@@ -171,7 +171,7 @@
 | -|-|- | -->
 <h2><a class="header" href="#function" id="function">Function</a></h2>
 <table><thead><tr><th>Function</th><th>Description</th></tr></thead><tbody>
-<tr><td>get_rgb(distort=0, noise=0)</td><td>Rendering photo-realistic image. distort(int) represent using distortion or not when rendering. See <a href="dsl/pixel_process/distortion.html">Distortion Simulation</a> for details.  noise (int) represent adding noise or not when rendering. See <a href="dsl/pixel_process/noise.html">Noise Simulation</a> for details.</td></tr>
+<tr><td>gen_rgb(distort=0)</td><td>Rendering photo-realistic image. distort(int) represent using distortion or not when rendering. See <a href="dsl/pixel_process/distortion.html">Distortion Simulation</a> for details.</td></tr>
 </tbody></table>
 <h3><a class="header" href="#example-rgb-rendering" id="example-rgb-rendering">Example: RGB rendering</a></h3>
 <p>Output format:
@@ -180,7 +180,7 @@
 <pre><code class="language-python">from ksecs.ECS.processors.render_processor import RenderProcessor
 class Render(RenderProcessor):
     def process(self, *args, **kwargs):
-        self.gen_rgb(distort=0, noise=0)
+        self.gen_rgb(distort=0)
 </code></pre>
 
                     </main>
