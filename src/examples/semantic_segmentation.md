@@ -136,7 +136,8 @@ class LabelMapping(PixelProcessor):
 
 ## MINERVAS output samples
 <!-- TBD. -->
-![semantic_samples](./../examples_figs/semantic_samples.png)
+<!-- ![semantic_samples](./../examples_figs/semantic_samples.png) -->
+![semantic_samples](./../examples_figs/semantic_samples_nyu40.png)
 
 <!-- ## Experimental Setup
 
