@@ -1045,7 +1045,7 @@ class ReadTrajDsl(EntityProcessor):
             cameraHeight = traj.height
 </code></pre>
 <h2><a class="header" href="#add-trajectory" id="add-trajectory">Add trajectory</a></h2>
-<h3><a class="header" href="#add-random-trajectory" id="add-random-trajectory">Add Random trajectory</a></h3>
+<h3><a class="header" href="#add-coverage-trajectory" id="add-coverage-trajectory">Add coverage trajectory</a></h3>
 <ul>
 <li><code>self.shader.world.add_trajectory({attr_name}={attr_value})</code>: create a new trajectory and add to the scene.</li>
 </ul>
@@ -1488,7 +1488,7 @@ class CameraRandomizer(EntityProcessor):
     def process(self):
         for camera in self.shader.world.cameras:
             random_vec = np.random.normal(0, 1, size=3)
-            camera_pos = np.array(list(camera.position.values()))
+            camera_pos = np.array([camera.position[axis] for axis in &quot;xyz&quot;])
             randomized_pos = camera_pos + random_vec * np.array([500.0, 500.0, 50.0])
             camera.set_attr('position', x=randomized_pos[0], y=randomized_pos[1], z=randomized_pos[2])
             camera.set_attr('lookAt', z=randomized_pos[2])
@@ -1635,7 +1635,7 @@ class EntityRandomizer(EntityProcessor):
     def randomize_camera(self):
         for camera in self.shader.world.cameras:
             random_vec = np.random.normal(0, 1, size=3)
-            camera_pos = np.array(list(camera.position.values()))
+            camera_pos = np.array([camera.position[axis] for axis in &quot;xyz&quot;])
             randomized_pos = camera_pos + random_vec * np.array([500.0, 500.0, 100.0])
             camera.set_attr('position', x=randomized_pos[0], y=randomized_pos[1], z=randomized_pos[2])
             camera.set_attr('lookAt', z=randomized_pos[2])
