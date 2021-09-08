@@ -177,7 +177,7 @@ use the output component to write out corner positions and
 camera parameters. -->
 <p>In this example, we generate semantic labels and show the domain randomization ability of the MINERVAS system.</p>
 <p>First, in the Entity Process Stage we filter out cameras in the rooms which do not has more than 4 furniture using <code>CameraFilter</code>. 
-For each camera, we set the camera model as <code>panoramar</code> and the resolution of the image to 640 * 480 in class <code>CameraSetting</code>. </p>
+For each camera, we set the camera model as <code>panorama</code> and the resolution of the image to 640 * 480 in class <code>CameraSetting</code>. </p>
 <p>We then utilize the system's ability for domain randomization to generate data. Specifically, we randomize room layout in the Scene Process Stage using <code>FurnitureLayoutSampler</code>. Then, we randomize material, model and camera in the Entity Process Stage using <code>EntityRandomizer</code>. </p>
 <p>In the Pixel Process Stage, we generate semantic label with NYUv2 40 label set as shown in <code>SemanticOutput</code> class.</p>
 <pre><code class="language-python">from ksecs.ECS.processors.entity_processor import EntityProcessor

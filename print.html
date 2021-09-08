@@ -197,7 +197,7 @@ The core workflow of MINERVAS includes the following parts: -->
 <!-- <span style="color:blue">*Comments:* Many formats in DSL description is not unified. </span> -->
 <!-- toc -->
 <h2><a class="header" href="#introduction-to-dsl-of-minervas" id="introduction-to-dsl-of-minervas">Introduction to DSL of MINERVAS</a></h2>
-<p>The DSL (Domain-Specific Language) of MINERVAS is kind of inernal DSL, it is based on Python programming languages. </p>
+<p>The DSL (Domain-Specific Language) of MINERVAS is kind of internal DSL, it is based on Python programming languages. </p>
 <p>Each DSL file submitted to MINERVAS system is a Python file ended with <code>.py</code>. </p>
 <p>In the Python file, users need to:</p>
 <ul>
@@ -1567,7 +1567,7 @@ use the output component to write out corner positions and
 camera parameters. -->
 <p>In this example, we generate semantic labels and show the domain randomization ability of the MINERVAS system.</p>
 <p>First, in the Entity Process Stage we filter out cameras in the rooms which do not has more than 4 furniture using <code>CameraFilter</code>. 
-For each camera, we set the camera model as <code>panoramar</code> and the resolution of the image to 640 * 480 in class <code>CameraSetting</code>. </p>
+For each camera, we set the camera model as <code>panorama</code> and the resolution of the image to 640 * 480 in class <code>CameraSetting</code>. </p>
 <p>We then utilize the system's ability for domain randomization to generate data. Specifically, we randomize room layout in the Scene Process Stage using <code>FurnitureLayoutSampler</code>. Then, we randomize material, model and camera in the Entity Process Stage using <code>EntityRandomizer</code>. </p>
 <p>In the Pixel Process Stage, we generate semantic label with NYUv2 40 label set as shown in <code>SemanticOutput</code> class.</p>
 <pre><code class="language-python">from ksecs.ECS.processors.entity_processor import EntityProcessor
