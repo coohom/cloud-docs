@@ -81,7 +81,7 @@ class ReadTrajDsl(EntityProcessor):
 ```
 
 ## Add trajectory
-### Add Random trajectory
+### Add coverage trajectory
 * `self.shader.world.add_trajectory({attr_name}={attr_value})`: create a new trajectory and add to the scene.
 
 example:
