@@ -117,7 +117,7 @@ class CameraRandomizer(EntityProcessor):
     def process(self):
         for camera in self.shader.world.cameras:
             random_vec = np.random.normal(0, 1, size=3)
-            camera_pos = np.array(list(camera.position.values()))
+            camera_pos = np.array([camera.position[axis] for axis in "xyz"])
             randomized_pos = camera_pos + random_vec * np.array([500.0, 500.0, 50.0])
             camera.set_attr('position', x=randomized_pos[0], y=randomized_pos[1], z=randomized_pos[2])
             camera.set_attr('lookAt', z=randomized_pos[2])
