@@ -16,7 +16,7 @@ camera parameters. -->
 In this example, we generate semantic labels and show the domain randomization ability of the MINERVAS system.
 
 First, in the Entity Process Stage we filter out cameras in the rooms which do not has more than 4 furniture using `CameraFilter`. 
-For each camera, we set the camera model as `panoramar` and the resolution of the image to 640 * 480 in class `CameraSetting`. 
+For each camera, we set the camera model as `panorama` and the resolution of the image to 640 * 480 in class `CameraSetting`. 
 
 We then utilize the system's ability for domain randomization to generate data. Specifically, we randomize room layout in the Scene Process Stage using `FurnitureLayoutSampler`. Then, we randomize material, model and camera in the Entity Process Stage using `EntityRandomizer`. 
 
