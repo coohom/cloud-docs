@@ -7,7 +7,7 @@ MINERVAS has a programmable dataset generation pipeline with Domain-Specific Lan
 
 ## Introduction to DSL of MINERVAS
 
-The DSL (Domain-Specific Language) of MINERVAS is kind of internal DSL, it is based on Python programming languages. 
+The DSL (Domain-Specific Language) of MINERVAS is a kind of internal DSL, it is based on the Python programming language. 
 
 Each DSL file submitted to MINERVAS system is a Python file ended with `.py`. 
 

@@ -1,7 +1,7 @@
 # Semantic Segmentation
 
 ## Introduction
-Depth estimiation is an essential task in indoor scene understanding. We show the performance gain by generating dataset using our system.
+Semantic segmentation is an essential task in indoor scene understanding. We show the performance gain by generating dataset using our system.
 
 Here we show the DSL for generating semantic mask in NYUd-v2-40 format which helps boosting the current semantic segmentation task.
 
