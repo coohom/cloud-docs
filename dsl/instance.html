@@ -228,6 +228,21 @@
             ).set_scale([1, 1, 1])
 
 </code></pre>
+<p>For some cases, users want to generate scenes with disorder objects for exploring the generalizations of CV models. This can be easily achieved by using these interfaces, we show an example code below.</p>
+<pre><code class="language-python">import numpy as np
+from scipy.spatial.transform import Rotation as R
+class DisorderInstance(EntityProcessor):
+    def process(self, *args, **kwargs):
+        for ins in self.shader.world.instances():
+            random_pos = 
+                np.array([ins.transform[i] for i in [3, 7, 11]]) + np.random.uniform(-1, 1, size=3) * 10
+            random_pos[2] = np.random.random() * self.shader.world.levels[0].height
+            ins.set_position(random_pos.tolist()
+            ).set_rotation(
+                np.concatenate(R.random().as_matrix()).tolist()
+            ).set_scale(np.random.random(3).tolist())
+
+</code></pre>
 
                     </main>
 
